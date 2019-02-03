@@ -301,7 +301,7 @@ label{
   	margin: 0; 
 	border: none;
 	text-align: center;
-	width: 10em;
+	width: fit-content;
 	font-style: italic;
 }
 
@@ -741,10 +741,10 @@ footer h1{
 		transform: scale(1.1);
 	}
 
-	.login-btn i:hover{
+	#login-btn i:hover{
 	    color: var(--peach);
+
 	}
-	
 	
 	.exit-col i:hover{
 		transform: scale(1.1);
@@ -758,9 +758,20 @@ footer h1{
     	height: 4em;
 	}
 	
-	.search-for-supplier input[type=text]{	
-    	font-size: 1.8em;
-		text-align: center;
+	.search-for-supplier input[type=text] {
+		font-size: 1.8em;
+		width: fit-content;
+		font-style: italic;
+	}
+	
+	/* Removed placeholder on focus */
+	input:focus::-webkit-input-placeholder {
+    	color: transparent;
+	}
+
+	
+	#search-for-photographer input[type=text]{	
+		width: 15em;
 	}
 
 	/* Background image for venue search section */
@@ -820,7 +831,12 @@ footer h1{
 		margin-bottom: 5em;
 	}
 	
-	#list-section article{
+	#item-details{
+		display: flex;
+	    padding-left: 2em;
+	}
+	
+	#filter-label{
 		display: flex;
     	justify-content: center;
 		align-self: flex-start;
@@ -836,7 +852,7 @@ footer h1{
 	
 	tag{
 		display: inline;
-    	font-size: 2em;
+    	font-size: 1.8em;
 		margin-left: 0.5em;
 		color: dimgrey;
 	}
@@ -940,15 +956,109 @@ footer h1{
 	/* -------------- Photos for the photographer list -------------- */
 	/* -------------------------------------------------------------- */
 
+	#photographer1{
+		background-image: url("../resources/web/photographers/photographer1-xl.jpg");
+	}
+
+	#photographer2{
+		background-image: url("../resources/web/photographers/photographer2-xl.jpg"); 
+	}
+
+	#photographer3{
+		background-image: url("../resources/web/photographers/photographer3-xl.jpg");
+	}
+
+	#photographer4{
+		background-image: url("../resources/web/photographers/photographer4-xl.jpg");
+	}
+
+	#photographer5{
+		background-image: url("../resources/web/photographers/photographer5-xl.jpg");
+	}
+
+	#photographer6{
+		background-image: url("../resources/web/photographers/photographer6-xl.jpg"); 
+	}
+
+	#photographer7{
+		background-image: url("../resources/web/photographers/photographer7-xl.jpg"); 
+	}
+
+	#photographer8{
+		background-image: url("../resources/web/photographers/photographer8-xl.jpg"); 
+	}
+	
 	/* -------------------------------------------------------------- */
 	/* ----------------- Photos for the bakeri list ----------------- */
 	/* -------------------------------------------------------------- */
 
+	#bakeri1{
+		background-image: url("../resources/web/bakeries/bakeri1-xl.jpg");
+	}
+
+	#bakeri2{
+		background-image: url("../resources/web/bakeries/bakeri2-xl.jpg");
+	}
+
+	#bakeri3{
+		background-image: url("../resources/web/bakeries/bakeri3-xl.jpg"); 
+	}
+
+	#bakeri4{
+		background-image: url("../resources/web/bakeries/bakeri4-xl.jpg");
+	}
+
+	#bakeri5{
+		background-image: url("../resources/web/bakeries/bakeri5-xl.jpg");
+	}
+
+	#bakeri6{
+		background-image: url("../resources/web/bakeries/bakeri6-xl.jpg");
+	}
+
+	#bakeri7{
+		background-image: url("../resources/web/bakeries/bakeri7-xl.jpg");
+	}
+
+	#bakeri8{
+		background-image: url("../resources/web/bakeries/bakeri3-xl.jpg");
+	}
+	
 	/* -------------------------------------------------------------- */
 	/* ------------------ Photos for the dress list ----------------- */
 	/* -------------------------------------------------------------- */
 
+	#dress1{
+		background-image: url("../resources/web/dresses/dress1-xl.jpg");
+	}
 
+	#dress2{
+		background-image: url("../resources/web/dresses/dress2-xl.jpg");
+	}
+
+	#dress3{
+		background-image: url("../resources/web/dresses/dress3-xl.jpg");
+	}
+
+	#dress4{
+		background-image: url("../resources/web/dresses/dress4-xl.jpg");
+	}
+
+	#dress5{
+		background-image: url("../resources/web/dresses/dress5-xl.jpg");
+	}
+
+	#dress6{
+		background-image: url("../resources/web/dresses/dress6-xl.jpg");
+	}
+
+	#dress7{
+		background-image: url("../resources/web/dresses/dress7-xl.jpg");
+	}
+
+	#dress8{
+		background-image: url("../resources/web/dresses/dress9-xl.jpg");
+	}
 
 	
 	/* Footer styling */

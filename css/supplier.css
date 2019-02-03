@@ -1,0 +1,969 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--peach: #fbbc8f;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+header{
+	width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+	padding: 0.5em;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas: 
+		'nav-bar logo login';
+	grid-gap: 2em;
+	align-items: center;
+}
+
+body{
+    max-width: 100%;
+    max-height: 100%;
+    text-rendering: optimizeLegibility;
+    line-height: 1.4;
+    font-size: 100%;
+	margin: 0;
+}
+
+main{
+	display: grid;
+	grid-template-rows: auto;
+}
+
+/* Hide elements on mobile version */
+#account-pop-up, #login-pop-up, #fa-line, #filter-btn-web, tag{
+	display: none;
+}
+
+a{
+	display: contents;
+	color: black;
+}
+
+h1{
+	font-style: italic;
+    font-weight: 100;
+	text-align: center;
+}
+
+
+/**
+* 
+* 
+* 
+* NAVIGATION
+* 
+* 
+**/
+
+#nav-bar{
+	display: grid;
+}
+
+/*Burger menu - Menu On*/
+#menuon{
+	background: black;
+	color: white;
+	padding: 1em 1.5em 0 0;
+	position: fixed;
+	z-index: 102;
+	opacity: 0;
+}
+
+/*Burger menu - Menu Off*/
+#menuoff{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.60);
+	z-index: 99;
+	display: none;
+}
+
+span{
+	display: block;
+	width: 2em;
+	height: 3px;
+	background: black;
+	margin-bottom: 4px;
+	z-index: 101;
+}
+
+/* Close button (X) for burger menu*/
+#x{
+    color: var(--peach);
+    padding: 0.2em;
+    position: fixed;
+    z-index: 102;
+    display: none;
+}
+
+/*Navigation bar*/
+nav {
+    background-color: rgba(0,0,0,0.60);
+    opacity: 1;
+	position: fixed;
+	padding: 2em 1em;
+	z-index: 100;
+	display: none;
+}
+
+/*Links in Navbar*/
+nav a{
+	color: white;
+	display: block;
+	padding-bottom: 1em;
+    min-width: 10em;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.6em;
+}
+
+
+/*to toggle the burger menu*/
+#togglemenu:checked ~ nav{
+	display: block;
+}
+
+/*to get rid of the checkbox*/
+#togglemenu{
+	display: none;
+}
+
+/*gray space to turn off burger menu*/
+#togglemenu:checked ~ #menuoff{
+	display: block;
+}
+
+/* X to turn off burger menu*/
+#togglemenu:checked ~ #x{
+	display: block;
+}
+
+#logo{
+	display: grid;
+    justify-items: center;
+}
+
+#logo img{
+	max-width: 50%;
+	align-self: center;
+}
+
+#login-btn{
+    display: flex;
+    background-color: transparent;
+    border: none;
+	justify-content: flex-end;
+}
+
+#login-btn:focus{
+	outline:none;
+}
+
+#login-btn i{
+    font-size: 2.5em;	
+}
+
+/* ------------- Form ---------------- */
+
+/* The popup form - hidden by default */
+.form-popup {
+	display: none;
+    position: absolute;
+    width: 95%;
+    height: 60%;
+    top: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.8;
+    bottom: 0;
+    /* border: 3px solid #f1f1f1; */
+    border-radius: 10px;
+    border-style: dashed;
+    z-index: 10009;
+}
+
+/* Add styles to the form container */
+.form-container {
+	  height: 100%;
+	  width: 100%;
+	  padding: 4em;
+	  display: grid;
+	  background-color: black;
+}
+
+/* Full-width input fields */
+.form-container input[type=text],input[type=email], textarea{
+  	width: 100%;
+  	padding: 15px;
+  	margin: 5px 0 22px 0;
+  	border: none;
+  	background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, input[type=email]:focus, textarea:focus{
+  	background-color: #ddd;
+  	outline: none;
+}
+
+/* Style send button */
+.login-btn {
+  	background-color: var(--peach);
+  	width: 100%;
+  	color: black;
+  	border: none;
+  	cursor: pointer;
+	padding: 0.2em;
+  	opacity: 1;
+    border-style: double;
+    border-radius: 1rem;
+  	font-size: 2.5rem;
+  	font-family: futura-pt, sans-serif;
+  	font-weight: 300;
+  	font-style: normal;
+  	transition:         0.08s ease-in;
+	-o-transition:      0.08s ease-in;
+	-ms-transition:     0.08s ease-in;
+	-moz-transition:    0.08s ease-in;
+	-webkit-transition: 0.08s ease-in;
+}
+
+/* Style label */
+label{
+	font-size: 3rem;
+	font-family: futura-pt, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	color: var(--dark-grey);
+}
+
+.exit-col{
+	width: 100%;
+}
+
+.exit-col i{
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    padding: 1rem;
+	opacity: 0.9;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+-------------------------------- SEARCH SECTION ---------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+.search-for-supplier{
+	display: flex;
+	height: 15em;
+	align-items: center;
+	justify-content: center;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.search-for-supplier article{
+	background-color: white;
+	display: flex;
+	opacity: 0.8;
+	height: 2.5em;
+}
+
+.search-for-supplier input[type=text]{	
+    font-size: 1.2em;
+  	margin: 0; 
+	border: none;
+	text-align: center;
+	width: 10em;
+	font-style: italic;
+}
+
+.button{
+  	border: none;
+  	cursor: pointer;
+	background:var(--peach);
+	opacity: 0.7;
+	display: inline-block;
+}
+
+	/* -------------------------------------------------------------- */
+	/* --------------------- Search for venue ----------------------- */
+	/* -------------------------------------------------------------- */
+
+#search-for-venue{
+	background-image: url("../resources/mobile/venues/venue-xs.jpg");
+}
+
+	/* -------------------------------------------------------------- */
+	/* ------------------- Search for florist ----------------------- */
+	/* -------------------------------------------------------------- */
+
+#search-for-florist{
+	background-image: url("../resources/mobile/florists/florist-xs.jpg");
+}
+
+	/* -------------------------------------------------------------- */
+	/* ----------------- Search for photographer -------------------- */
+	/* -------------------------------------------------------------- */
+
+#search-for-photographer{
+	background-image: url("../resources/mobile/photographers/photographer-xs.jpg");
+}
+
+	/* -------------------------------------------------------------- */
+	/* -------------------- Search for bakeri ----------------------- */
+	/* -------------------------------------------------------------- */
+
+#search-for-bakeri{
+	background-image: url("../resources/mobile/bakeries/bakeri-xs.jpg");
+}
+
+	/* -------------------------------------------------------------- */
+	/* --------------------- Search for dress ----------------------- */
+	/* -------------------------------------------------------------- */
+
+#search-for-dress{
+	background-image: url("../resources/mobile/dresses/dress-xs.jpg");
+}
+
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+--------------------------------- LIST SECTION ----------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+/* Styling the list of venues */
+#list-section{
+	padding: 0.5em;
+}
+
+#list-section ul{
+	height: 100%;
+   	width: 100%;
+	padding: 0;
+	margin: 0;
+	margin-top: 4em;
+}
+
+#list-section ul li{
+    display: flex;
+	align-items: center;
+    width: 100%;
+	border: 2px solid var(--peach);
+	margin-bottom: 1.5em;
+}
+
+#list-section ul li h1{
+	width: 30%;
+	font-size: 1em;
+	margin-left: 3%;
+}
+
+.item{
+	margin: 0;
+	height: 7em;
+	width: 60%;
+	background-position: center; 
+  	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+}
+
+	/* -------------------------------------------------------------- */
+	/* ----------------- Images for list of venues ------------------ */
+	/* -------------------------------------------------------------- */
+
+#venue1{
+	background-image: url("../resources/mobile/venues/venue1-xs.jpg"); 
+}
+
+#venue2{
+	background-image: url("../resources/mobile/venues/venue2-xs.jpg"); 
+}
+
+#venue3{
+	background-image: url("../resources/mobile/venues/venue3-xs.jpg"); 
+}
+
+#venue4{
+	background-image: url("../resources/mobile/venues/venue4-xs.jpg"); 
+}
+
+#venue5{
+	background-image: url("../resources/mobile/venues/venue5-xs.jpg"); 
+}
+
+#venue6{
+	background-image: url("../resources/mobile/venues/venue6-xs.jpg"); 
+}
+
+#venue7{
+	background-image: url("../resources/mobile/venues/venue7-xs.jpg"); 
+}
+
+#venue8{
+	background-image: url("../resources/mobile/venues/venue8-xs.jpg"); 
+}
+
+	/* -------------------------------------------------------------- */
+	/* --------------- Images for list of florists ------------------ */
+	/* -------------------------------------------------------------- */
+
+#venue1{
+	background-image: url("../resources/mobile/venues/venue1-xs.jpg"); 
+}
+
+#venue2{
+	background-image: url("../resources/mobile/venues/venue2-xs.jpg"); 
+}
+
+#venue3{
+	background-image: url("../resources/mobile/venues/venue3-xs.jpg"); 
+}
+
+#venue4{
+	background-image: url("../resources/mobile/venues/venue4-xs.jpg"); 
+}
+
+#venue5{
+	background-image: url("../resources/mobile/venues/venue5-xs.jpg"); 
+}
+
+#venue6{
+	background-image: url("../resources/mobile/venues/venue6-xs.jpg"); 
+}
+
+#venue7{
+	background-image: url("../resources/mobile/venues/venue7-xs.jpg"); 
+}
+
+#venue8{
+	background-image: url("../resources/mobile/venues/venue8-xs.jpg"); 
+}
+
+	/* -------------------------------------------------------------- */
+	/* -------------- Images for list of photographers -------------- */
+	/* -------------------------------------------------------------- */
+
+#venue1{
+	background-image: url("../resources/mobile/venues/venue1-xs.jpg"); 
+}
+
+#venue2{
+	background-image: url("../resources/mobile/venues/venue2-xs.jpg"); 
+}
+
+#venue3{
+	background-image: url("../resources/mobile/venues/venue3-xs.jpg"); 
+}
+
+#venue4{
+	background-image: url("../resources/mobile/venues/venue4-xs.jpg"); 
+}
+
+#venue5{
+	background-image: url("../resources/mobile/venues/venue5-xs.jpg"); 
+}
+
+#venue6{
+	background-image: url("../resources/mobile/venues/venue6-xs.jpg"); 
+}
+
+#venue7{
+	background-image: url("../resources/mobile/venues/venue7-xs.jpg"); 
+}
+
+#venue8{
+	background-image: url("../resources/mobile/venues/venue8-xs.jpg"); 
+}
+
+	/* -------------------------------------------------------------- */
+	/* --------------- Images for list of bakeries ------------------ */
+	/* -------------------------------------------------------------- */
+
+#venue1{
+	background-image: url("../resources/mobile/venues/venue1-xs.jpg"); 
+}
+
+#venue2{
+	background-image: url("../resources/mobile/venues/venue2-xs.jpg"); 
+}
+
+#venue3{
+	background-image: url("../resources/mobile/venues/venue3-xs.jpg"); 
+}
+
+#venue4{
+	background-image: url("../resources/mobile/venues/venue4-xs.jpg"); 
+}
+
+#venue5{
+	background-image: url("../resources/mobile/venues/venue5-xs.jpg"); 
+}
+
+#venue6{
+	background-image: url("../resources/mobile/venues/venue6-xs.jpg"); 
+}
+
+#venue7{
+	background-image: url("../resources/mobile/venues/venue7-xs.jpg"); 
+}
+
+#venue8{
+	background-image: url("../resources/mobile/venues/venue8-xs.jpg"); 
+}
+
+	/* -------------------------------------------------------------- */
+	/* ---------------- Images for list of dresses ------------------ */
+	/* -------------------------------------------------------------- */
+
+#venue1{
+	background-image: url("../resources/mobile/venues/venue1-xs.jpg"); 
+}
+
+#venue2{
+	background-image: url("../resources/mobile/venues/venue2-xs.jpg"); 
+}
+
+#venue3{
+	background-image: url("../resources/mobile/venues/venue3-xs.jpg"); 
+}
+
+#venue4{
+	background-image: url("../resources/mobile/venues/venue4-xs.jpg"); 
+}
+
+#venue5{
+	background-image: url("../resources/mobile/venues/venue5-xs.jpg"); 
+}
+
+#venue6{
+	background-image: url("../resources/mobile/venues/venue6-xs.jpg"); 
+}
+
+#venue7{
+	background-image: url("../resources/mobile/venues/venue7-xs.jpg"); 
+}
+
+#venue8{
+	background-image: url("../resources/mobile/venues/venue8-xs.jpg"); 
+}
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+-------------------------------------- FOOTER -----------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+footer{
+	width: 100%;
+    height: 100%;
+	display:flex;
+	justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+	padding: 0.5em;
+	text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #3a3a3c;
+}
+
+footer ul {
+    display: flex;
+    padding: 0;
+	margin: 0;
+    list-style: none;    
+
+}
+
+footer h1{
+	text-align: center;
+    font-size: 0.9em;
+	padding: 0.3em;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook-f {
+    display: block;
+    padding: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+.fa-twitter {
+    display: block;
+    padding: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+.fa-instagram {
+	display: block;
+    padding: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+------------------------------- MEDIA QUERIES -----------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+/* Desktop */
+
+@media screen and (min-width: 700px){
+	
+	/* Reposition nav-bar items */
+	#logo{
+		grid-area: nav-bar;
+		justify-items: flex-start;
+	}
+	
+	#logo img{
+	    max-width: 20%;
+	}
+	
+	#nav-bar{
+		grid-area: logo;
+	}
+	
+	/* Burger menu dissapears */
+	#menuoff, #menuon, #x, span{
+		display: none;
+	}
+	
+	/* Nav-bar appears as desktop navbar */
+	nav{
+		display: inline-flex;
+		position: static;
+		background-color: white;
+		padding: 1em;
+	}
+	
+	/* Nav-bar links get in a line */
+	nav a{
+		display: inline-block;
+		color: black;
+		font-size: 1.2em;
+		padding: 0;
+	}
+	
+	/* Change color on hover for the nav-bar and login icon */
+	nav a:hover{
+		color: var(--peach);
+	}
+	
+	nav a:active{
+		color: var(--peach);
+	}
+	
+	#login-btn{
+	    justify-content: flex-start;
+	}
+	
+	#login-btn:focus{
+	    outline: none;
+	}
+	
+	.form-popup{
+    	width: 35%;
+   		height: 45%;
+		position: absolute;
+    	left: 50%;
+		top: 2%;
+	}
+	
+	.form-container{
+	    padding: 5em;
+		padding-left: 10em;
+	}
+	
+	.login-btn{
+		width: 80%;
+	}
+	
+	.login-btn:before {
+		content: "";
+		position: absolute;
+		background: var(--red);
+		bottom: 0;
+		left: 0;
+		top: 0;
+		right: 100%;
+		z-index: -1;
+		-webkit-transition: right 0.09s ease-in;
+		transition: right 0.09s ease-in;
+	}
+	
+	.login-btn:hover {
+		color: white;
+		transition: right 0.09s ease-in;
+		transform: scale(1.1);
+	}
+
+	.login-btn i:hover{
+	    color: var(--peach);
+	}
+	
+	
+	.exit-col i:hover{
+		transform: scale(1.1);
+	}
+	
+	.search-for-supplier{
+		height: 40em;
+	}
+
+	.search-for-supplier article {
+    	height: 4em;
+	}
+	
+	.search-for-supplier input[type=text]{	
+    	font-size: 1.8em;
+		text-align: center;
+	}
+
+	/* Background image for venue search section */
+	#search-for-venue{
+		background-image: url("../resources/web/venues/venue-xl.jpg");
+	}
+	
+	/* Background image for florist search section */
+	#search-for-florist{
+		background-image: url("../resources/web/florists/florist-xl.jpg");
+	}
+
+	/* Background image for photographer search section */
+	#search-for-photographer{
+		background-image: url("../resources/web/photographers/photographer-xl.jpg");
+	}
+
+		/* Background image for bakeri search section */
+	#search-for-bakeri{
+		background-image: url("../resources/web/bakeries/bakeri-xl.jpg");
+	}
+
+		/* Background image for dress search section */
+	#search-for-dress{
+		background-image: url("../resources/web/dresses/dress-xl.jpg");
+	}
+
+	/* Filter and search buttons style*/
+	.button{
+    	padding: 1em;
+   		padding-right: 2em;
+    	padding-left: 2em;
+	}
+
+	#filter-btn{
+		display: none;
+	}
+	
+	#search-btn{
+		font-size: 1em;
+		background: var(--peach);
+	}
+	
+	
+	/* List with suppliers */
+	.item{
+		height: 7em;
+	}
+	
+	#list-section{
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-template-areas: 
+			'filter-btn list';
+		align-items: flex-end;
+		margin-top: 5em;
+		margin-bottom: 5em;
+	}
+	
+	#list-section article{
+		display: flex;
+    	justify-content: center;
+		align-self: flex-start;
+	}
+	
+	#filter-btn-web{
+		display: inline-block;
+		margin: 0;
+		width: fit-content;
+		background-color: var(--peach);
+		padding: 1em;
+	}
+	
+	tag{
+		display: inline;
+    	font-size: 2em;
+		margin-left: 0.5em;
+		color: dimgrey;
+	}
+	
+	#list-section ul{
+		grid-area: list;
+		display: flex;
+    	flex-flow: column;
+    	align-items: center;
+		border-left: 2px solid black;
+	}
+	
+	#list-section ul li{
+	    width: 60%;
+		margin-bottom: 3em;
+	}
+	
+	#list-section ul li h1{
+		font-size: 1.5em;
+	}
+	
+	#list-section span{
+		display: block;
+		height: 12em;
+		width: 45%;
+	}
+	
+	/* -------------------------------------------------------------- */
+	/* ----------------- Photos for the venue list ------------------ */
+	/* -------------------------------------------------------------- */
+
+	#venue1{
+	background-image: url("../resources/web/venues/venue1-xl.jpg"); 
+	}
+
+	#venue2{
+		background-image: url("../resources/web/venues/venue2-xl.jpg"); 
+	}
+
+	#venue3{
+		background-image: url("../resources/web/venues/venue3-xl.jpg");
+	}
+
+	#venue4{
+		background-image: url("../resources/web/venues/venue4-xl.jpg");
+	}
+
+	#venue5{
+		background-image: url("../resources/web/venues/venue5-xl.jpg"); 
+	}
+
+	#venue6{
+		background-image: url("../resources/web/venues/venue6-xl.jpg"); 
+	}
+
+	#venue7{
+		background-image: url("../resources/web/venues/venue7-xl.jpg"); 
+	}
+
+	#venue8{
+		background-image: url("../resources/web/venues/venue8-xl.jpg"); 
+	}
+
+	/* -------------------------------------------------------------- */
+	/* ----------------- Photos for the florist list ---------------- */
+	/* -------------------------------------------------------------- */
+
+	#florist1{
+		background-image: url("../resources/web/florists/florist1-xl.jpg"); 
+	}
+
+	#florist2{
+		background-image: url("../resources/web/florists/florist2-xl.jpg"); 
+	}
+
+	#florist3{
+		background-image: url("../resources/web/florists/florist3-xl.jpg"); 
+	}
+
+	#florist4{
+		background-image: url("../resources/web/florists/florist4-xl.jpg"); 
+	}
+
+	#florist5{
+		background-image: url("../resources/web/florists/florist5-xl.jpg"); 
+	}
+
+	#florist6{
+		background-image: url("../resources/web/florists/florist6-xl.jpg"); 
+	}
+
+	#florist7{
+		background-image: url("../resources/web/florists/florist7-xl.jpg"); 
+	}
+
+	#florist8{
+		background-image: url("../resources/web/florists/florist8-xl.jpg"); 
+	}
+
+	/* -------------------------------------------------------------- */
+	/* -------------- Photos for the photographer list -------------- */
+	/* -------------------------------------------------------------- */
+
+	/* -------------------------------------------------------------- */
+	/* ----------------- Photos for the bakeri list ----------------- */
+	/* -------------------------------------------------------------- */
+
+	/* -------------------------------------------------------------- */
+	/* ------------------ Photos for the dress list ----------------- */
+	/* -------------------------------------------------------------- */
+
+
+
+	
+	/* Footer styling */
+	footer h1 {
+    	font-size: 1.5em;
+	}
+	
+	footer ul{
+	    padding: 0.3em;
+	}
+	
+	footer ul a i{
+		font-size: 1.5em;
+	}
+}
+	
+/* Tablet */
+

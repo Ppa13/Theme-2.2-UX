@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Find your invitation</title>
+	<title>Venues</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="../css/guest.css" type="text/css">
+	<!-- Link to external source of the icons -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	<script src="js/guest.js"></script>
+	<!-- -->
+	<script async="" src="https://cdn.heapanalytics.com/js/heap-2625472963.js"></script>
+	<script src="../js/guest.js"></script>
 </head>
-<body>
-	<h1>Guest</h1>
+
+<body><!-- Navigation -->
+	<header>
+		<!-- Burger menu -->			
+		<section class="" id="nav-bar">
+			<!--Checkbox to toggle the burger menu-->
+			<input id="togglemenu" type="checkbox" />
+			<!--Label for the checkbox to turn ON-->
+			<label id="menuon" for="togglemenu"></label>
+			<!--Label for X in burger menu-->
+			<label id="x" for="togglemenu"><i class="far fa-times-circle fa-1x" aria-hidden="true"></i></label>
+			<!--Label for the checkbox to turn OFF-->
+			<label id="menuoff" for="togglemenu"></label>
+			<!--Navigation bar-->
+			<nav>
+				<!--Links in Navbar-->
+				<a href="home.html">Home</a>
+				<a href="planning-tools.html">Planning Tools</a>
+				<a href="supplier.html">Suppliers</a>
+				<a href="guest.html">Guests</a>
+				<a href="collaborator.html">Collaborators</a>
+			</nav>
+			<!--Burger Menu lines-->
+			<span></span>
+			<span></span>
+			<span></span>
+		</section>
+		<!-- Logo -->
+		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
+		<!-- Login function -->
+		<button id="login-btn" onclick="openLogin()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
+    </header>
 </body>
 </html>

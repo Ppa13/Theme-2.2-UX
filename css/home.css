@@ -1,1 +1,545 @@
-home.css
+@charset "utf-8";
+/* CSS Document */
+
+:root {
+	--peach: #fbbc8f;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+#nav-bar{
+	display: grid;
+}
+
+/*Burger menu - Menu On*/
+#menuon{
+	background: black;
+	color: white;
+	padding: 20px 35px 0 0;
+	position: fixed;
+	z-index: 1002;
+	opacity: 0;
+}
+
+/*Burger menu - Menu Off*/
+#menuoff{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.60);
+	z-index: 1000;
+	display: none;
+}
+
+span{
+	display: block;
+	width: 34px;
+	height: 4px;
+	background: #000000;
+	margin-bottom: 4px;
+	z-index: 1001;
+}
+
+/* Close button (X) for burger menu*/
+#x{
+	background: red;
+	color: white;
+	padding: 10px;
+	position: fixed;
+	z-index: 1004;
+	display: none;
+}
+
+/*Navigation bar*/
+nav {
+	background-color: white;
+	position: fixed;
+	padding: 20px 0px 10px;
+	z-index: 1003;
+	display: none;
+}
+
+/*Links in Navbar*/
+nav a{
+	color: #000000;
+	display: block;
+	padding-bottom: 10px;
+	min-width: 200px;
+	text-decoration: none;
+	text-align: center;
+}
+
+nav a:hover{
+	color: var(--peach);
+}
+
+
+/*to toggle the burger menu*/
+#togglemenu:checked ~ nav{
+	display: block;
+}
+
+/*to get rid of the checkbox*/
+#togglemenu{
+	display: none;
+}
+
+/*gray space to turn off burger menu*/
+#togglemenu:checked ~ #menuoff{
+	display: block;
+}
+
+/* X to turn off burger menu*/
+#togglemenu:checked ~ #x{
+	display: block;
+}
+
+.dropdown-content{
+	position: absolute;
+	display: none;
+	z-index: 2000;
+	padding: 0;
+	margin: 1rem 0;
+	background: #FFFFFF;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content li{
+	display: none;
+}
+
+
+
+#logo{
+	display: grid;
+    justify-items: center;
+}
+
+#logo img{
+	max-width: 50%;
+	align-self: center;
+}
+
+#login-btn{
+    display: flex;
+    background-color: transparent;
+    border: none;
+	justify-content: flex-end;
+}
+
+#login-btn:focus{
+	outline:none;
+}
+
+#login-btn i{
+    font-size: 2.5em;	
+}
+
+/*Responsiveness for burger menu*/
+@media screen and (min-width: 500px){
+	
+	/* Reposition nav-bar items */
+	#logo{
+		grid-area: nav-bar;
+		justify-items: flex-start;
+	}
+	
+	#logo img{
+	    max-width: 20%;
+	}
+	
+	#nav-bar{
+		grid-area: logo;
+	}
+	
+	/* Burger menu dissapears */
+	#menuoff, #menuon, #x, span{
+		display: none;
+	}
+	
+	/* Nav-bar appears as desktop navbar */
+	nav{
+		display: inline-flex;
+		position: static;
+		background-color: white;
+		padding: 1em;
+	}
+	
+	/* Nav-bar links get in a line */
+	nav a{
+		display: inline-block;
+		color: black;
+		font-size: 1.2em;
+		padding: 0;
+	}
+	
+	/* Change color on hover for the nav-bar and login icon */
+	nav a:hover{
+		color: var(--peach);
+	}
+	
+	nav a:active{
+		color: var(--peach);
+	}
+	
+	#login-btn{
+	    justify-content: flex-start;
+	}
+	
+	#login-btn:focus{
+	    outline: none;
+	}
+	
+	.dropdown{
+	position: relative;
+}
+
+	.dropdown-content li{
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		list-style: none;
+		padding: 0.25rem 0;
+		display: block;
+}
+
+	.dropdown:hover > .dropdown-content{
+		display: block;
+}
+
+	.dropdown-content li a:hover{
+		color: var(--peach);
+}
+}
+
+img{
+	width: 100%;
+}
+
+header{
+	width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+body{
+    text-rendering: optimizeLegibility;
+    line-height: 1.4;
+    font-size: 100%;
+	margin: 0;
+}
+
+a{
+	display: contents;
+}
+
+#logo{
+	max-width: 15%;
+}
+
+
+.homepage-pictures article{
+	position: relative;
+	min-height: 35rem;
+	background: url("../resources/jeremy-wong-weddings-602196-unsplash.jpg");
+	background-size: cover;
+    background-position:center;
+}
+
+.homepage-pictures{
+	position: relative;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4)
+}
+.start-planning-button{
+	position: absolute;
+	bottom: 20%;
+  	left: 29%;
+	background-color:var(--peach);
+  	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 1.5rem;
+	opacity: 0.7;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4)
+		
+	-moz-transition: opacity 0.2s; /* Firefox */
+    -webkit-transition: opacity 0.2s; /* Safari and Chrome */
+    -o-transition: opacity 0.2s; /* Opera */
+    transition: opacity 0.2s;
+}
+
+.start-planning-button:hover{
+	opacity: 1;
+}
+
+#quote{
+	text-align: center;
+	font-size: 1.5rem;
+}
+
+#venue-pic{
+	background: url("../resources/sweet-ice-cream-photography-399226-unsplash.jpg");
+	background-size: cover;
+    background-position:center;
+	display: block;
+	min-height: 15rem;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+	
+	-moz-transition: opacity 0.5s; /* Firefox */
+    -webkit-transition: opacity 0.5s; /* Safari and Chrome */
+    -o-transition: opacity 0.5s; /* Opera */
+    transition: opacity 0.5s;
+}
+
+#venue-pic:hover{
+	opacity: 0.6;
+}
+
+#venues-text{
+	position: absolute;
+	top: 10%;
+	left: 24%;
+	font-size: 3.7rem;
+	color: white;
+}
+
+#boxes-section{
+	display: grid;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	margin: 1rem;
+}
+
+#florist-box{
+	position: relative;
+	min-height: 10rem;
+	background: url("../resources/tom-the-photographer-651516-unsplash.jpg");
+	background-size: cover;
+    background-position:center;
+	display: block;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+		
+	-moz-transition: opacity 0.5s; /* Firefox */
+    -webkit-transition: opacity 0.5s; /* Safari and Chrome */
+    -o-transition: opacity 0.5s; /* Opera */
+    transition: opacity 0.5s;
+}
+
+#florist-box:hover{
+	opacity: 0.6;
+}
+
+#dresses-box{
+	position: relative;
+	min-height: 10rem;
+	background: url("../resources/charisse-kenion-340543-unsplash.jpg");
+	background-size: cover;
+    background-position:center;
+	display: block;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+		
+	-moz-transition: opacity 0.5s; /* Firefox */
+    -webkit-transition: opacity 0.5s; /* Safari and Chrome */
+    -o-transition: opacity 0.5s; /* Opera */
+    transition: opacity 0.5s;
+}
+
+#dresses-box:hover{
+	opacity: 0.6;
+}
+
+#rings-box{
+	position: relative;
+	min-height: 10rem;
+	background: url("../resources/rings.jpg");
+	background-size: cover;
+    background-position:center;
+	display: block;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+		
+	-moz-transition: opacity 0.5s; /* Firefox */
+    -webkit-transition: opacity 0.5s; /* Safari and Chrome */
+    -o-transition: opacity 0.5s; /* Opera */
+    transition: opacity 0.5s;
+}
+
+#rings-box:hover{
+	opacity: 0.6;
+}
+
+#cakes-box{
+	position: relative;
+	min-height: 10rem;
+	background: url("../resources/marcie-douglass-204244-unsplash.jpg");
+	background-size: cover;
+    background-position:top;
+	display: block;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+		
+	-moz-transition: opacity 0.5s; /* Firefox */
+    -webkit-transition: opacity 0.5s; /* Safari and Chrome */
+    -o-transition: opacity 0.5s; /* Opera */
+    transition: opacity 0.5s;
+}
+
+#cakes-box:hover{
+	opacity: 0.6;
+}
+
+.box-text-first{
+	position: absolute;
+	top: 16%;
+	left: 21%;
+	font-size: 2rem;
+	color: white;
+	
+}
+
+.box-text-second{
+	position: absolute;
+	top: 16%;
+	left: 28%;
+	font-size: 2rem;
+	color: white;
+}
+
+footer{
+	width: 100%;
+    height: 100%;
+	display:flex;
+	justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+	padding: 0.5em;
+	text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: #3a3a3c;
+}
+
+footer ul {
+    display: flex;
+    padding: 0;
+	margin: 0;
+    list-style: none;    
+
+}
+
+footer h1{
+	text-align: center;
+    font-size: 0.9em;
+	padding: 0.3em;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook-f {
+    display: block;
+    padding: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+.fa-twitter {
+    display: block;
+    padding: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+.fa-instagram {
+	display: block;
+    padding: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/*Responsiveness for homepage*/
+@media screen and (min-width: 500px){
+	
+	.start-planning-button{
+  	left: 41%;
+	}
+	
+	#venues-text{
+	left: 40%;
+	top: 25%;
+}
+	#venue-pic{
+	min-height: 25rem;
+		margin-bottom: 2%;
+}
+	
+	.box-text-first{
+	top: 29%;
+	left: 29%;
+}
+	.box-text-second{
+	top: 29%;
+	left: 35%;
+}
+	
+	#boxes-section{
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+	
+	#florist-box{
+		min-height: 15rem;
+	}
+	
+	#dresses-box{
+		min-height: 15rem;
+	}
+	
+	#rings-box{
+		min-height: 15rem;
+	}
+	
+	#cakes-box{
+		min-height: 15rem;
+	}
+	
+	#quote{
+	font-size: 2.5rem;
+}
+	
+	footer h1 {
+    	font-size: 1.5em;
+	}
+	
+	footer ul{
+	    padding: 0.3em;
+	}
+	
+	footer ul a i{
+		font-size: 1.5em;
+	}
+}

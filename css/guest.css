@@ -1,1 +1,492 @@
-guest.css
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--peach: #fbbc8f;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+header{
+	width: 100%;
+	height: 4em;
+    margin: 0;
+	padding: 0.5em;
+    background-color: white;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas: 
+		'nav-bar logo login';
+	grid-gap: 2em;
+	align-items: center;
+	overflow: hidden;
+	position: fixed;
+	opacity: 0.7;
+}
+
+body{
+    max-width: 100%;
+    max-height: 100%;
+    text-rendering: optimizeLegibility;
+    line-height: 1.4;
+    font-size: 100%;
+	margin: 0;
+}
+
+
+main{
+	display: grid;
+	grid-template-rows: auto;
+}
+
+a{
+	display: contents;
+	color: black;
+}
+
+h1{
+	font-style: italic;
+    font-weight: 100;
+	text-align: center;
+}
+
+/*********                *********
+************ Don't display ********
+**********                *********/
+
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+-------------------------------- NAVIGATION -------------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+#nav-bar{
+	display: grid;
+}
+
+/*Burger menu - Menu On*/
+#menuon{
+	background: black;
+	color: white;
+	padding: 1em 1.5em 0 0;
+	position: fixed;
+	z-index: 1002;
+	opacity: 0;
+}
+
+/*Burger menu - Menu Off*/
+#menuoff{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.60);
+	z-index: 999;
+	display: none;
+}
+
+#nav-bar span{
+	display: block;
+	width: 2em;
+	height: 3px;
+	background: black;
+	margin-bottom: 4px;
+	z-index: 1001;
+}
+
+/* Close button (X) for burger menu*/
+#x{
+    color: var(--peach);
+    padding: 0.2em;
+	top: 5%;
+    left: 10%;
+    position: fixed;
+    z-index: 1002;
+    display: none;
+}
+
+/*Navigation bar*/
+nav {
+    background-color: rgba(0,0,0,0.60);
+    opacity: 1;
+	padding: 2em;
+    position: fixed;
+    left: 5%;
+    z-index: 1000;
+    display: none;
+}
+
+/*Links in Navbar*/
+nav a{
+	color: white;
+	display: block;
+	padding-bottom: 1em;
+    min-width: 10em;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.6em;
+}
+
+
+/*to toggle the burger menu*/
+#togglemenu:checked ~ nav{
+	display: block;
+}
+
+/*to get rid of the checkbox*/
+#togglemenu{
+	display: none;
+}
+
+/*gray space to turn off burger menu*/
+#togglemenu:checked ~ #menuoff{
+	display: block;
+}
+
+/* X to turn off burger menu*/
+#togglemenu:checked ~ #x{
+	display: block;
+}
+
+#logo{
+	display: grid;
+    justify-items: center;
+}
+
+#logo img{
+	max-width: 50%;
+	align-self: center;
+}
+
+#login-btn{
+	padding: 0;
+    display: flex;
+    background-color: transparent;
+    border: none;
+	justify-content: flex-end;
+}
+
+#login-btn i{
+    font-size: 2.5em;	
+}
+
+#login-btn:focus{
+	outline:none;
+}
+
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------- MAIN SECTION ---------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.image{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#background-img{
+	display: flex;
+	flex-flow: column;
+	height: 18em;
+	align-items: center;
+	justify-content: center;
+	background-image: url("../resources/web/venues/venue3-xl.jpg");
+}
+
+#second-img{
+	display: none;
+}
+
+
+.page-title{
+	color: black;
+	font-weight: 300;
+	font-size: xx-large;
+	border-radius: 5px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    margin-bottom: 0;
+    background-color: black;
+    opacity: 0.8;
+}
+
+/* Add styles to the form container */
+.form-container {
+	  height: 100%;
+	  padding: 2em;
+	  display: flex;
+      justify-content: space-between;
+	  align-items: center;
+      flex-flow: column;
+	  background-color: white;
+}
+
+.row{
+	  margin-bottom: 1em;
+	  width: 100%;
+}
+
+#date{
+	 font-size: large;
+}
+/* Full-width input fields */
+.form-container input[type=text],input[type=email], textarea{
+  	border: none;
+  	background: #f1f1f1;
+  	width: 100%;
+	height: 3em;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, input[type=email]:focus, textarea:focus{
+  	background-color: #ddd;
+  	outline: none;
+}
+
+/* Style send button */
+.login-btn {
+  	background-color: var(--peach);
+  	width: 100%;
+  	color: black;
+  	border: none;
+  	cursor: pointer;
+	padding: 0.5em;
+	margin-top: 2em;
+  	opacity: 1;
+    border-radius: 1rem;
+  	font-size: 1.5em;
+  	font-family: futura-pt, sans-serif;
+  	font-weight: 300;
+  	font-style: normal;
+  	transition:         0.08s ease-in;
+	-o-transition:      0.08s ease-in;
+	-ms-transition:     0.08s ease-in;
+	-moz-transition:    0.08s ease-in;
+	-webkit-transition: 0.08s ease-in;
+}
+
+label{
+	font-size: xx-large;
+	font-family: futura-pt, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	color: var(--dark-grey);
+}
+
+.exit-col{
+	width: 100%;
+}
+
+.exit-col i{
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    padding: 0.2em;
+	opacity: 0.9;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+-------------------------------------- FOOTER -----------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+footer{
+	width: 100%; 
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 2%;
+    text-align: center;
+	opacity: 0.7;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer ul {
+    display: flex;
+    padding: 0;
+	margin: 0;
+    list-style: none;    
+}
+
+footer h1{
+	text-align: center;
+    font-size: 0.9em;
+	padding: 0.3em;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook-f {
+    display: block;
+    padding: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+.fa-twitter {
+    display: block;
+    padding: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+.fa-instagram {
+	display: block;
+    padding: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+------------------------------- MEDIA QUERIES -----------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+/* Desktop */
+
+@media screen and (min-width: 700px){
+	
+	header{
+		padding: 0;
+	}
+	/* Reposition nav-bar items */
+	#logo{
+		grid-area: nav-bar;
+		justify-items: flex-start;
+	}
+	
+	#logo img{
+	    max-width: 20%;
+	}
+	
+	#nav-bar{
+		grid-area: logo;
+	}
+	
+	/* Burger menu dissapears */
+	#menuoff, #menuon, #x, #nav-bar span{
+		display: none;
+	}
+	
+	/* Nav-bar appears as desktop navbar */
+	nav{
+		display: inline-flex;
+		position: static;
+		background-color: white;
+		padding: 0;
+		height: 100%;
+	}
+	
+	/* Nav-bar links get in a line */
+	nav a{
+		display: inline-block;
+		color: black;
+		font-size: 1.2em;
+		padding: 0;
+	}
+	
+	/* Change color on hover for the nav-bar and login icon */
+	nav a:hover{
+		color: var(--peach);
+	}
+	
+	nav a:active{
+		color: var(--peach);
+	}
+	
+	/* Removed placeholder on focus */
+	input:focus::-webkit-input-placeholder {
+    	color: transparent;
+	}
+	
+	.button{
+    	padding: 1em;
+		font-size: 1em;
+		background: var(--peach);
+	}
+	
+	#login-btn{
+		justify-content: flex-start;
+	}
+	
+	.login-btn:hover{
+		transform: scale(1.1);
+	}
+
+	#background-img{
+		height: 550px;
+	}
+	
+	#second-img{
+		display: block;
+		background-image: url("../resources/web/guest.jpg");
+		height: 250px;
+	}
+	
+	.page-title{
+	    font-size: 3.5em;
+		color: black;
+		position: absolute;
+		top: 40%;
+		left: 2%;
+	}
+	
+	.form-popup{
+		opacity: 1;
+	}
+	
+	.form-container{
+		flex-flow: row;
+		align-items: flex-end;
+	}
+	
+	.row{
+		width: 25%;
+		margin: 0;
+	}
+	
+	footer h1 {
+    	font-size: 1.5em;
+		color: white;
+	}
+	
+	footer ul{
+	    padding: 0.3em;
+	}
+	
+	footer ul a i{
+		font-size: 1.5em;
+		color: white;
+	}
+}

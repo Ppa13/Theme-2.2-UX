@@ -59,14 +59,11 @@ h1{
 }
 
 
-/**
-* 
-* 
-* 
-* NAVIGATION
-* 
-* 
-**/
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+-------------------------------- NAVIGATION -------------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
 
 #nav-bar{
 	display: grid;
@@ -282,12 +279,24 @@ label{
 
 .search-for-supplier{
 	display: flex;
+	flex-flow: column;
 	height: 15em;
 	align-items: center;
 	justify-content: center;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+.page-title{
+	color: black;
+	font-weight: 600;
+	padding: 0.3em;
+	border-radius: 5px;
+}
+
+#search-for-photographer .page-title, #search-for-florist .page-title, #search-for-venue .page-title{
+	color: white;
 }
 
 .search-for-supplier article{
@@ -375,11 +384,11 @@ label{
 }
 
 #list-section ul li{
-    display: flex;
+	display: flex;
+	flex-flow: column;
 	align-items: center;
-    width: 100%;
 	border: 2px solid var(--peach);
-	margin-bottom: 1.5em;
+	margin-bottom: 3em;
 }
 
 #list-section ul li h1{
@@ -388,14 +397,44 @@ label{
 	margin-left: 3%;
 }
 
+
 .item{
+	height: 8em;
+    width: 100%;
 	margin: 0;
-	height: 7em;
-	width: 60%;
 	background-position: center; 
   	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: -1;
+	justify-content: center;
+    align-items: center;
+}
+
+.image-label{
+    display: flex;
+	flex-flow: row-reverse;
+    align-items: center;
+	width: 100%;
+	font-size: 1.2em;
+    justify-content: space-around;
+    margin-left: 1em;
+}
+
+.icons{
+    display: flex;
+    flex-flow: column;
+    margin: 1em;
+    align-items: center;
+}
+
+.icons i{
+	padding: 0.8em;
+	color: #fbbc8f;
+}
+
+table{
+	margin-left: 2em;
+    margin-right: 2em;
 }
 
 	/* -------------------------------------------------------------- */
@@ -438,144 +477,144 @@ label{
 	/* --------------- Images for list of florists ------------------ */
 	/* -------------------------------------------------------------- */
 
-#venue1{
-	background-image: url("../resources/mobile/venues/venue1-xs.jpg"); 
+#florist1{
+	background-image: url("../resources/mobile/florists/florist1-xs.jpg"); 
 }
 
-#venue2{
-	background-image: url("../resources/mobile/venues/venue2-xs.jpg"); 
+#florist2{
+	background-image: url("../resources/mobile/florists/florist2-xs.jpg"); 
 }
 
-#venue3{
-	background-image: url("../resources/mobile/venues/venue3-xs.jpg"); 
+#florist3{
+	background-image: url("../resources/mobile/florists/florist3-xs.jpg"); 
 }
 
-#venue4{
-	background-image: url("../resources/mobile/venues/venue4-xs.jpg"); 
+#florist4{
+	background-image: url("../resources/mobile/florists/florist4-xs.jpg"); 
 }
 
-#venue5{
-	background-image: url("../resources/mobile/venues/venue5-xs.jpg"); 
+#florist5{
+	background-image: url("../resources/mobile/florists/florist5-xs.jpg"); 
 }
 
-#venue6{
-	background-image: url("../resources/mobile/venues/venue6-xs.jpg"); 
+#florist6{
+	background-image: url("../resources/mobile/florists/florist6-xs.jpg"); 
 }
 
-#venue7{
-	background-image: url("../resources/mobile/venues/venue7-xs.jpg"); 
+#florist7{
+	background-image: url("../resources/mobile/florists/florist7-xs.jpg"); 
 }
 
-#venue8{
-	background-image: url("../resources/mobile/venues/venue8-xs.jpg"); 
+#florist8{
+	background-image: url("../resources/mobile/florists/florist8-xs.jpg"); 
 }
 
 	/* -------------------------------------------------------------- */
 	/* -------------- Images for list of photographers -------------- */
 	/* -------------------------------------------------------------- */
 
-#venue1{
-	background-image: url("../resources/mobile/venues/venue1-xs.jpg"); 
+#photographer1{
+	background-image: url("../resources/mobile/photographers/photographer1-xs.jpg"); 
 }
 
-#venue2{
-	background-image: url("../resources/mobile/venues/venue2-xs.jpg"); 
+#photographer2{
+	background-image: url("../resources/mobile/photographers/photographer2-xs.jpg"); 
 }
 
-#venue3{
-	background-image: url("../resources/mobile/venues/venue3-xs.jpg"); 
+#photographer3{
+	background-image: url("../resources/mobile/photographers/photographer3-xs.jpg"); 
 }
 
-#venue4{
-	background-image: url("../resources/mobile/venues/venue4-xs.jpg"); 
+#photographer4{
+	background-image: url("../resources/mobile/photographers/photographer4-xs.jpg"); 
 }
 
-#venue5{
-	background-image: url("../resources/mobile/venues/venue5-xs.jpg"); 
+#photographer5{
+	background-image: url("../resources/mobile/photographers/photographer5-xs.jpg"); 
 }
 
-#venue6{
-	background-image: url("../resources/mobile/venues/venue6-xs.jpg"); 
+#photographer6{
+	background-image: url("../resources/mobile/photographers/photographer6-xs.jpg"); 
 }
 
-#venue7{
-	background-image: url("../resources/mobile/venues/venue7-xs.jpg"); 
+#photographer7{
+	background-image: url("../resources/mobile/photographers/photographer7-xs.jpg"); 
 }
 
-#venue8{
-	background-image: url("../resources/mobile/venues/venue8-xs.jpg"); 
+#photographer8{
+	background-image: url("../resources/mobile/photographers/photographer8-xs.jpg"); 
 }
 
 	/* -------------------------------------------------------------- */
 	/* --------------- Images for list of bakeries ------------------ */
 	/* -------------------------------------------------------------- */
 
-#venue1{
-	background-image: url("../resources/mobile/venues/venue1-xs.jpg"); 
+#bakeri1{
+	background-image: url("../resources/mobile/bakeries/bakeri1-xs.jpg"); 
 }
 
-#venue2{
-	background-image: url("../resources/mobile/venues/venue2-xs.jpg"); 
+#bakeri2{
+	background-image: url("../resources/mobile/bakeries/bakeri2-xs.jpg"); 
 }
 
-#venue3{
-	background-image: url("../resources/mobile/venues/venue3-xs.jpg"); 
+#bakeri3{
+	background-image: url("../resources/mobile/bakeries/bakeri3-xs.jpg"); 
 }
 
-#venue4{
-	background-image: url("../resources/mobile/venues/venue4-xs.jpg"); 
+#bakeri4{
+	background-image: url("../resources/mobile/bakeries/bakeri4-xs.jpg"); 
 }
 
-#venue5{
-	background-image: url("../resources/mobile/venues/venue5-xs.jpg"); 
+#bakeri5{
+	background-image: url("../resources/mobile/bakeries/bakeri5-xs.jpg"); 
 }
 
-#venue6{
-	background-image: url("../resources/mobile/venues/venue6-xs.jpg"); 
+#bakeri6{
+	bakeri-image: url("../resources/mobile/bakeries/bakeri6-xs.jpg"); 
 }
 
-#venue7{
-	background-image: url("../resources/mobile/venues/venue7-xs.jpg"); 
+#bakeri7{
+	background-image: url("../resources/mobile/bakeries/bakeri7-xs.jpg"); 
 }
 
-#venue8{
-	background-image: url("../resources/mobile/venues/venue8-xs.jpg"); 
+#bakeri8{
+	background-image: url("../resources/mobile/bakeries/bakeri8-xs.jpg"); 
 }
 
 	/* -------------------------------------------------------------- */
 	/* ---------------- Images for list of dresses ------------------ */
 	/* -------------------------------------------------------------- */
 
-#venue1{
-	background-image: url("../resources/mobile/venues/venue1-xs.jpg"); 
+#dress1{
+	background-image: url("../resources/mobile/dresses/dress1-xs.jpg"); 
 }
 
-#venue2{
-	background-image: url("../resources/mobile/venues/venue2-xs.jpg"); 
+#dress2{
+	background-image: url("../resources/mobile/dresses/dress2-xs.jpg"); 
 }
 
-#venue3{
-	background-image: url("../resources/mobile/venues/venue3-xs.jpg"); 
+#dress3{
+	background-image: url("../resources/mobile/dresses/dress3-xs.jpg"); 
 }
 
-#venue4{
-	background-image: url("../resources/mobile/venues/venue4-xs.jpg"); 
+#dress4{
+	background-image: url("../resources/mobile/dresses/dress4-xs.jpg"); 
 }
 
-#venue5{
-	background-image: url("../resources/mobile/venues/venue5-xs.jpg"); 
+#dress5{
+	background-image: url("../resources/mobile/dresses/dress5-xs.jpg"); 
 }
 
-#venue6{
-	background-image: url("../resources/mobile/venues/venue6-xs.jpg"); 
+#dress6{
+	background-image: url("../resources/mobile/dresses/dress6-xs.jpg"); 
 }
 
-#venue7{
-	background-image: url("../resources/mobile/venues/venue7-xs.jpg"); 
+#dress7{
+	background-image: url("../resources/mobile/dresses/dress7-xs.jpg"); 
 }
 
-#venue8{
-	background-image: url("../resources/mobile/venues/venue8-xs.jpg"); 
+#dress8{
+	background-image: url("../resources/mobile/dresses/dress8-xs.jpg"); 
 }
 
 /* ------------------------------------------------------------------------
@@ -755,6 +794,10 @@ footer h1{
 		height: 40em;
 	}
 
+	.page-title{
+		font-size: 2.5em;
+	}
+	
 	.search-for-supplier article {
     	height: 4em;
 	}
@@ -768,11 +811,6 @@ footer h1{
 	/* Removed placeholder on focus */
 	input:focus::-webkit-input-placeholder {
     	color: transparent;
-	}
-
-	
-	#search-for-photographer input[type=text]{	
-		width: 15em;
 	}
 
 	/* Background image for venue search section */
@@ -818,9 +856,6 @@ footer h1{
 	
 	
 	/* List with suppliers */
-	.item{
-		height: 7em;
-	}
 	
 	#list-section{
 		display: grid;
@@ -832,11 +867,38 @@ footer h1{
 		margin-bottom: 5em;
 	}
 	
-	#item-details{
-		display: flex;
-	    padding-left: 2em;
+	.item{
+		display: block;
+		height: 12em;
+		width: 100%;
+		grid-column: 1/2;
+		grid-row: 1/3
+	}
+	
+	.icons{
+		grid-column: 3/4;
 		font-family: 'Dosis', sans-serif;
 		letter-spacing: 1px;
+		padding: 0;
+		margin: 0;
+	}
+	
+	table{
+		margin: 0;
+		grid-column: 2/3;
+		grid-row: 1/3
+	}
+	
+	.image-label{
+		font-size: 1em;
+	}
+	
+	.icons i{
+			color: black;
+	}
+	
+	.icons i:hover{
+		color: var(--peach);
 	}
 	
 	#filter-label{
@@ -871,17 +933,13 @@ footer h1{
 	#list-section ul li{
 	    width: 60%;
 		margin-bottom: 3em;
+		flex-flow: row;
 	}
 	
 	#list-section ul li h1{
 		font-size: 1.5em;
 	}
 	
-	#list-section span{
-		display: block;
-		height: 12em;
-		width: 45%;
-	}
 	
 	/* -------------------------------------------------------------- */
 	/* ----------------- Photos for the venue list ------------------ */
@@ -1024,7 +1082,7 @@ footer h1{
 	}
 
 	#bakeri8{
-		background-image: url("../resources/web/bakeries/bakeri3-xl.jpg");
+		background-image: url("../resources/web/bakeries/bakeri8-xl.jpg");
 	}
 	
 	/* -------------------------------------------------------------- */

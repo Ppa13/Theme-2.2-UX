@@ -1,30 +1,38 @@
-// Form buttons
-function openForm() {
+// Open login pop-up
+function openLogin(){
  	document.getElementById("account-pop-up").style.display="block";
 }
 
-function closeForm() {
-  	document.getElementById("account-pop-up").style.display = "none";
+// Open logout pop-up
+function openLogout(){
+	document.getElementById("logout-pop-up").style.display="block";
 }
 
-function searchFunction(){
+// Close login pop-up
+function closeLogin(){
+  	document.getElementById("account-pop-up").style.display="none";
+}
 
-  // Declare variables
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById('search-input-field');
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName('li');
+// Close logout pop-up
+function closeLogout(){
+	document.getElementById("logout-pop-up").style.display="none";
+}
 
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
+// When the user scrolls down make button appear
+function scrollFunction(){
+  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+    document.getElementById("back-to-top").style.display = "block";
+  } else {
+    document.getElementById("back-to-top").style.display = "none";
   }
 }
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction(){
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+
 

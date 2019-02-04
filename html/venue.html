@@ -7,12 +7,9 @@
 	<link rel="stylesheet" href="../css/supplier.css" type="text/css">
 	<!-- Link to external source of the icons -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400i|Dancing+Script|Dosis" rel="stylesheet">
+	<!-- -->
+	<script async="" src="https://cdn.heapanalytics.com/js/heap-2625472963.js"></script>
 	<script src="../js/supplier.js"></script>
-	<!-- -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<!-- -->
-	<script type="text/javascript" async="" src="https://cdn.heapanalytics.com/js/heap-2625472963.js"></script>
 </head>
 
 <body>
@@ -45,28 +42,68 @@
 		<!-- Logo -->
 		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
 		<!-- Login function -->
-		<button id="login-btn" onclick="openForm()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
+		<button id="login-btn" onclick="openLogin()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
     </header>
 
     <!-- The content of the page -->
     <main>
-    	<!-- Image and the search bar -->
+    	<!-- The background image and the search bar -->
 		<section class="search-for-supplier" id="search-for-venue">
 			<h1 class="page-title">Discover the perfect venue for you</h1>
+			<!-- Search bar + filter btn and search btn -->
 			<article>
-				<button class="button" id="filter-btn" type="submit"><i class="fas fa-sliders-h fa-2x"></i></button>
+				<button class="button" id="filter-btn-mobile" type="submit"><i class="fas fa-sliders-h fa-2x"></i></button>
 				<input type="text" onkeyup="myFunction()" placeholder="Search ...">
 				<button class="button" id="search-btn" type="submit"><i class="fas fa-search fa-2x"></i></button>
 			</article>
 		</section>
-
-		<!-- Scroll down list with the items -->
+		
+		<!-- Scroll down list of suppliers and the filter search -->
 		<section id="list-section">
-			<article id="filter-label">
+			<i class="fas fa-angle-down fa-2x" id="arrow-down"></i>
+			<!-- Left side of the page, the filter functions -->
+			<section id="filter-section">
+				<!-- Container with the filter label and the button -->
+				<article id="filter-container">
 					<button class="button" id="filter-btn-web" type="submit"><i class="fas fa-sliders-h fa-2x"></i></button>
-					<tag>Filters</tag>
-			</article>
-			<ul>
+					<label id="filter-functions-label">Filters</label>
+				</article>
+				
+				<!-- Filter search form -->
+				<form action="/action_page.php" class="form-container" id="filter-form">
+					<span style="white-space:nowrap" id="area-filter">
+						<label class="filter-list-label" for="area">Area</label>
+						<input type="text" class="checkbox-input" id="area">
+					</span>
+					<span style="white-space:nowrap" id="budget-filter">
+						<label class="filter-list-label">Budget</label>
+						<input type="text" class="checkbox-input" id="burget">
+					</span>
+					<span style="white-space:nowrap" id="guest-filter">
+						<label class="filter-list-label">Guest number</label>
+						<input type="text" class="checkbox-input" id="guest-no">
+					</span>
+					<span style="white-space:nowrap" id="accomodation-filter">
+						<label class="filter-list-label">Accomodation</label>
+						<input type="text" class="checkbox-input" id="accomodation">
+					</span>
+					<div>
+						<label class="filter-list-label">Style</label>
+						<ul id="checkbox-filter-list">
+							<li><input type="checkbox"><label class="checkbox-li">Estate</label></li>
+							<li><input type="checkbox"><label class="checkbox-li">Rustic</label></li>
+							<li><input type="checkbox"><label class="checkbox-li">Modern</label></li>
+							<li><input type="checkbox"><label class="checkbox-li">Clasic</label></li>
+							<li><input type="checkbox"><label class="checkbox-li">Castle</label></li>
+							<li><input type="checkbox"><label class="checkbox-li">Manor</label></li>
+							<li><input type="checkbox"><label class="checkbox-li">Barn</label></li>
+						</ul>
+					</div>
+				</form>
+			</section>
+	
+			<!-- Right side of the page, the list with suppliers -->
+			<ul id="list-of-suppliers">
 				<li>
 					<span class="item" id="venue1"></span>
 					<section class="image-label">
@@ -151,6 +188,7 @@
 							<tr><td><i class="fas fa-coins"></i>&nbsp;10.000 to 25.000 DKK</td></tr>
 						</table>
 					</section>
+				</li>
 				<li>
 					<span class="item" id="venue6"></span>
 					<section class="image-label">
@@ -162,8 +200,8 @@
 							<tr><td><b>Kirkelte Stuehus</b></td></tr>
 							<tr><td><i class="fas fa-map-marker-alt"></i>&nbsp;Kirkelte, Denmark</td></tr>
 							<tr><td><i class="fas fa-chair"></i>&nbsp;Modern Farmhouse</td></tr>
-							<tr><td><i class="fas fa-users"></i>&nbsp;Up to 165  &nbsp;<i class="fas fa-bed"></i>&nbsp;Up to 30</td></tr>
-							<tr><td><i class="fas fa-plus"></i>&nbsp; Outdoor venue, picturesque settings&nbsp;</td></tr>
+							<tr><td><i class="fas fa-users"></i>&nbsp;Up to 165&nbsp;<i class="fas fa-bed"></i>&nbsp;Up to 30</td></tr>
+							<tr><td><i class="fas fa-plus"></i>&nbsp; Outdoor venue,&nbsp;picturesque settings</td></tr>
 							<tr><td><i class="fas fa-coins"></i>&nbsp;20.000 to 39.000 DKK</td></tr>
 						</table>
 					</section>
@@ -197,7 +235,7 @@
 							<tr><td><i class="fas fa-map-marker-alt"></i>&nbsp;Elmelunde, Denmark</td></tr>
 							<tr><td><i class="fas fa-chair"></i>&nbsp;Rustic Barn</td></tr>
 							<tr><td><i class="fas fa-users"></i>&nbsp;Up to 50  &nbsp;<i class="fas fa-bed"></i>&nbsp;Up to 5</td></tr>
-							<tr><td><i class="fas fa-plus"></i>&nbsp; Rustic decor &amp; space for a marquee&nbsp;</td></tr>
+							<tr><td><i class="fas fa-plus"></i>&nbsp; Rustic decor &amp; &nbsp;space for a marquee</td></tr>
 							<tr><td><i class="fas fa-coins"></i>&nbsp;12.000 to 25.000 DKK</td></tr>
 						</table>
 					</section>
@@ -206,76 +244,82 @@
 		</section>
 
 		<!-- Back to top function -->
-		<section id="scroll-up-section">
-		</section>
+		<button onclick="topFunction()" id="back-to-top" title="Go to top">Back to top</button>
     </main>
 
     <!-- Contact information and social media icons -->
 	<footer>
 		<ul>
-		    <a href="#"><i class="fab fa-facebook-f"></i></a>
-			<a href="#"><i class="fab fa-twitter "></i></a> 
-			<a href="#"><i class="fab fa-instagram "></i></a>
+			<li>
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter "></i></a> 
+				<a href="#"><i class="fab fa-instagram "></i></a>
+			</li>
   		</ul>
 		<h1>weddingplanner@customerservice.dk</h1>
 	</footer>
 	
-	<!-- Sign up OR Login pop-up -->
+	<!-- Sign up || Login -->
 	<div class="form-popup" id="account-pop-up">
-			<form action="/action_page.php" class="form-container" method="post" name="questions">
-				<div class="exit-row">
-					<div class="exit-col">
-						<i class="far fa-times-circle fa-3x" onclick="closeForm()" aria-hidden="true"></i> 
-					</div>
+		<form action="/action_page.php" class="form-container" method="post" name="questions">
+			<div class="exit-row">
+				<div class="exit-col">
+					<i class="far fa-times-circle fa-2x" onclick="closeLogin()" aria-hidden="true"></i> 
 				</div>
+			</div>
 
-				<div class="signup-row">
-					<div class="col-25">
-						<button type="submit" class="login-btn" id="signup-btn">Sign up</button>
-					</div>
+			<div class="btn-row">
+				<div class="col-25">
+					<button type="submit" class="login-btn" onclick="window.open('timeline.html');">Sign up</button>
 				</div>
-				
-				<div class="login-row">
-					<div class="col-25">
-						<button type="submit" class="login-btn">Login</button>
-					</div>
+			</div>
+
+			<div class="btn-row">
+				<div class="col-25">
+					<button type="submit" class="login-btn" onclick="window.open('timeline.html');">Login</button>
 				</div>
-			</form>
+			</div>
+		</form>
 	</div>
-	
-	<!-- Login pop-up -->
-	<section id="login-pop-up">
-			<form action="/action_page.php" class="form-container" method="post" name="questions">
-				<div class="exit-row">
-					<div class="exit-col">
-						<i class="far fa-times-circle fa-3x" onclick="closeForm()" aria-hidden="true"></i> 
-					</div>
-				</div>
 
-				<div class="email-row">
-					<div class="col-25">
-						<label for="email">Email Address</label>
-					</div>
-					<div class="col-75">
-						<input type="email" id="email" name="email" required>
-					</div>
+	<!-- Login  -->
+	<section class="form-popup" id="login-form">
+		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
+				<div class="exit-col">
+					<i class="far fa-times-circle fa-3x" onclick="closeForm()" aria-hidden="true"></i> 
 				</div>
+			</div>
 
-				<div class="password-row">
-					<div class="col-25">
-						<label for="password">Password</label>
-					</div>
-					<div class="col-75">
-						<input type="password" id="password" name="password" required>
-					</div>
+			<div class="email-row">
+				<div class="col-25">
+					<label for="email">Email Address</label>
 				</div>
+				<div class="col-75">
+					<input type="email" id="email" name="email" required>
+				</div>
+			</div>
 
-				<div class="login-row">
-					<div class="col-25">
-						<button type="submit" class="login-btn">Login</button>
-					</div>
+			<div class="password-row">
+				<div class="col-25">
+					<label for="password">Password</label>
 				</div>
-			</form>
+				<div class="col-75">
+					<input type="password" id="password" name="password" required>
+				</div>
+			</div>
+
+			<div class="login-row">
+				<div class="col-25">
+					<button type="submit" class="login-btn">Login</button>
+				</div>
+			</div>
+		</form>
 	</section>
+	<script>
+		// When the user scrolls down 150px from the top of the document, show the button
+		window.onscroll = function() {
+			scrollFunction()
+		};
+	</script>
 </body>
 </html>

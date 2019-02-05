@@ -55,9 +55,10 @@ a{
 }
 
 h1{
-	font-style: italic;
-    font-weight: 100;
+	font-family: 'Fahkwang', sans-serif;
+    font-weight: 600;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 
@@ -293,8 +294,9 @@ label{
 }
 
 #under-construction{
-	display: flex;
-    justify-content: center;
+    position: fixed;
+    top: 10%;
+    left: 30%;
 }
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------

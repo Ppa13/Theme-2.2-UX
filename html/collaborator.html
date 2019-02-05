@@ -6,9 +6,107 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="../css/collaborator.css" type="text/css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	<script src="js/collaborator.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Khmer" rel="stylesheet">
+	<script src="../js/collaborator.js"></script>
 </head>
+
 <body>
-	<h1>Collaborator</h1>
+	<!-- Navigation -->
+	<header>
+		<!-- Burger menu -->			
+		<section class="" id="nav-bar">
+			<!--Checkbox to toggle the burger menu-->
+			<input id="togglemenu" type="checkbox" />
+			<!--Label for the checkbox to turn ON-->
+			<label id="menuon" for="togglemenu"></label>
+			<!--Label for X in burger menu-->
+			<label id="x" for="togglemenu"><i class="far fa-times-circle fa-2x" aria-hidden="true"></i></label>
+			<!--Label for the checkbox to turn OFF-->
+			<label id="menuoff" for="togglemenu"></label>
+			<!--Navigation bar-->
+			<nav>
+				<!--Links in Navbar-->
+				<a href="home.html">Home</a>
+				<a href="planning-tools.html">Planning Tools</a>
+				<a href="supplier.html">Suppliers</a>
+				<a href="guest.html">Guests</a>
+				<a href="collaborator.html">Collaborators</a>
+			</nav>
+			<!--Burger Menu lines-->
+			<span></span>
+			<span></span>
+			<span></span>
+		</section>
+		<!-- Logo -->
+		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
+		<button id="account-btn" onclick="openLogin()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
+    </header>
+
+     <!-- The content of the page -->
+    <main>
+    	<!-- The background image -->
+		<section class="image" id="background-img">
+			<h1 class="page-title">Work with us</h1>
+		</section>
+
+		<!-- Text  -->
+		<section id="page-content">
+			<h2>Partner with us &amp; increase your business revenue</h2>
+			<br>
+			<h4>Our goal is to provide the best for both the couples looking for the perfect day, and the suppliers looking to make that happen.
+			We offer suppliers an excellent rate in exchange for a flow of traffic, a low percentage fee of 9% - so you don’t have to worry about monthly overheads, you only pay a fee with a guaranteed booking.<br><br><br>We specialise in social media marketing and promotion, so you can focus on doing what you do best and we will put your name out there (in big flashing lights)<br><br><br>We provide our customers the website for free, so they can build everything for their wedding in one place - and have access to view all the best wedding suppliers in the business, we handpick the suppliers because we want the best in the business - providing the highest service for our customers, whilst keeping your business with a great reputation.<br><br><br>With no fees without a sale, no commitments, you can only benefit from joining us today &amp; increasing your business revenue.<br><br><br>Send us a message with some photos of your work, perhaps what you specialize in &amp; any other information you would like your clients to know, we will review it and let you know within 48 hours if you have been added to the weddingplanner.dk family!
+			</h4>
+			<br>
+			<button type="submit" id="become-supplier-btn" onclick="window.open('under-construction.html');">Become a supplier</button>
+		</section>
+		
+		
+		<!-- Back to top function -->
+		<button type="submit" onclick="topFunction()" id="back-to-top" title="Go to top">Back to top</button>
+	</main>
+
+		<!-- Contact information and social media icons -->
+	<footer>
+		<ul>
+			<li>
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter "></i></a> 
+				<a href="#"><i class="fab fa-instagram "></i></a>
+				<h4>weddingplanner@customerservice.dk</h4>
+			</li>
+		</ul>
+	</footer>
+	
+	<!-- Sign up || Login -->
+	<div class="form-section" id="account-form-section">
+		<form action="/action_page.php" class="form-container" id="account-form-container">
+			<div class="exit-row">
+				<div class="exit-col">
+					<i class="far fa-times-circle fa-2x" onclick="closeLogin()" aria-hidden="true"></i> 
+				</div>
+			</div>
+
+			<div class="btn-row">
+				<div class="col-25">
+					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="window.open('under-construction.html');">Sign up</button>
+				</div>
+			</div>
+
+			<div class="btn-row">
+				<div class="col-25">
+					<button type="submit" class="account-form-btn" id="login-btn" onclick="window.open('under-construction.html');">Login</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<script>
+	// When the user scrolls down 150px from the top of the document, show the button
+	if (window.innerWidth > 700){
+		window.onscroll = function() {
+		scrollFunction()
+		}
+	};
+	</script>
 </body>
 </html>

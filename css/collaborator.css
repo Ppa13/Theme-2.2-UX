@@ -1,1 +1,490 @@
-collaborator.css
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--peach: #fbbc8f;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+header{
+	width: 100%;
+	height: 3em;
+    margin: 0;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+    background-color: white;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas: 
+		'nav-bar logo login';
+	grid-gap: 2em;
+	align-items: center;
+	overflow: hidden;
+	position: fixed;
+	opacity: 0.9;
+}
+
+body{
+    max-width: 100%;
+    max-height: 100%;
+    text-rendering: optimizeLegibility;
+    line-height: 1.4;
+    font-size: 100%;
+	margin: 0;
+}
+
+
+main{
+	display: grid;
+	grid-template-rows: auto;
+}
+
+a{
+	display: contents;
+	text-decoration: none;
+	color: black;
+}
+
+h1{
+	font-family: 'Fahkwang', sans-serif;
+    font-weight: 900;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+h2{
+	font-family: 'Fahkwang', sans-serif;
+}
+
+/* Don't display on mobile */
+#account-pop-up{
+	display: none;
+}
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+-------------------------------- NAVIGATION -------------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+#nav-bar{
+	display: grid;
+}
+
+/*Burger menu - Menu On*/
+#menuon{
+	background: black;
+	color: white;
+	padding: 1em 1.5em 0 0;
+	position: fixed;
+	z-index: 1002;
+	opacity: 0;
+}
+
+/*Burger menu - Menu Off*/
+#menuoff{
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.60);
+	z-index: 999;
+	display: none;
+}
+
+#nav-bar span{
+	display: block;
+	width: 2em;
+	height: 3px;
+	background: black;
+	margin-bottom: 4px;
+	z-index: 1001;
+}
+
+/* Close button (X) for burger menu*/
+#x{
+    color: var(--peach);
+	top: 5%;
+    left: 10%;
+    position: fixed;
+    z-index: 1002;
+    display: none;
+}
+
+/*Navigation bar*/
+nav {
+    background-color: rgba(0,0,0,0.60);
+    opacity: 1;
+	padding: 2em;
+    position: fixed;
+    left: 5%;
+    z-index: 1000;
+    display: none;
+}
+
+/*Links in Navbar*/
+nav a{
+	color: white;
+	display: block;
+	padding-bottom: 1em;
+    min-width: 10em;
+	text-align: center;
+	font-size: 1.6em;
+}
+
+
+/*to toggle the burger menu*/
+#togglemenu:checked ~ nav{
+	display: block;
+}
+
+/*to get rid of the checkbox*/
+#togglemenu{
+	display: none;
+}
+
+/*gray space to turn off burger menu*/
+#togglemenu:checked ~ #menuoff{
+	display: block;
+}
+
+/* X to turn off burger menu*/
+#togglemenu:checked ~ #x{
+	display: block;
+}
+
+#logo{
+	display: grid;
+    justify-items: center;
+}
+
+#logo img{
+	max-width: 50%;
+	align-self: center;
+}
+
+/* Sign-up / Login pop-up */
+#account-form-section {
+	display: none;
+	position: absolute;
+	width: 90%;
+	height: 50%;
+	margin: 1em;
+	top: 0;
+	right: 0;
+	background-color: black;
+	opacity: 0.8;
+	bottom: 0;
+	border-style: dashed;
+	z-index: 10009;
+}
+
+#account-form-container {
+	height: 100%;
+	width: 100%;
+	padding: 4em;
+	display: flex;
+	justify-content: space-between;
+	flex-flow: column;
+	background-color: black;
+}
+
+.account-form-btn {
+	background-color: var(--peach);
+	width: 100%;
+	color: black;
+	border: none;
+	cursor: pointer;
+    padding: 0.2em;
+    opacity: 1;
+    border-style: double;
+    border-radius: 1rem;
+    font-size: 2em;
+}
+
+label{
+	font-size: large;
+	color: var(--dark-grey);
+}
+
+.exit-col{
+	width: 100%;
+}
+
+.exit-col i{
+	color: white;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	padding: 0.2em;
+	opacity: 0.9;
+}
+
+/* Sign-up or sign-in button */
+#account-btn{
+	padding: 0;
+    display: flex;
+    background-color: transparent;
+    border: none;
+	justify-content: flex-end;
+}
+
+#account-btn i{
+    font-size: 2.5em;	
+}
+
+#account-btn:focus{
+	outline:none;
+}
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------- MAIN SECTION ---------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+.image{
+	background-position: 55% 20%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#background-img{
+	background-image: url("../resources/web/collaborator.jpg");
+	margin-bottom: 1em;
+	height: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.page-title{
+	color: white;
+	font-weight: 600;
+	position: absolute;
+	top: 15%;
+    font-size: 2.5em;
+}
+
+#page-content{
+    padding: 1em;
+	padding-bottom: 10em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+	color: #4c6250;
+}
+
+#become-supplier-btn{
+	background-color: var(--peach);
+	width: 60%;
+	height: auto;
+	color: black;
+	border: none;
+	padding: 0.5em;
+	border-radius: 0.5rem;
+	font-size: 1.2em;
+	opacity: 0.8;
+}
+
+#back-to-top{
+	display: none;
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	z-index: 99;
+	font-size: 1.2em;
+	border: none;
+	outline: none;
+	background-color: var(--peach);
+	color: black;
+	padding: 0.8em;
+	border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+-------------------------------------- FOOTER -----------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+footer{
+	width: 100%; 
+	opacity: 0.7;
+	display: flex;
+	justify-content: center;
+	padding: 0.5em;
+}
+
+footer ul {
+    padding: 0;
+	margin: 0;
+    list-style: none;    
+}
+
+footer li{
+	flex-flow: row;
+    display: flex;
+    align-items: center;
+}
+
+footer a {
+    color: black;
+}
+
+footer h4{
+	text-align: center;
+    font-size: 0.9em;
+	padding: 0.3em;
+	margin: 0;
+    opacity: 0.9;
+}
+
+.fa-facebook-f, .fa-twitter, .fa-instagram{
+    display: block;
+    padding: 8px;
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------
+---------------------------------------------------------------------------
+------------------------------- MEDIA QUERIES -----------------------------
+---------------------------------------------------------------------------
+--------------------------------------------------------------------------- */
+
+/* Desktop */
+
+@media screen and (min-width: 700px){
+	
+	header{
+		padding: 0;
+		height: auto;
+	}
+	
+	h2{
+		font-size: 2.5em;
+    	opacity: 0.9;
+	}
+
+	h4{
+		font-size: x-large;
+    	font-weight: 300;
+		margin-bottom: 5em;
+	}
+	
+	/* Nav-bar appears as desktop navbar */
+	nav{
+		display: inline-flex;
+		position: static;
+		background-color: white;
+		padding: 0;
+		height: 100%;
+	}
+	
+	/* Nav-bar links get in a line */
+	nav a{
+		display: inline-block;
+		color: black;
+		font-size: 1.2em;
+		padding: 0;
+	}
+	
+	/* Change color on hover for the nav-bar and login icon */
+	nav a:hover{
+		color: var(--peach);
+	}
+	
+	nav a:active{
+		color: var(--peach);
+	}
+
+	/* Reposition nav-bar items */
+	#logo{
+		grid-area: nav-bar;
+		justify-items: flex-start;
+	}
+	
+	#logo img{
+	    max-width: 20%;
+	}
+	
+	#nav-bar{
+		grid-area: logo;
+	}
+	
+	/* Burger menu dissapears */
+	#menuoff, #menuon, #x, #nav-bar span{
+		display: none;
+	}
+	
+
+	#account-btn{
+		justify-content: flex-start;
+	}
+	
+	#account-btn:hover{
+		color: var(--peach);
+	}
+	
+	#account-form-section{
+		width: 25%;
+		height: 30%;
+	 	margin: 1em;
+    	right: 17%;
+	}
+	.account-form-btn:hover{
+		transform: scale(1.1);
+		color: white;
+	}
+	
+	.page-title{
+		font-size: 6em;
+		color: white;
+		top: 25%;
+	}
+	
+	#background-img{
+		height: 600px;
+		background-position: 20% 35%;
+	}
+	
+	#page-content{
+		padding: 20em;
+		padding-top: 5em;
+		padding-bottom: 10em;
+	}
+	
+	#become-supplier-btn{
+		width: 30%;
+    	font-size: 2em;
+	}
+	
+	#become-supplier-btn:hover{
+		transform: scale(1.1);
+	}
+	
+	#back-to-top:hover{
+		transform: scale(1.1);
+	}
+	
+	footer h4 {
+    	font-size: 1.2em;
+	}
+	
+	footer ul{
+	    padding: 0.3em;
+	}
+	
+	footer ul a i{
+		font-size: 1.5em;
+		color: black;
+	}
+}

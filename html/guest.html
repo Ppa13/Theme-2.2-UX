@@ -40,7 +40,7 @@
 		</section>
 		<!-- Logo -->
 		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
-		<button id="login-btn" onclick="openLogin()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
+		<button id="account-btn" onclick="openLogin()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
     </header>
 	
 	 <!-- The content of the page -->
@@ -51,8 +51,8 @@
 		</section>
 		
 		<!-- Ivitation request form  -->
-		<section class="form-popup" id="invitation-form">
-			<form class="form-container">		
+		<section class="form-section" id="invitation-form-section">
+			<form class="form-container" id="invitation-form-container">		
 				<div class="row">
 					<div class="col-25">
 						<label for="name">Name</label>
@@ -71,7 +71,7 @@
 					</div>
 				</div>
 				
-				<div class="row">
+				<div class="row" id="date-row">
 					<div class="col-25">
 						<label for="date">Date</label>
 					</div>
@@ -80,9 +80,9 @@
 					</div>
 				</div>
 
-				<div class="login-row">
+				<div class="row" id="open-invitation-row">
 					<div class="col-25">
-						<button type="submit" class="login-btn">Open invitation</button>
+						<button type="submit" id="invitation-form-btn">Open invitation</button>
 					</div>
 				</div>
 			</form>
@@ -105,5 +105,28 @@
 		</ul>
 		<h1>weddingplanner@customerservice.dk</h1>
 	</footer>
+	
+	<!-- Sign up || Login -->
+	<div class="form-section" id="account-form-section">
+		<form action="/action_page.php" class="form-container" id="account-form-container">
+			<div class="exit-row">
+				<div class="exit-col">
+					<i class="far fa-times-circle fa-2x" onclick="closeLogin()" aria-hidden="true"></i> 
+				</div>
+			</div>
+
+			<div class="btn-row">
+				<div class="col-25">
+					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="window.open('timeline.html');">Sign up</button>
+				</div>
+			</div>
+
+			<div class="btn-row">
+				<div class="col-25">
+					<button type="submit" class="account-form-btn" id="login-btn" onclick="window.open('timeline.html');">Login</button>
+				</div>
+			</div>
+		</form>
+	</div>
 </body>
 </html>

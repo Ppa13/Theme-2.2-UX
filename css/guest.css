@@ -12,9 +12,10 @@ html{
 
 header{
 	width: 100%;
-	height: 4em;
+	height: 3em;
     margin: 0;
-	padding: 0.5em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
     background-color: white;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -52,10 +53,6 @@ h1{
     font-weight: 100;
 	text-align: center;
 }
-
-/*********                *********
-************ Don't display ********
-**********                *********/
 
 
 /* ------------------------------------------------------------------------
@@ -102,7 +99,6 @@ h1{
 /* Close button (X) for burger menu*/
 #x{
     color: var(--peach);
-    padding: 0.2em;
 	top: 5%;
     left: 10%;
     position: fixed;
@@ -163,7 +159,8 @@ nav a{
 	align-self: center;
 }
 
-#login-btn{
+/* Sign-up or sign-in button */
+#account-btn{
 	padding: 0;
     display: flex;
     background-color: transparent;
@@ -171,11 +168,11 @@ nav a{
 	justify-content: flex-end;
 }
 
-#login-btn i{
+#account-btn i{
     font-size: 2.5em;	
 }
 
-#login-btn:focus{
+#account-btn:focus{
 	outline:none;
 }
 
@@ -194,6 +191,7 @@ nav a{
 #background-img{
 	display: flex;
 	flex-flow: column;
+	margin-bottom: 1em;
 	height: 18em;
 	align-items: center;
 	justify-content: center;
@@ -207,75 +205,107 @@ nav a{
 
 .page-title{
 	color: black;
+	position: absolute;
+	top: 20%;
 	font-weight: 300;
 	font-size: xx-large;
 	border-radius: 5px;
 }
 
-/* The popup form - hidden by default */
-.form-popup {
+
+#invitation-form-section {
     margin-bottom: 0;
-    background-color: black;
+    background-color: white;
     opacity: 0.8;
 }
 
-/* Add styles to the form container */
-.form-container {
-	  height: 100%;
-	  padding: 2em;
-	  display: flex;
-      justify-content: space-between;
-	  align-items: center;
-      flex-flow: column;
-	  background-color: white;
+#invitation-form-container {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
 }
 
-.row{
-	  margin-bottom: 1em;
-	  width: 100%;
+#invitation-form-btn{
+	background-color: var(--peach);
+	width: 100%;
+	color: black;
+	border: none;
+	padding: 0.5em;
+	margin-top: 1em;
+	border-radius: 1rem;
+	font-size: 1.5em;
 }
+
+/* Input fields*/
+.row{
+	margin-bottom: 1em;
+	width: 15em;
+	content: "";
+	display: table;
+	clear: both;
+}	
 
 #date{
 	 font-size: large;
 }
+
+/* Get invitation form */
+#account-form-section {
+	display: none;
+	position: absolute;
+	width: 90%;
+	height: 50%;
+	margin: 1em;
+	top: 0;
+	right: 0;
+	background-color: black;
+	opacity: 0.8;
+	bottom: 0;
+	border-style: dashed;
+	z-index: 10009;
+}
+
+#account-form-container {
+	height: 100%;
+	width: 100%;
+	padding: 4em;
+	display: flex;
+	justify-content: space-between;
+	flex-flow: column;
+	background-color: black;
+}
+
 /* Full-width input fields */
-.form-container input[type=text],input[type=email], textarea{
-  	border: none;
-  	background: #f1f1f1;
-  	width: 100%;
-	height: 3em;
+#account-form-container input[type=text],input[type=email], textarea{
+	border: none;
+	background: #f1f1f1;
+	width: 20em;
 }
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, input[type=email]:focus, textarea:focus{
-  	background-color: #ddd;
-  	outline: none;
+#account-form-container input[type=text]:focus, input[type=email]:focus, textarea:focus{
+	background-color: #ddd;
+	outline: none;
 }
 
-/* Style send button */
-.login-btn {
-  	background-color: var(--peach);
-  	width: 100%;
-  	color: black;
-  	border: none;
-  	cursor: pointer;
-	padding: 0.5em;
-	margin-top: 2em;
-  	opacity: 1;
+.account-form-btn {
+	background-color: var(--peach);
+	width: 100%;
+	color: black;
+	border: none;
+	cursor: pointer;
+    padding: 0.2em;
+    opacity: 1;
+    border-style: double;
     border-radius: 1rem;
-  	font-size: 1.5em;
-  	font-family: futura-pt, sans-serif;
-  	font-weight: 300;
-  	font-style: normal;
-  	transition:         0.08s ease-in;
-	-o-transition:      0.08s ease-in;
-	-ms-transition:     0.08s ease-in;
-	-moz-transition:    0.08s ease-in;
-	-webkit-transition: 0.08s ease-in;
+    font-size: 2em;
+    font-family: futura-pt, sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 label{
-	font-size: xx-large;
+	font-size: x-large;
 	font-family: futura-pt, sans-serif;
 	font-weight: 300;
 	font-style: normal;
@@ -287,20 +317,13 @@ label{
 }
 
 .exit-col i{
-    color: white;
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    padding: 0.2em;
+	color: white;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	padding: 0.2em;
 	opacity: 0.9;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 /* ------------------------------------------------------------------------
@@ -313,7 +336,7 @@ footer{
 	width: 100%; 
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     bottom: 2%;
     text-align: center;
 	opacity: 0.7;
@@ -379,6 +402,7 @@ footer h1{
 	
 	header{
 		padding: 0;
+		height: auto;
 	}
 	/* Reposition nav-bar items */
 	#logo{
@@ -425,25 +449,7 @@ footer h1{
 		color: var(--peach);
 	}
 	
-	/* Removed placeholder on focus */
-	input:focus::-webkit-input-placeholder {
-    	color: transparent;
-	}
 	
-	.button{
-    	padding: 1em;
-		font-size: 1em;
-		background: var(--peach);
-	}
-	
-	#login-btn{
-		justify-content: flex-start;
-	}
-	
-	.login-btn:hover{
-		transform: scale(1.1);
-	}
-
 	#background-img{
 		height: 550px;
 	}
@@ -451,7 +457,8 @@ footer h1{
 	#second-img{
 		display: block;
 		background-image: url("../resources/web/guest.jpg");
-		height: 250px;
+		height: 300px;
+		margin-top: 2em;
 	}
 	
 	.page-title{
@@ -462,18 +469,67 @@ footer h1{
 		left: 2%;
 	}
 	
-	.form-popup{
-		opacity: 1;
+	#invitation-form-section{
+		flex-flow: row;
 	}
 	
-	.form-container{
+	#invitation-form-container{
 		flex-flow: row;
-		align-items: flex-end;
+		margin-right: 2em;
+    	margin-left: 2em;
+	}
+	
+	#account-form-section{
+		margin: 0;
+		width: 25%;
+		height: 30%;
+		position: absolute;
+		left: 59%;
+		top: 2%;
+	}
+	
+	#account-form-container{
+		
+	}
+	
+	/* Removed placeholder on focus */
+	input:focus::-webkit-input-placeholder {
+    	color: transparent;
 	}
 	
 	.row{
-		width: 25%;
-		margin: 0;
+		margin-bottom: 0;
+    	margin-right: 1em;
+    	margin-left: 1em;
+	}
+	
+	.row input{
+		width: 25em;
+		height: -webkit-fill-available;
+	}
+	
+	#open-invitation-row{
+		width: 30%;
+	}
+	
+	#account-btn{
+		justify-content: flex-start;
+	}
+	
+	#account-btn:hover{
+		color: var(--peach);
+	}
+
+	.account-form-btn{
+		
+	}
+	
+	.account-form-btn:hover{		
+		transform: scale(1.1);
+	}
+	
+	#invitation-form-btn:hover{
+		transform: scale(1.1);
 	}
 	
 	footer h1 {

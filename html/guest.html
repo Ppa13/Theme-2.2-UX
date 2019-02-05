@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Venues</title>
+	<title>Find your invitation</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="../css/guest.css" type="text/css">
 	<!-- Link to external source of the icons -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	<!-- -->
-	<script async="" src="https://cdn.heapanalytics.com/js/heap-2625472963.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Khmer" rel="stylesheet">
 	<script src="../js/guest.js"></script>
 </head>
 
@@ -47,12 +46,13 @@
     <main>
     	<!-- The background image -->
 		<section class="image" id="background-img">
-			<h1 class="page-title">Find your invitation </h1>
+			<h1 class="page-title">Guests</h1>
 		</section>
 		
 		<!-- Ivitation request form  -->
 		<section class="form-section" id="invitation-form-section">
 			<form class="form-container" id="invitation-form-container">		
+				<h2 id="form-title">Find your invitation</h2>
 				<div class="row">
 					<div class="col-25">
 						<label for="name">Name</label>
@@ -71,26 +71,21 @@
 					</div>
 				</div>
 				
-				<div class="row" id="date-row">
+				<div class="row" id="code-row">
 					<div class="col-25">
-						<label for="date">Date</label>
+						<label for="code">Code</label>
 					</div>
 					<div class="col-75">
-						<input type="date" id="date" name="date" required>
+						<input type="text" id="code" name="code" required>
 					</div>
 				</div>
 
 				<div class="row" id="open-invitation-row">
 					<div class="col-25">
-						<button type="submit" id="invitation-form-btn">Open invitation</button>
+						<button type="submit" id="invitation-form-btn"><h4>Open</h4></button>
 					</div>
 				</div>
 			</form>
-		</section>
-		
-		<!-- The background image -->
-		<section class="image" id="second-img">
-			<h1></h1>
 		</section>
 	</main>
 		
@@ -101,9 +96,9 @@
 				<a href="#"><i class="fab fa-facebook-f"></i></a>
 				<a href="#"><i class="fab fa-twitter "></i></a> 
 				<a href="#"><i class="fab fa-instagram "></i></a>
+				<h4>weddingplanner@customerservice.dk</h4>
 			</li>
 		</ul>
-		<h1>weddingplanner@customerservice.dk</h1>
 	</footer>
 	
 	<!-- Sign up || Login -->

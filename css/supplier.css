@@ -132,6 +132,9 @@ nav a{
 	font-size: 1.6em;
 }
 
+nav a:hover{
+	color: var(--peach);
+}
 
 /*to toggle the burger menu*/
 #togglemenu:checked ~ nav{
@@ -150,6 +153,24 @@ nav a{
 
 /* X to turn off burger menu*/
 #togglemenu:checked ~ #x{
+	display: block;
+}
+
+.dropdown-content{
+	position: absolute;
+	display: none;
+	z-index: 2000;
+	padding: 0;
+	margin: 1rem 0;
+	background: #FFFFFF;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content li{
+	display: none;
+}
+
+nav a:active ~ .dropdown-content{
 	display: block;
 }
 
@@ -176,6 +197,28 @@ nav a{
 
 #login-btn i{
     font-size: 2.5em;	
+}
+
+/* Style send button */
+.login-btn {
+  	background-color: var(--peach);
+  	width: 100%;
+  	color: black;
+  	border: none;
+  	cursor: pointer;
+	padding: 0.2em;
+  	opacity: 1;
+    border-style: double;
+    border-radius: 1rem;
+  	font-size: 2em;
+  	font-family: futura-pt, sans-serif;
+  	font-weight: 300;
+  	font-style: normal;
+  	transition:         0.08s ease-in;
+	-o-transition:      0.08s ease-in;
+	-ms-transition:     0.08s ease-in;
+	-moz-transition:    0.08s ease-in;
+	-webkit-transition: 0.08s ease-in;
 }
 
 /* ------------- Form ---------------- */
@@ -218,28 +261,6 @@ nav a{
 .form-container input[type=text]:focus, input[type=email]:focus, textarea:focus{
   	background-color: #ddd;
   	outline: none;
-}
-
-/* Style send button */
-.login-btn {
-  	background-color: var(--peach);
-  	width: 100%;
-  	color: black;
-  	border: none;
-  	cursor: pointer;
-	padding: 0.2em;
-  	opacity: 1;
-    border-style: double;
-    border-radius: 1rem;
-  	font-size: 2em;
-  	font-family: futura-pt, sans-serif;
-  	font-weight: 300;
-  	font-style: normal;
-  	transition:         0.08s ease-in;
-	-o-transition:      0.08s ease-in;
-	-ms-transition:     0.08s ease-in;
-	-moz-transition:    0.08s ease-in;
-	-webkit-transition: 0.08s ease-in;
 }
 
 label{
@@ -767,6 +788,25 @@ footer h1{
 	}
 	
 	nav a:active{
+		color: var(--peach);
+	}
+
+	.dropdown{
+		position: relative;
+	}
+
+	.dropdown-content li{
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		list-style: none;
+		padding: 0.25rem 0;
+		display: block;
+	}
+
+	.dropdown:hover > .dropdown-content{
+		display: block;
+	}
+
+	.dropdown-content li a:hover{
 		color: var(--peach);
 	}
 	

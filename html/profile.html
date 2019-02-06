@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Profile</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../css/profile.css" type="text/css">
+	<!-- Link to external source of the icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<!-- -->
+	<script async="" src="https://cdn.heapanalytics.com/js/heap-2625472963.js"></script>
+	<script src="../js/supplier.js"></script>
+</head>
+
+<body>
+	<!-- Navigation -->
+	<header>
+		<!-- Burger menu -->			
+		<section class="" id="nav-bar">
+			<!--Checkbox to toggle the burger menu-->
+			<input id="togglemenu" type="checkbox" />
+			<!--Label for the checkbox to turn ON-->
+			<label id="menuon" for="togglemenu"></label>
+			<!--Label for X in burger menu-->
+			<label id="x" for="togglemenu"><i class="far fa-times-circle fa-1x" aria-hidden="true"></i></label>
+			<!--Label for the checkbox to turn OFF-->
+			<label id="menuoff" for="togglemenu"></label>
+			<!--Navigation bar-->
+			<nav>
+				<!--Links in Navbar-->
+				<a href="home.html">Home</a>
+				<section class="dropdown">
+					<a href="planning-tools.html">Planning Tools</a>
+						<ul class="dropdown-content">
+							<li><a href="planning-tools.html">Dashboard</a></li>
+							<li><a href="planning-tools.html">Checklist</a></li>
+							<li><a href="planning-tools.html">Inspiration</a></li>
+							<li><a href="planning-tools.html">Favorites</a></li>
+							<li><a href="planning-tools.html">Guest List</a></li>
+							<li><a href="planning-tools.html">Table Chart</a></li>
+						</ul>
+				</section>
+				<section class="dropdown">
+					<a href="supplier.html">Suppliers</a>
+						<ul class="dropdown-content">
+							<li><a href="planning-tools.html">Venues</a></li>
+							<li><a href="planning-tools.html">Photographers</a></li>
+							<li><a href="planning-tools.html">Florists</a></li>
+							<li><a href="planning-tools.html">Bakers</a></li>
+							<li><a href="planning-tools.html">Dresses</a></li>
+						</ul>
+				</section>
+				<a href="guest.html">Guests</a>
+				<a href="collaborator.html">Collaborators</a>
+			</nav>
+			<!--Burger Menu lines-->
+			<span></span>
+			<span></span>
+			<span></span>
+		</section>
+		<!-- Logo -->
+		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
+		<!-- Login function -->
+		<button id="login-btn" onclick="openLogin()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
+    </header>
+
+    <!-- The content of the page -->
+    <main>
+    	<!-- The background image and the search bar -->
+		<section id="profile-pic">
+			<p id="profile-text">PROFILE</p>
+			<!-- Search bar + filter btn and search btn -->
+		</section>
+		
+		<!-- Scroll down list of suppliers and the filter search -->
+		<section id="profile-section">
+			<i class="fas fa-angle-down fa-2x" id="arrow-down"></i>
+			<!-- Left side of the page, the filter functions -->
+			<section id="filter-section-profile">
+				<!-- Container with the icons and the buttons -->
+				<article class="icon-container">
+					
+					<button class="profile-sidebuttons" onclick="filterSelection('Information')"><i id="info-icon" class="fas fa-info fa-2x"></i> Information</button>
+				</article>
+				
+				<article class="icon-container">
+					
+					<button class="profile-sidebuttons" onclick="filterSelection('Checklist')"><i id="checklist-icon" class="fas fa-check fa-2x"></i> Checklist</button>
+				</article>
+				
+				<article class="icon-container">
+					
+					<button class="profile-sidebuttons" onclick="filterSelection('Favorites')"><i id="fav-icon" class="fas fa-heart fa-2x"></i> Favorites</button>
+				</article>
+				
+				<article class="icon-container">
+					
+					<button class="profile-sidebuttons" onclick="filterSelection('Guestlist')"><i id="guests-icon" class="fas fa-users fa-2x"></i> Guest list</button>
+				</article>
+				
+				<article class="icon-container">
+					
+					<button class="profile-sidebuttons" onclick="filterSelection('Inspiration')"><i id="inspiration-icon" class="fas fa-lightbulb fa-2x"></i> Inspiration</button>
+				</article>
+				
+				<article class="icon-container">
+					
+					<button class="profile-sidebuttons" onclick="filterSelection('Messages')"><i id="messages-icon" class="fas fa-comments fa-2x"></i> Messages</button>
+				</article>
+				
+			</section>
+			
+			<!-- Right side of the page, the list with suppliers -->
+			<section>
+				<article class="filterDiv Information" id="information">
+					<p class="profile-names">Your Name</p>
+					<input type="text" class="profile-names-input">
+					<br>
+					<p class="profile-names">Your Partners Name</p>
+					<input type="text" class="profile-names-input">
+					<br>
+					<p class="profile-names">Budget</p>
+					<input type="text" class="profile-names-input">
+				</article>
+				
+				<article id="checklist" class="filterDiv Checklist">
+					<ul>
+						<li class="profile-list">
+							<!--Checkbox-->
+							<label class="profile-checkbox-container">
+  								<input type="checkbox" checked="checked">
+  								<span class="checkmark"></span>
+								<p class="profile-checkbox-text">Venue:</p>
+							</label>
+							
+							<a class="profile-seemore-links" href="#">See Venues</a>
+							
+							<!--Checklist items-->
+							
+							<section class="profile-image-label">
+								
+								<table class="profile-table">
+									<tr><td><b>Sørup Herrgård</b></td></tr>
+									<tr><td><i class="fas fa-map-marker-alt"></i>&nbsp;Vetterslev, Denmark</td></tr>
+									<tr><td><i class="fas fa-chair"></i>&nbsp;Manor</td></tr>
+									<tr><td><i class="fas fa-users"></i>&nbsp;Up to 250  &nbsp;<i class="fas fa-bed"></i>&nbsp;up to 120</td></tr>
+									<tr><td><i class="fas fa-plus"></i>&nbsp; Extensive grounds, vinery</td></tr>
+									<tr><td><i class="fas fa-coins"></i>&nbsp;35000-55000 DKK</td></tr>
+								</table>
+								<article id="profile-image-label-venuepic">
+									
+								</article>
+							</section>
+							<section class="profile-box-buttons">
+								<button class="profile-button">Request</button>
+								<button class="profile-button">Message</button>
+							</section>
+						</li>
+						
+						<li class="profile-list">
+							<!--Checkbox-->
+							<label class="profile-checkbox-container">
+  								<input type="checkbox" checked="checked">
+  								<span class="checkmark"></span>
+								<p class="profile-checkbox-text">Dress:</p>
+							</label>
+							
+							<a class="profile-seemore-links" href="#">See Dresses</a>
+							
+							<!--Checklist items-->
+							
+							<section class="profile-image-label">
+								
+								<table class="profile-table">
+									<tr><td><b>Lilly Brudekjoler</b></td></tr>
+									<tr><td><i class="fas fa-map-marker-alt"></i>&nbsp;Helsinge, Sjælland, Denmark</td></tr>
+									<tr><td><i class="fas fa-coins"></i>&nbsp;3700 DKK</td></tr>
+								</table>
+								<article id="profile-image-label-dresspic">
+									
+								</article>
+							</section>
+							<section class="profile-box-buttons">
+								<button class="profile-button">Request</button>
+								<button class="profile-button">Message</button>
+							</section>
+						</li>
+						
+						<li class="profile-list">
+							<!--Checkbox-->
+							<label class="profile-checkbox-container">
+  								<input type="checkbox" checked="checked">
+  								<span class="checkmark"></span>
+								<p class="profile-checkbox-text">Florist:</p>
+							</label>
+							
+							<a class="profile-seemore-links" href="#">See Florists</a>
+							
+							<!--Checklist items-->
+							
+							<section class="profile-image-label">
+								
+								<table class="profile-table">
+									<tr><td><b>Claus Andersen L’art des Fleur</b></td></tr>
+									<tr><td><i class="fas fa-map-marker-alt"></i>&nbsp;Næstved, Sjælland, Denmark</td></tr>
+									<tr><td><i class="fas fa-coins"></i>&nbsp;1000 DKK</td></tr>
+								</table>
+								<article id="profile-image-label-floristpic">
+									
+								</article>
+							</section>
+							<section class="profile-box-buttons">
+								<button class="profile-button">Request</button>
+								<button class="profile-button">Message</button>
+							</section>
+						</li>
+						
+						<li class="profile-list">
+							<!--Checkbox-->
+							<label class="profile-checkbox-container">
+  								<input type="checkbox" checked="checked">
+  								<span class="checkmark"></span>
+								<p class="profile-checkbox-text">Photographers:</p>
+							</label>
+							
+							<a class="profile-seemore-links" href="#">See Photographers</a>
+							
+							<!--Checklist items-->
+							
+							<section class="profile-image-label">
+								
+								<table class="profile-table">
+									<tr><td><b>Camilla Jørvad</b></td></tr>
+									<tr><td><i class="fas fa-map-marker-alt"></i>&nbsp;Copenhagen, Denmark</td></tr>
+									<tr><td><i class="fas fa-palette"></i>&nbsp;Modern, Minimalist</td></tr>
+									<tr><td><i class="fas fa-book-open"></i>&nbsp;jorvad.dk</td></tr>
+									<tr><td><i class="fas fa-video"></i>&nbsp;Included</td></tr>
+									<tr><td><i class="fas fa-coins"></i>&nbsp;1000 DKK</td></tr>
+								</table>
+								<article id="profile-image-label-photographerpic">
+									
+								</article>
+							</section>
+							<section class="profile-box-buttons">
+								<button class="profile-button">Request</button>
+								<button class="profile-button">Message</button>
+							</section>
+						</li>
+						
+						<li class="profile-list">
+							<!--Checkbox-->
+							<label class="profile-checkbox-container">
+  								<input type="checkbox" checked="checked">
+  								<span class="checkmark"></span>
+								<p class="profile-checkbox-text">Wedding Cake:</p>
+							</label>
+							
+							<a class="profile-seemore-links" href="#">See Bakeries</a>
+							
+							<!--Checklist items-->
+							
+							<section class="profile-image-label">
+								
+								<table class="profile-table">
+									<tr><td><b>Bake My Day</b></td></tr>
+									<tr><td><i class="fas fa-map-marker-alt"></i>&nbsp;Bornholm, Denmark</td></tr>
+									<tr><td><i class="fas fa-palette"></i>&nbsp;Pastel Colours, Sugar Flowers</td></tr>
+									<tr><td><i class="fas fa-coins"></i>&nbsp;2000 DKK</td></tr>
+								</table>
+								<article id="profile-image-label-cakepic">
+									
+								</article>
+							</section>
+							<section class="profile-box-buttons">
+								<button class="profile-button">Request</button>
+								<button class="profile-button">Message</button>
+							</section>
+						</li>
+						
+					</ul>
+					
+				</article>
+				
+				<!--Smaller boxes section-->
+				<article class="filterDiv Favorites">
+					
+					<section class="boxes-section">
+			
+						<!--Florist box-->
+						<article>
+				
+							<!--Florist link with img-->
+							<section class="florist-box" href="#">
+								<button class="box-icons-one"><i class="fas fa-heart"></i></button>
+								<button class="box-icons-two"><i class="fas fa-plus"></i></button>
+							</section>
+							<p class="box-names-one">Sonnerupgaard Gods</p>
+					
+								<p class="box-names-two">VENUE</p>
+				
+						</article>
+			
+						<!--Dresses box-->
+						<article>
+				
+							<!--Dresses link with img-->
+							<section class="dresses-box" href="#">
+								<button class="box-icons-one"><i class="fas fa-heart"></i></button>
+								<button class="box-icons-two"><i class="fas fa-plus"></i></button>
+							</section>
+							<p class="box-names-one">Lilly Brudekjoler</p>
+					
+								<p class="box-names-two">DRESS</p>
+				
+						</article>
+			
+						<!--Rings box-->
+						<article>
+				
+							<!--Rings link with img-->
+							<section class="rings-box" href="#">
+								<button class="box-icons-one"><i class="fas fa-heart"></i></button>
+								<button class="box-icons-two"><i class="fas fa-plus"></i></button>
+							</section>
+							<p class="box-names-one">Kirkelte Stuehus</p>
+					
+								<p class="box-names-two">VENUE</p>
+				
+						</article>
+			
+						<!--Cakes box-->
+						<article>
+				
+							<!--Cakes link with img-->
+							<section class="cakes-box" href="#">
+								<button class="box-icons-one"><i class="fas fa-heart"></i></button>
+								<button class="box-icons-two"><i class="fas fa-plus"></i></button>
+							</section>
+							<p class="box-names-one">Bakery Enø</p>
+					
+								<p class="box-names-two">BAKERY</p>
+				
+						</article>
+					</section>
+				</article>
+				
+				<!--Guestlist-->
+				<section id="guest-list-border" class="filterDiv Guestlist">
+					<a id="edit-all-guests" href="#">Edit all guests</a>
+					<article class="guest-boxes-yes">
+						<p class="guest-names">Rasmus Andersen</p>
+						<p class="going-cannot">GOING</p>
+					</article>
+				
+				
+				
+					<article class="guest-boxes-no">
+						<p class="guest-names">Camilla Jensen</p>
+						<p class="going-cannot">CAN'T GO</p>
+					</article>
+				
+				
+				
+					<article class="guest-boxes-yes">
+						<p class="guest-names">Magnus Christiansen</p>
+						<p class="going-cannot">GOING</p>
+					</article>
+				
+				
+				
+					<article class="guest-boxes-pending">
+						<p class="guest-names">Vivian Nielsen</p>
+						<p class="going-cannot">PENDING</p>
+					</article>
+					
+					<article class="guest-boxes-pending">
+						<p class="guest-names">Clara Pedersen</p>
+						<p class="going-cannot">PENDING</p>
+					</article>
+				</section>
+				<!--Smaller boxes section-->
+				<article class="filterDiv Inspiration">
+					
+					<section class="boxes-section">
+			
+						<!--Florist box-->
+						<article>
+				
+							<!--Florist link with img-->
+							<a class="florist-box" href="#">
+								<section class="pinterest"><i class="fab fa-pinterest fa-2x"></i></section>
+							</a>
+				
+						</article>
+			
+						<!--Dresses box-->
+						<article>
+				
+							<!--Dresses link with img-->
+							<a class="dresses-box" href="#">
+								<section class="pinterest"><i class="fab fa-pinterest fa-2x"></i></section>
+							</a>
+				
+						</article>
+			
+						<!--Rings box-->
+						<article>
+				
+							<!--Rings link with img-->
+							<a class="rings-box" href="#">
+								<section class="pinterest"><i class="fab fa-pinterest fa-2x"></i></section>
+							</a>
+				
+						</article>
+			
+						<!--Cakes box-->
+						<article>
+				
+							<!--Cakes link with img-->
+							<a class="cakes-box" href="#">
+								<section class="pinterest"><i class="fab fa-pinterest fa-2x"></i></section>
+							</a>
+				
+						</article>
+					</section>
+				</article>
+				
+				<!--Chat-->
+				<section class="filterDiv Messages" id="chat-window">
+					<article class="bubble-right">
+						<p>I have a question about the venue. Can we bring pets inside?</p>
+						<span class="time-right">11:00</span>
+					</article>
+					
+					<article class="bubble-left">
+						<p>Hell no!</p>
+						<span class="time-left">11:01</span>
+					</article>
+				</section>
+			</section>
+			
+			
+			
+		</section>
+
+		<!-- Back to top function -->
+		<button onclick="topFunction()" id="back-to-top" title="Go to top">Back to top</button>
+    </main>
+
+    <!-- Contact information and social media icons -->
+	<footer>
+		<ul>
+			<li>
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter "></i></a> 
+				<a href="#"><i class="fab fa-instagram "></i></a>
+			</li>
+  		</ul>
+		<h1>weddingplanner@customerservice.dk</h1>
+	</footer>
+	
+	<!-- Sign up || Login -->
+	<div class="form-popup" id="account-pop-up">
+		<form action="/action_page.php" class="form-container" method="post" name="questions">
+			<div class="exit-row">
+				<div class="exit-col">
+					<i class="far fa-times-circle fa-2x" onclick="closeLogin()" aria-hidden="true"></i> 
+				</div>
+			</div>
+
+			<div class="btn-row">
+				<div class="col-25">
+					<button type="submit" class="login-btn" onclick="window.open('timeline.html');">Sign up</button>
+				</div>
+			</div>
+
+			<div class="btn-row">
+				<div class="col-25">
+					<button type="submit" class="login-btn" onclick="window.open('timeline.html');">Login</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<!-- Login  -->
+	<section class="form-popup" id="login-form">
+		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
+				<div class="exit-col">
+					<i class="far fa-times-circle fa-3x" onclick="closeForm()" aria-hidden="true"></i> 
+				</div>
+			</div>
+
+			<div class="email-row">
+				<div class="col-25">
+					<label for="email">Email Address</label>
+				</div>
+				<div class="col-75">
+					<input type="email" id="email" name="email" required>
+				</div>
+			</div>
+
+			<div class="password-row">
+				<div class="col-25">
+					<label for="password">Password</label>
+				</div>
+				<div class="col-75">
+					<input type="password" id="password" name="password" required>
+				</div>
+			</div>
+
+			<div class="login-row">
+				<div class="col-25">
+					<button type="submit" class="login-btn">Login</button>
+				</div>
+			</div>
+		</form>
+	</section>
+	<script>
+		// When the user scrolls down 150px from the top of the document, show the button
+		window.onscroll = function() {
+			scrollFunction()
+		};
+		
+		
+
+
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+	</script>
+</body>
+</html>

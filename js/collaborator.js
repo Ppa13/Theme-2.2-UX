@@ -20,7 +20,7 @@ function closeLogout(){
 
 // When the user scrolls down make button appear
 function scrollFunction(){
-  if (window.innerWidth > 700 && document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     document.getElementById("back-to-top").style.display = "block";
   } else {
     document.getElementById("back-to-top").style.display = "none";

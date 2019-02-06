@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Rubik:300');
 * {
 	box-sizing: border-box;
 }
 
 :root {
 	--peach: #fbbc8f;
+	--dark: #4C6250;
+	--light: #A4BC82;
 }
 
 html{
@@ -12,7 +15,8 @@ html{
 
 header{
 	width: 100%;
-	height: 4em;
+	height: 3em;
+	padding: 0 0.5em 0 0.5em;
     margin: 0;
     background-position: center;
     background-size: cover;
@@ -36,6 +40,8 @@ body{
     line-height: 1.4;
     font-size: 100%;
 	margin: 0;
+	color: var(--dark);
+	font-family: 'Rubik', sans-serif;
 }
 
 
@@ -51,16 +57,31 @@ main{
 
 a{
 	display: contents;
+	text-decoration: none;
 	color: black;
 }
 
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 h1{
-	font-family: 'Fahkwang', sans-serif;
+	font-family:'Playfair Display', serif;
+	padding: 0;
+	margin: 0 0 4rem 0;
     font-weight: 600;
 	text-align: center;
 	text-transform: uppercase;
+	color: white;
+	font-size: 2.5em;
 }
 
+h5{
+	font-family: 'Playfair Display', serif;
+	font-style: italic;
+}
 
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
@@ -131,6 +152,7 @@ nav a{
 	text-decoration: none;
 	text-align: center;
 	font-size: 1.6em;
+	font-family: 'Rubik', sans-serif;
 }
 
 nav a:hover{
@@ -189,6 +211,7 @@ nav a:active ~ .dropdown-content{
     display: flex;
     background-color: transparent;
     border: none;
+	padding: 0;
 	justify-content: flex-end;
 }
 
@@ -200,26 +223,16 @@ nav a:active ~ .dropdown-content{
     font-size: 2.5em;	
 }
 
-/* Style send button */
+/* Style login/sign-up button */
 .login-btn {
   	background-color: var(--peach);
   	width: 100%;
-  	color: black;
   	border: none;
-  	cursor: pointer;
 	padding: 0.2em;
   	opacity: 1;
     border-style: double;
     border-radius: 1rem;
   	font-size: 2em;
-  	font-family: futura-pt, sans-serif;
-  	font-weight: 300;
-  	font-style: normal;
-  	transition:         0.08s ease-in;
-	-o-transition:      0.08s ease-in;
-	-ms-transition:     0.08s ease-in;
-	-moz-transition:    0.08s ease-in;
-	-webkit-transition: 0.08s ease-in;
 }
 
 /* ------------- Form ---------------- */
@@ -249,6 +262,8 @@ nav a:active ~ .dropdown-content{
       justify-content: space-between;
       flex-flow: column;
 	  background-color: black;
+	  font-family: 'Rubik', sans-serif;
+
 }
 
 /* Full-width input fields */
@@ -307,38 +322,42 @@ label{
 .search-for-supplier{
 	display: flex;
 	flex-flow: column;
-	height: 17em;
+	height: 14em;
 	align-items: center;
 	justify-content: center;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	
 }
 
 .page-title{
-	color: black;
-	font-weight: 300;
-	border-radius: 5px;
+	position: relative;
+	top: 30%;	
+	z-index: 1;
 }
 
-#search-for-photographer .page-title, #search-for-florist .page-title, #search-for-venue .page-title{
-	color: white;
+#photographer-title{
+	font-size: 2em;	
 }
 
 .search-for-supplier article{
 	background-color: white;
 	display: flex;
-	opacity: 0.7;
+	position: relative;
+	top: 50%;
+	opacity: 1;
 	height:3em;
+	width: 18em;
 }
 
 .search-for-supplier input[type=text]{	
-    font-size: 1em;
-    color: black;
+	background-color:antiquewhite;
+	width: 100%;
   	margin: 0; 
+	opacity: 1;
 	border: none;
 	text-align: center;
-	width: fit-content;
 	font-style: italic;
 }
 
@@ -348,10 +367,6 @@ label{
 	background:var(--peach);
 	opacity: 0.7;
 	display: inline-block;
-}
-
-#filter-btn-web{
-	display: none;
 }
 
 #filter-btn-mobile{
@@ -367,7 +382,8 @@ label{
 	/* -------------------------------------------------------------- */
 
 #search-for-venue{
-	background-image: url("../resources/mobile/venues/venue-xs.jpg");
+	background-image: url(../resources/sweet-ice-cream-photography-399226-unsplash.jpg);
+	
 }
 
 	/* -------------------------------------------------------------- */
@@ -411,13 +427,14 @@ label{
 
 /* Styling the list of venues */
 #list-section{
+	margin-top: 5em;
 	padding: 0.5em;
 }
 
 #arrow-down{
 	display: flex;
 	justify-content: center;
-	color: dimgrey;
+	color: var(--dark);
 	margin-top: 1em;
 }
 
@@ -427,6 +444,8 @@ label{
 	padding: 0;
 	margin: 0;
 	margin-top: 2em;
+	font-family: 'Rubik', sans-serif;
+
 }
 
 #list-of-suppliers li{
@@ -435,12 +454,16 @@ label{
 	align-items: center;
 	border: 2px solid var(--peach);
 	margin-bottom: 3em;
+	font-family: 'Rubik', sans-serif;
+
 }
 
 #list-of-suppliers li h1{
 	width: 30%;
 	font-size: 1em;
 	margin-left: 3%;
+	font-family: 'Rubik', sans-serif;
+
 }
 
 
@@ -462,7 +485,6 @@ label{
     align-items: center;
 	width: 100%;
 	font-size: 0.8em;
-	padding: 0.5em;
     justify-content: space-around;
 }
 
@@ -667,7 +689,7 @@ label{
   border: none;
   outline: none;
   background-color: var(--peach);
-  color: black;
+  color: var(--dark);
   padding: 0.8em;
   border-radius: 4px;
 }
@@ -682,44 +704,25 @@ label{
 footer{
     display: flex;
     justify-content: center;
-    text-align: center;
-	opacity: 0.7;
+	align-items: center;
+	padding: 0 0.5em 0 0.5em;
+	opacity: 0.9;
 }
 
 footer a {
-    text-decoration: none;
-    color: black;
-}
-
-footer ul {
-    display: flex;
-    padding: 0;
-	margin: 0;
-    list-style: none;    
-}
-
-footer h5{
-	text-align: center;
-	font-style: italic;
-    font-size: 0.9em;
-	padding: 0.3em;
-	margin: 0;
-    opacity: 0.9;
+    color: var(--dark);
 }
 
 footer li{
-	flex-flow: row;
     display: flex;
     align-items: center;
+	padding: 0 0.5em 0 0;
+	
 }
 
 .fa-facebook-f, .fa-twitter, .fa-instagram{
     display: block;
-    padding: 8px;
-    max-width: 80px;
-    max-height: 80px;
-    border-radius: 50%;
-    text-decoration: none;
+    padding: 0 0.5em 0 0.5em;
 }
 
 /* ------------------------------------------------------------------------
@@ -732,7 +735,11 @@ footer li{
 
 @media screen and (min-width: 700px){
 	
-	/* Reposition nav-bar items */
+	header{
+		height: auto;
+		padding: 0;
+	}
+	
 	#logo{
 		grid-area: nav-bar;
 		justify-items: flex-start;
@@ -747,7 +754,7 @@ footer li{
 	}
 	
 	/* Burger menu dissapears */
-	#menuoff, #menuon, #x, #nav-bar span, #filter-btn-mobile, #arrow-down{
+	#menuoff, #menuon, #x, #nav-bar span, #filter-btn-mobile, #arrow-down, #filter-btn-web{
 		display: none;
 	}
 	
@@ -860,16 +867,24 @@ footer li{
 	}
 
 	.page-title{
-		font-size: 3em;
+		font-size: 8rem;
+		top: 10%;
+	}
+	
+	#photographer-title{
+		font-size: 8em;
 	}
 	
 	.search-for-supplier article {
     	height: 4em;
+		width: 25%;
+		top: 5%;
+		opacity: 0.8;
 	}
 	
 	.search-for-supplier input[type=text] {
-		font-size: xx-large;
-		width: fit-content;
+		font-size: x-large;
+		width: -webkit-fill-available;
 		font-style: italic;
 	}
 	
@@ -880,7 +895,7 @@ footer li{
 
 	/* Background image for venue search section */
 	#search-for-venue{
-		background-image: url("../resources/web/venues/venue-xl.jpg");
+		background-image: url(../resources/sweet-ice-cream-photography-399226-unsplash.jpg)
 	}
 	
 	/* Background image for florist search section */
@@ -890,17 +905,22 @@ footer li{
 
 	/* Background image for photographer search section */
 	#search-for-photographer{
-		background-image: url("../resources/web/photographers/photographer-xl.jpg");
+		background-image: url(../resources/web/photographers/photographer2-xl.jpg);
+		
+		
 	}
 
 		/* Background image for bakeri search section */
 	#search-for-bakeri{
-		background-image: url("../resources/web/bakeries/bakeri-xl.jpg");
+		background-image: url(../resources/web/bakeries/bakeri-xl.jpg);
+		background-position: top;
+		 
 	}
 
 		/* Background image for dress search section */
 	#search-for-dress{
-		background-image: url("../resources/web/dresses/dress-xl.jpg");
+		background-image: url(../resources/charisse-kenion-340543-unsplash.jpg);
+		background-position: top;
 	}
 
 	/* Filter and search buttons style*/
@@ -957,6 +977,7 @@ footer li{
 		margin: 0;
 		list-style: none;
 		display: inline-block;
+		font-family: 'Rubik', sans-serif;
 	}
 	
 	#checkbox-filter-list li{
@@ -968,10 +989,16 @@ footer li{
 		margin: 1em;
 	} 
 	
+	#filter-functions-label {
+		font-family: 'Rubik', sans-serif;
+		
+	}
+	
 	.filter-list-label{
 		float: left;
-		font-size: x-large;
+		font-size: large;
 		width: 10em;
+		font-family: 'Rubik', sans-serif;
 	}
 	
 	.checkbox-input{
@@ -1030,7 +1057,7 @@ footer li{
 	}
 	
 	.icons i{
-		color: black;
+		color: var(--dark);
 	}
 	
 	.icons i:hover{
@@ -1219,11 +1246,10 @@ footer li{
 
 	/* Footer styling */
 	footer h5{
-	    font-size:1.2em;
+	    font-size: 1.5em;
 	}
 	
-	footer ul{
-	    padding: 0.3em;
+	footer a{
+		font-size: 1.5em;
 	}
 }
-

@@ -1,8 +1,12 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Rubik:300');
+
 /* CSS Document */
 
 :root {
 	--peach: #fbbc8f;
+	--dark: #4C6250;
+	--light: #A4BC82;
 }
 
 html{
@@ -81,6 +85,7 @@ nav {
 	padding: 2em;
 	z-index: 100;
 	display: none;
+	
 }
 
 /*Links in Navbar*/
@@ -92,6 +97,7 @@ nav a{
 	text-decoration: none;
 	text-align: center;
 	font-size: 1.6em;
+	
 }
 
 
@@ -156,6 +162,7 @@ nav a:hover{
 
 .dropdown-content li{
 	display: none;
+	
 }
 
 
@@ -239,7 +246,7 @@ nav a:hover{
     border-style: double;
     border-radius: 1rem;
   	font-size: 2em;
-  	font-family: futura-pt, sans-serif;
+  	font-family: 'Rubik', sans-serif;
   	font-weight: 300;
   	font-style: normal;
   	transition:         0.08s ease-in;
@@ -251,7 +258,7 @@ nav a:hover{
 
 label{
 	font-size: xx-large;
-	font-family: futura-pt, sans-serif;
+	font-family:'Rubik', sans-serif;
 	font-weight: 300;
 	font-style: normal;
 	color: var(--dark-grey);
@@ -316,9 +323,10 @@ label{
 	/* Nav-bar links get in a line */
 	nav a{
 		display: inline-block;
-		color: black;
+		color: #4C6250;
 		font-size: 1.2em;
 		padding: 0;
+		font-family: 'Rubik', sans-serif;
 	}
 	
 	/* Change color on hover for the nav-bar and login icon */
@@ -332,6 +340,8 @@ label{
 	
 	#login-btn{
 	    justify-content: flex-start;
+		color: #4C6250;
+		
 	}
 	
 	#login-btn:focus{
@@ -412,8 +422,9 @@ a{
 #first-pic-text{
 	position: absolute;
 	top: 15%;
-	left: 20%;
+	left: 10%;
 	font-size: 3rem;
+	font-family:'Playfair Display', serif;
 	color: white;
 	text-align: center;
 }
@@ -430,8 +441,8 @@ a{
   	text-decoration: none;
   	display: inline-block;
   	font-size: 1.5rem;
-	opacity: 0.7;
-	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4)
+	opacity: 0.9;
+	
 		
 	-moz-transition: opacity 0.2s; /* Firefox */
     -webkit-transition: opacity 0.2s; /* Safari and Chrome */
@@ -450,6 +461,9 @@ a{
 	margin-right: 3rem;
 	margin-bottom: 0;
 	margin-top: 1.5rem;
+	font-family: 'Playfair Display', serif;
+	
+	color: #4C6250;
 }
 
 #quote-name{
@@ -458,6 +472,7 @@ a{
 	font-size: 1rem;
 	padding: 0;
 	margin: 0 2rem 1.5rem 0;
+	color: #4C6250;
 }
 
 #venue-pic{
@@ -500,7 +515,7 @@ a{
 	background-size: cover;
     background-position:center;
 	display: block;
-	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+	
 		
 	-moz-transition: opacity 0.5s; /* Firefox */
     -webkit-transition: opacity 0.5s; /* Safari and Chrome */
@@ -519,7 +534,7 @@ a{
 	background-size: cover;
     background-position:center;
 	display: block;
-	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+	
 		
 	-moz-transition: opacity 0.5s; /* Firefox */
     -webkit-transition: opacity 0.5s; /* Safari and Chrome */
@@ -534,11 +549,11 @@ a{
 #rings-box{
 	position: relative;
 	min-height: 10rem;
-	background: url("../resources/rings.jpg");
+	background: url(../resources/web/photographers/photographer2-xl.jpg);
 	background-size: cover;
     background-position:center;
 	display: block;
-	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+	
 		
 	-moz-transition: opacity 0.5s; /* Firefox */
     -webkit-transition: opacity 0.5s; /* Safari and Chrome */
@@ -557,7 +572,7 @@ a{
 	background-size: cover;
     background-position:top;
 	display: block;
-	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
+	
 		
 	-moz-transition: opacity 0.5s; /* Firefox */
     -webkit-transition: opacity 0.5s; /* Safari and Chrome */
@@ -573,8 +588,9 @@ a{
 	position: absolute;
 	top: 16%;
 	left: 21%;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	color: white;
+	font-family:'Playfair Display', serif;
 	
 }
 
@@ -582,8 +598,18 @@ a{
 	position: absolute;
 	top: 16%;
 	left: 28%;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	color: white;
+	font-family:'Playfair Display', serif;
+}
+.box-text-third {
+	position: absolute;
+	top: 20%;
+	left: 11%;
+	font-size: 1.5rem;
+	color: white;
+	font-family:'Playfair Display', serif;
+	
 }
 
 #back-to-top {
@@ -596,9 +622,10 @@ a{
   border: none;
   outline: none;
   background-color: var(--peach);
-  color: black;
+  color: white;
   padding: 0.8em;
-  border-radius: 4px;
+  
+  
 }
 
 footer{
@@ -631,6 +658,7 @@ footer h1{
 	padding: 0.3em;
 	margin: 0;
 	vertical-align: middle;
+	color: #4C6250;
 }
 
 .fa:hover {
@@ -643,6 +671,7 @@ footer h1{
     max-height: 80px;
     border-radius: 50%;
     text-decoration: none;
+	color: #4C6250;
 }
 .fa-twitter {
     display: block;
@@ -651,6 +680,7 @@ footer h1{
     max-height: 80px;
     border-radius: 50%;
     text-decoration: none;
+	color: #4C6250;
 }
 .fa-instagram {
 	display: block;
@@ -659,20 +689,24 @@ footer h1{
     max-height: 80px;
     border-radius: 50%;
     text-decoration: none;
+	color: #4C6250;
 }
 
 
 /*Responsiveness for homepage*/
-@media screen and (min-width: 500px){
+@media screen and (min-width: 700px){
 	
 	.start-planning-button{
   	left: 41%;
+		font-family: 'Rubik', sans-serif;
 	}
 	
 	#first-pic-text{
-	top: 25%;
-	left: 26%;
-	font-size: 4rem;
+	top: 24%;
+	left: 25%;
+	font-size: 6rem;
+	font-family: 'Playfair Display', serif;
+	
 	}
 	
 	#break{
@@ -684,6 +718,7 @@ footer h1{
 	#venues-text{
 	left: 40%;
 	top: 25%;
+	font-family: 'Playfair Display', serif;
 }
 	#venue-pic{
 	min-height: 25rem;
@@ -692,12 +727,19 @@ footer h1{
 	.box-text-first{
 	top: 29%;
 	left: 29%;
+	font-family: 'Playfair Display', serif;
 }
 	.box-text-second{
 	top: 29%;
 	left: 35%;
+	font-family: 'Playfair Display', serif;
 }
-	
+	.box-text-third {
+	top: 29%;
+	left: 24%;
+	font-family: 'Playfair Display', serif;
+		
+	}
 	#boxes-section{
 	display: grid;
 	grid-gap: 20px;
@@ -722,17 +764,21 @@ footer h1{
 	
 	#quote{
 	text-align: center;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	margin-bottom: 0;
 	margin-top: 3rem;
+	font-family: 'Playfair Display', serif;
+	color: #4C6250;
 }
 
 #quote-name{
 	text-align: right;
 	/*margin-right: 2rem;*/
-	font-size: 2rem;
+	font-size: 1.7rem;
 	padding: 0;
 	margin: 1rem 10rem 3rem 0;
+	font-family: 'Playfair Display', serif;
+	color: #4C6250;
 }
 	
 	.form-popup{
@@ -789,6 +835,8 @@ footer h1{
 	
 	footer h1 {
     	font-size: 1.5em;
+		font-family: 'Playfair Display', serif;
+
 	}
 	
 	footer ul{

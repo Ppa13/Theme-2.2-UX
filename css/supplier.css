@@ -680,19 +680,15 @@ label{
 --------------------------------------------------------------------------- */
 
 footer{
-	width: 100%;
-    height: 100%;
-	display:flex;
-	justify-content: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-	padding: 0.5em;
-	text-align: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+	opacity: 0.7;
 }
 
 footer a {
     text-decoration: none;
-    color: #3a3a3c;
+    color: black;
 }
 
 footer ul {
@@ -700,38 +696,25 @@ footer ul {
     padding: 0;
 	margin: 0;
     list-style: none;    
-
 }
 
-footer h1{
+footer h5{
 	text-align: center;
+	font-style: italic;
     font-size: 0.9em;
 	padding: 0.3em;
 	margin: 0;
-	vertical-align: middle;
+    opacity: 0.9;
 }
 
-.fa:hover {
-    opacity: 0.7;
+footer li{
+	flex-flow: row;
+    display: flex;
+    align-items: center;
 }
-.fa-facebook-f {
+
+.fa-facebook-f, .fa-twitter, .fa-instagram{
     display: block;
-    padding: 8px;
-    max-width: 80px;
-    max-height: 80px;
-    border-radius: 50%;
-    text-decoration: none;
-}
-.fa-twitter {
-    display: block;
-    padding: 8px;
-    max-width: 80px;
-    max-height: 80px;
-    border-radius: 50%;
-    text-decoration: none;
-}
-.fa-instagram {
-	display: block;
     padding: 8px;
     max-width: 80px;
     max-height: 80px;
@@ -1053,7 +1036,6 @@ footer h1{
 	.icons i:hover{
 		color: var(--peach);
 	}
-
 	
 	/* -------------------------------------------------------------- */
 	/* ----------------- Photos for the venue list ------------------ */
@@ -1235,20 +1217,13 @@ footer h1{
 		background-image: url("../resources/web/dresses/dress9-xl.jpg");
 	}
 
-	
 	/* Footer styling */
-	footer h1 {
-    	font-size: 1.5em;
+	footer h5{
+	    font-size:1.2em;
 	}
 	
 	footer ul{
 	    padding: 0.3em;
 	}
-	
-	footer ul a i{
-		font-size: 1.5em;
-	}
 }
-	
-/* Tablet */
 

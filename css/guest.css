@@ -199,11 +199,12 @@ nav a{
 	height: 12em;
 	align-items: center;
 	justify-content: center;
-	background-image: url("../resources/web/venues/venue3-xl.jpg");
+	background-image: url("../resources/web/guest.jpg");
 }
 
 .page-title{
 	position: absolute;
+	color: antiquewhite;
 	top: 10%;
 	font-weight: 600;
     font-size: 2.5em;
@@ -352,7 +353,7 @@ footer ul {
     list-style: none;    
 }
 
-footer h4{
+footer h5{
 	text-align: center;
 	font-style: italic;
     font-size: 0.9em;
@@ -398,6 +399,12 @@ footer li{
 		font-size: 2em;
     	opacity: 0.9;
 	}
+	
+	h5{
+	    font-size: 1.2em;
+    	font-style:italic;    
+	}
+	
 	/* Reposition nav-bar items */
 	#logo{
 		grid-area: nav-bar;
@@ -450,7 +457,8 @@ footer li{
 
 	.page-title{
 		font-size: 6em;
-		color: black;
+		color: white;
+		opacity: 0.9;
 		position: absolute;
 		top: 10%;
 	}
@@ -519,16 +527,11 @@ footer li{
 		transform: scale(1.1);
 	}
 	
-	footer h4 {
-    	font-size: 1.2em;
+	footer h5{
+	    font-size:1.2em;
 	}
 	
 	footer ul{
 	    padding: 0.3em;
-	}
-	
-	footer ul a i{
-		font-size: 1.5em;
-		color: black;
 	}
 }

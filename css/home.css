@@ -31,6 +31,7 @@ header{
 	position: fixed;
 	opacity: 0.7;
 	z-index: 98;
+	padding: 0;
 }
 
 #nav-bar{
@@ -99,6 +100,8 @@ nav a{
 	font-size: 1.6em;
 	
 }
+
+
 
 
 /*to toggle the burger menu*/
@@ -290,83 +293,6 @@ label{
     justify-content: center;
 }
 
-/*Responsiveness for burger menu*/
-@media screen and (min-width: 500px){
-	
-	/* Reposition nav-bar items */
-	#logo{
-		grid-area: nav-bar;
-		justify-items: flex-start;
-	}
-	
-	#logo img{
-	    max-width: 20%;
-	}
-	
-	#nav-bar{
-		grid-area: logo;
-	}
-	
-	/* Burger menu dissapears */
-	#menuoff, #menuon, #x, #nav-bar span, #filter-btn-mobile, #arrow-down{
-		display: none;
-	}
-	
-	/* Nav-bar appears as desktop navbar */
-	nav{
-		display: inline-flex;
-		position: static;
-		background-color: white;
-		padding: 1em;
-	}
-	
-	/* Nav-bar links get in a line */
-	nav a{
-		display: inline-block;
-		color: #4C6250;
-		font-size: 1.2em;
-		padding: 0;
-		font-family: 'Rubik', sans-serif;
-	}
-	
-	/* Change color on hover for the nav-bar and login icon */
-	nav a:hover{
-		color: var(--peach);
-	}
-	
-	nav a:active{
-		color: var(--peach);
-	}
-	
-	#login-btn{
-	    justify-content: flex-start;
-		color: #4C6250;
-		
-	}
-	
-	#login-btn:focus{
-	    outline: none;
-	}
-	
-	.dropdown{
-	position: relative;
-}
-
-	.dropdown-content li{
-		border-bottom: 1px solid rgba(0,0,0,0.2);
-		list-style: none;
-		padding: 0.25rem 0;
-		display: block;
-}
-
-	.dropdown:hover > .dropdown-content{
-		display: block;
-}
-
-	.dropdown-content li a:hover{
-		color: var(--peach);
-}
-}
 
 img{
 	width: 100%;
@@ -393,8 +319,8 @@ main{
 }
 
 h1{
-	font-style: italic;
-    font-weight: 100;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 200;
 	text-align: center;
 }
 
@@ -415,14 +341,13 @@ a{
 .homepage-pictures{
 	position: relative;
 	margin-bottom: 10px;
-	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.4);
 	
 }
 
 #first-pic-text{
 	position: absolute;
 	top: 15%;
-	left: 10%;
+	left: 0%;
 	font-size: 3rem;
 	font-family:'Playfair Display', serif;
 	color: white;
@@ -432,7 +357,7 @@ a{
 .start-planning-button{
 	position: absolute;
 	bottom: 20%;
-  	left: 32%;
+  	left: 29%;
 	background-color:var(--peach);
   	border: none;
   	color: white;
@@ -587,7 +512,7 @@ a{
 .box-text-first{
 	position: absolute;
 	top: 16%;
-	left: 21%;
+	left: 22%;
 	font-size: 1.8rem;
 	color: white;
 	font-family:'Playfair Display', serif;
@@ -605,7 +530,7 @@ a{
 .box-text-third {
 	position: absolute;
 	top: 20%;
-	left: 11%;
+	left: 2%;
 	font-size: 1.5rem;
 	color: white;
 	font-family:'Playfair Display', serif;
@@ -694,7 +619,7 @@ footer h1{
 
 
 /*Responsiveness for homepage*/
-@media screen and (min-width: 700px){
+@media screen and (min-width: 500px){
 	
 	.start-planning-button{
   	left: 41%;
@@ -703,7 +628,7 @@ footer h1{
 	
 	#first-pic-text{
 	top: 24%;
-	left: 25%;
+	left: 18%;
 	font-size: 6rem;
 	font-family: 'Playfair Display', serif;
 	
@@ -735,10 +660,10 @@ footer h1{
 	font-family: 'Playfair Display', serif;
 }
 	.box-text-third {
-	top: 29%;
-	left: 24%;
+	top: 30%;
+	left: 16%;
 	font-family: 'Playfair Display', serif;
-		
+	font-size: 1.7rem;
 	}
 	#boxes-section{
 	display: grid;
@@ -846,4 +771,101 @@ footer h1{
 	footer ul a i{
 		font-size: 1.5em;
 	}
+		/* Reposition nav-bar items */
+	#logo{
+		grid-area: nav-bar;
+		justify-items: flex-start;
+		margin-left: 2em;
+	}
+	
+	#logo img{
+	    max-width: 30%;
+	}
+	
+	#nav-bar{
+		grid-area: logo;
+		padding: 0;
+		margin: 0;
+	}
+	
+	/* Burger menu dissapears */
+	#menuoff, #menuon, #x, #nav-bar span, #filter-btn-mobile, #arrow-down{
+		display: none;
+	}
+	
+	/* Nav-bar appears as desktop navbar */
+	nav{
+		display: inline-flex;
+		position: static;
+		background-color: white;
+		padding: 0;
+		margin: 0;
+	}
+	
+	nav button{
+	padding: 1.5em 0;
+		margin: 0;
+}
+	
+	/* Nav-bar links get in a line */
+	nav a{
+		display: inline-block;
+		color: #4C6250;
+		font-size: 1.2em;
+		padding: 0;
+		font-family: 'Rubik', sans-serif;
+		margin: 0;
+	}
+	
+	nav ul{
+		margin: 0;
+	}
+	
+	
+	
+	/* Change color on hover for the nav-bar and login icon */
+	nav a:hover{
+		color: var(--peach);
+	}
+	
+	nav a:active{
+		color: var(--peach);
+	}
+	
+	#login-btn{
+	    justify-content: flex-start;
+		color: #4C6250;
+		margin-left: 8em;
+	}
+	
+	#login-btn:focus{
+	    outline: none;
+	}
+	
+	.dropdown{
+	position: relative;
+	margin: 0;
+}
+	
+	.dropdown-content{
+		margin: 0;
+		padding: 1.5rem 0 0;
+	}
+
+	.dropdown-content li{
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		list-style: none;
+		padding: 0.25rem 0;
+		display: block;
+		
+}
+
+	.dropdown:hover > .dropdown-content{
+		display: block;
+}
+
+	.dropdown-content li a:hover{
+		color: var(--peach);
+}
+	
 }

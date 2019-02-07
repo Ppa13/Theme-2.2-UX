@@ -10,6 +10,7 @@
 	<!-- -->
 	<script async="" src="https://cdn.heapanalytics.com/js/heap-2625472963.js"></script>
 	<script src="../js/supplier.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Rubik:300" rel="stylesheet">
 </head>
 
 <body>
@@ -28,30 +29,30 @@
 			<!--Navigation bar-->
 			<nav>
 				<!--Links in Navbar-->
-				<a href="home.html">Home</a>
+				<a href="index.html">Home</a>
 				<section class="dropdown">
-					<a href="planning-tools.html">Planning Tools</a>
+					<a href="#">Planning Tools</a>
 						<ul class="dropdown-content">
-							<li><a href="planning-tools.html">Dashboard</a></li>
-							<li><a href="planning-tools.html">Checklist</a></li>
-							<li><a href="planning-tools.html">Inspiration</a></li>
-							<li><a href="planning-tools.html">Favorites</a></li>
-							<li><a href="planning-tools.html">Guest List</a></li>
-							<li><a href="planning-tools.html">Table Chart</a></li>
+							<li><a href="profile.html">My Information</a></li>
+							<li><a href="profile.html">Checklist</a></li>
+							<li><a href="profile.html">Inspiration</a></li>
+							<li><a href="profile.html">Favorites</a></li>
+							<li><a href="profile.html">Guest List</a></li>
+							<li><a href="profile.html">Messages</a></li>
 						</ul>
 				</section>
 				<section class="dropdown">
-					<a href="supplier.html">Suppliers</a>
+					<a href="#">Wedding Suppliers</a>
 						<ul class="dropdown-content">
-							<li><a href="planning-tools.html">Venues</a></li>
-							<li><a href="planning-tools.html">Photographers</a></li>
-							<li><a href="planning-tools.html">Florists</a></li>
-							<li><a href="planning-tools.html">Bakers</a></li>
-							<li><a href="planning-tools.html">Dresses</a></li>
+							<li><a href="venue.html">Venues</a></li>
+							<li><a href="photographer.html">Photographers</a></li>
+							<li><a href="florist.html">Florists</a></li>
+							<li><a href="bakeri.html">Bakers</a></li>
+							<li><a href="dress.html">Dresses</a></li>
 						</ul>
 				</section>
-				<a href="guest.html">Guests</a>
-				<a href="collaborator.html">Collaborators</a>
+				<a href="guest.html">For Guests</a>
+				<a href="collaborator.html">Work with Us</a>
 			</nav>
 			<!--Burger Menu lines-->
 			<span></span>
@@ -68,7 +69,7 @@
     <main>
     	<!-- The background image and the search bar -->
 		<section id="profile-pic">
-			<p id="profile-text">PROFILE</p>
+			<p id="profile-text">MY  INFORMATION</p>
 			<!-- Search bar + filter btn and search btn -->
 		</section>
 		
@@ -80,7 +81,7 @@
 				<!-- Container with the icons and the buttons -->
 				<article class="icon-container">
 					
-					<button class="profile-sidebuttons" onclick="filterSelection('Information')"><i id="info-icon" class="fas fa-info fa-2x"></i> Information</button>
+					<button class="profile-sidebuttons" onclick="filterSelection('Information')"><i id="info-icon" class="fas fa-info fa-2x"></i> My Information</button>
 				</article>
 				
 				<article class="icon-container">
@@ -133,7 +134,7 @@
 								<p class="profile-checkbox-text">Venue:</p>
 							</label>
 							
-							<a class="profile-seemore-links" href="#">See Venues</a>
+							<a class="profile-seemore-links" href="venue.html">See Venues</a>
 							
 							<!--Checklist items-->
 							
@@ -165,7 +166,7 @@
 								<p class="profile-checkbox-text">Dress:</p>
 							</label>
 							
-							<a class="profile-seemore-links" href="#">See Dresses</a>
+							<a class="profile-seemore-links" href="dress.html">See Dresses</a>
 							
 							<!--Checklist items-->
 							
@@ -194,7 +195,7 @@
 								<p class="profile-checkbox-text">Florist:</p>
 							</label>
 							
-							<a class="profile-seemore-links" href="#">See Florists</a>
+							<a class="profile-seemore-links" href="florist.html">See Florists</a>
 							
 							<!--Checklist items-->
 							
@@ -223,7 +224,7 @@
 								<p class="profile-checkbox-text">Photographers:</p>
 							</label>
 							
-							<a class="profile-seemore-links" href="#">See Photographers</a>
+							<a class="profile-seemore-links" href="photographer.html">See Photographers</a>
 							
 							<!--Checklist items-->
 							
@@ -255,7 +256,7 @@
 								<p class="profile-checkbox-text">Wedding Cake:</p>
 							</label>
 							
-							<a class="profile-seemore-links" href="#">See Bakeries</a>
+							<a class="profile-seemore-links" href="bakeri.html">See Bakeries</a>
 							
 							<!--Checklist items-->
 							
@@ -444,7 +445,7 @@
 		</section>
 
 		<!-- Back to top function -->
-		<button onclick="topFunction()" id="back-to-top" title="Go to top">Back to top</button>
+		<button onclick="topFunction()" id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     </main>
 
     <!-- Contact information and social media icons -->

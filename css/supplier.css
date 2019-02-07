@@ -13,25 +13,6 @@ html{
 	scroll-behavior: smooth;
 }
 
-header{
-	width: 100%;
-	height: 3em;
-	padding: 0 0.5em 0 0.5em;
-    margin: 0;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: white;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-areas: 
-		'nav-bar logo login';
-	grid-gap: 2em;
-	align-items: center;
-	overflow: hidden;
-	position: fixed;
-	opacity: 0.7;
-}
 
 body{
     max-width: 100%;
@@ -71,7 +52,7 @@ h1{
 	font-family:'Playfair Display', serif;
 	padding: 0;
 	margin: 0 0 4rem 0;
-    font-weight: 600;
+    /*font-weight: 600;*/
 	text-align: center;
 	text-transform: uppercase;
 	color: white;
@@ -79,8 +60,8 @@ h1{
 }
 
 h5{
-	font-family: 'Playfair Display', serif;
-	font-style: italic;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 200;
 }
 
 /* ------------------------------------------------------------------------
@@ -88,6 +69,27 @@ h5{
 -------------------------------- NAVIGATION -------------------------------
 ---------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
+
+header{
+	width: 100%;
+	height: 4em;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: white;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas: 
+		'nav-bar logo login';
+	grid-gap: 2em;
+	align-items: center;
+	/*overflow: hidden;*/
+	position: fixed;
+	opacity: 0.7;
+	z-index: 98;
+	padding: 0;
+}
 
 #nav-bar{
 	display: grid;
@@ -141,23 +143,23 @@ nav {
 	padding: 2em;
 	z-index: 100;
 	display: none;
+	
 }
 
 /*Links in Navbar*/
 nav a{
 	color: white;
 	display: block;
-	padding-bottom: 1em;
+	padding-bottom: 2em;
     min-width: 10em;
 	text-decoration: none;
 	text-align: center;
 	font-size: 1.6em;
-	font-family: 'Rubik', sans-serif;
+	
 }
 
-nav a:hover{
-	color: var(--peach);
-}
+
+
 
 /*to toggle the burger menu*/
 #togglemenu:checked ~ nav{
@@ -179,24 +181,6 @@ nav a:hover{
 	display: block;
 }
 
-.dropdown-content{
-	position: absolute;
-	display: none;
-	z-index: 2000;
-	padding: 0;
-	margin: 1rem 0;
-	background: #FFFFFF;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-.dropdown-content li{
-	display: none;
-}
-
-nav a:active ~ .dropdown-content{
-	display: block;
-}
-
 #logo{
 	display: grid;
     justify-items: center;
@@ -211,7 +195,6 @@ nav a:active ~ .dropdown-content{
     display: flex;
     background-color: transparent;
     border: none;
-	padding: 0;
 	justify-content: flex-end;
 }
 
@@ -222,6 +205,26 @@ nav a:active ~ .dropdown-content{
 #login-btn i{
     font-size: 2.5em;	
 }
+nav a:hover{
+	color: var(--peach);
+}
+
+
+.dropdown-content{
+	position: absolute;
+	display: none;
+	z-index: 2000;
+	padding: 0;
+	margin: 1rem 0;
+	background: #FFFFFF;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content li{
+	display: none;
+	
+}
+
 
 /* Style login/sign-up button */
 .login-btn {
@@ -282,7 +285,7 @@ nav a:active ~ .dropdown-content{
 label{
 	font-size: xx-large;
 	font-family: futura-pt, sans-serif;
-	font-weight: 300;
+	/*font-weight: 300;*/
 	font-style: normal;
 	color: var(--dark-grey);
 }
@@ -335,10 +338,12 @@ label{
 	position: relative;
 	top: 30%;	
 	z-index: 1;
+	font-weight: 200;
+	font-size: 3.7rem;
 }
 
 #photographer-title{
-	font-size: 2em;	
+	font-size: 2.6em;	
 }
 
 .search-for-supplier article{
@@ -689,9 +694,10 @@ label{
   border: none;
   outline: none;
   background-color: var(--peach);
-  color: var(--dark);
+  color: white;
   padding: 0.8em;
   border-radius: 4px;
+	
 }
 
 
@@ -707,6 +713,7 @@ footer{
 	align-items: center;
 	padding: 0 0.5em 0 0.5em;
 	opacity: 0.9;
+	
 }
 
 footer a {
@@ -736,25 +743,28 @@ footer li{
 @media screen and (min-width: 700px){
 	
 	header{
-		height: auto;
+		height: 4em;
 		padding: 0;
 	}
 	
 	#logo{
 		grid-area: nav-bar;
 		justify-items: flex-start;
+		margin-left: 2em;
 	}
 	
 	#logo img{
-	    max-width: 20%;
+	    max-width: 30%;
 	}
 	
 	#nav-bar{
 		grid-area: logo;
+		padding: 0;
+		margin: 0;
 	}
 	
 	/* Burger menu dissapears */
-	#menuoff, #menuon, #x, #nav-bar span, #filter-btn-mobile, #arrow-down, #filter-btn-web{
+	#menuoff, #menuon, #x, #nav-bar span, #filter-btn-mobile, #arrow-down{
 		display: none;
 	}
 	
@@ -763,16 +773,30 @@ footer li{
 		display: inline-flex;
 		position: static;
 		background-color: white;
-		padding: 1em;
+		padding: 0;
+		margin: 0;
 	}
+	
+	nav button{
+	padding: 1.5em 0;
+		margin: 0;
+}
 	
 	/* Nav-bar links get in a line */
 	nav a{
 		display: inline-block;
-		color: black;
+		color: #4C6250;
 		font-size: 1.2em;
 		padding: 0;
+		font-family: 'Rubik', sans-serif;
+		margin: 0;
 	}
+	
+	nav ul{
+		margin: 0;
+	}
+	
+	
 	
 	/* Change color on hover for the nav-bar and login icon */
 	nav a:hover{
@@ -782,9 +806,25 @@ footer li{
 	nav a:active{
 		color: var(--peach);
 	}
-
+	
+	#login-btn{
+	    justify-content: flex-start;
+		color: #4C6250;
+		margin-left: 8em;
+	}
+	
+	#login-btn:focus{
+	    outline: none;
+	}
+	
 	.dropdown{
-		position: relative;
+	position: relative;
+	margin: 0;
+}
+	
+	.dropdown-content{
+		margin: 0;
+		padding: 1.5rem 0 0;
 	}
 
 	.dropdown-content li{
@@ -792,23 +832,16 @@ footer li{
 		list-style: none;
 		padding: 0.25rem 0;
 		display: block;
-	}
+		
+}
 
 	.dropdown:hover > .dropdown-content{
 		display: block;
-	}
+}
 
 	.dropdown-content li a:hover{
 		color: var(--peach);
-	}
-	
-	#login-btn{
-	    justify-content: flex-start;
-	}
-	
-	#login-btn:focus{
-	    outline: none;
-	}
+}
 	
 	.form-popup{
 		margin: 0;
@@ -863,16 +896,16 @@ footer li{
 	}
 	
 	.search-for-supplier{
-		height: 40em;
+		min-height: 25rem;
 	}
 
 	.page-title{
-		font-size: 8rem;
+		font-size: 5rem;
 		top: 10%;
 	}
 	
 	#photographer-title{
-		font-size: 8em;
+		font-size: 5em;
 	}
 	
 	.search-for-supplier article {

@@ -12,24 +12,7 @@ html{
 	scroll-behavior: smooth;
 }
 
-header{
-	width: 100%;
-	height: 4em;
-    margin: 0;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: white;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-areas: 
-		'nav-bar logo login';
-	grid-gap: 2em;
-	align-items: center;
-	/*overflow: hidden;*/
-	position: fixed;
-	opacity: 0.7;
-}
+
 
 body{
     max-width: 100%;
@@ -57,8 +40,8 @@ a{
 }
 
 h1{
-	font-style: italic;
-    font-weight: 100;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 200;
 	text-align: center;
 }
 
@@ -68,6 +51,27 @@ h1{
 -------------------------------- NAVIGATION -------------------------------
 ---------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
+
+header{
+	width: 100%;
+	height: 4em;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: white;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas: 
+		'nav-bar logo login';
+	grid-gap: 2em;
+	align-items: center;
+	/*overflow: hidden;*/
+	position: fixed;
+	opacity: 0.7;
+	z-index: 98;
+	padding: 0;
+}
 
 #nav-bar{
 	display: grid;
@@ -115,24 +119,28 @@ h1{
 
 /*Navigation bar*/
 nav {
-   background-color: rgba(0,0,0,0.60);
+    background-color: rgba(0,0,0,0.60);
     opacity: 1;
 	position: fixed;
 	padding: 2em;
 	z-index: 100;
 	display: none;
+	
 }
 
 /*Links in Navbar*/
 nav a{
 	color: white;
 	display: block;
-	padding-bottom: 1em;
+	padding-bottom: 2em;
     min-width: 10em;
 	text-decoration: none;
 	text-align: center;
 	font-size: 1.6em;
+	
 }
+
+
 
 
 /*to toggle the burger menu*/
@@ -179,6 +187,10 @@ nav a{
 #login-btn i{
     font-size: 2.5em;	
 }
+nav a:hover{
+	color: var(--peach);
+}
+
 
 .dropdown-content{
 	position: absolute;
@@ -192,6 +204,7 @@ nav a{
 
 .dropdown-content li{
 	display: none;
+	
 }
 
 /* ------------- Form ---------------- */
@@ -657,7 +670,7 @@ label{
   border: none;
   outline: none;
   background-color: var(--peach);
-  color: black;
+  color: white;
   padding: 0.8em;
   border-radius: 4px;
 }
@@ -678,6 +691,7 @@ footer{
     margin-bottom: 1em;
 	padding: 0.5em;
 	text-align: center;
+	opacity: 0.9;
 }
 
 footer a {
@@ -735,13 +749,15 @@ footer h1{
 #profile-text{
 	position: absolute;
 	top: 7%;
-	left: 34%;
+	left: 15%;
 	font-size: 3.7rem;
 	color: white;
+	font-family: 'Playfair Display', serif;
+	font-weight: 200;
 }
 
 #profile-pic{
-	background: url("../resources/homepage-image.jpg");
+	background: url("../../weddingplanner.dk/resources/homepage-image.jpg");
 	background-size: cover;
     background-position:right;
 	min-height: 15rem;
@@ -761,6 +777,7 @@ footer h1{
 		font-size: 1.5rem;
 		margin: 0 0 1rem;
 		text-align: center;
+	font-family: 'Rubik', sans-serif;
 	}
 	
 	.profile-names-input{
@@ -862,6 +879,7 @@ footer h1{
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 4rem;
+	font-family: 'Rubik', sans-serif;
 }
 
 #profile-image-label-venuepic{
@@ -924,6 +942,7 @@ footer h1{
   	display: inline-block;
   	font-size: 1rem;
 	margin-top: 1rem;
+	font-family: 'Rubik', sans-serif;
 }
 
 .profile-box-buttons{
@@ -936,11 +955,13 @@ footer h1{
 .profile-table{
 	margin: 0 3rem 0 0;
 	padding: 0;
+	font-family: 'Rubik', sans-serif;
 }
 
 .profile-checkbox-text{
 	margin: 0;
 	padding: 0;
+	font-family: 'Rubik', sans-serif;
 }
 
 .filterDiv{
@@ -962,40 +983,48 @@ footer h1{
   		font-size: 0.7rem;
 		grid-area: sidebuttons;
 		cursor: pointer;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 600;
 	}
 
 .icon-container{
-		margin: 2rem 1rem;
+		margin: 0rem 1rem;
 	}
 
 #info-icon{
 		padding: 0.5rem 1rem;
 		background: var(--peach);
+	
 	}
 	
 	#checklist-icon{
 		padding: 0.5rem;
 		background: var(--peach);
+		
 	}
 	
 	#fav-icon{
 		padding: 0.5rem;
-		background: var(--peach)
+		background: var(--peach);
+			
 	}
 	
 	#guests-icon{
 		padding: 0.5rem 0.4rem;
 		background: var(--peach);
+		
 	}
 	
 	#inspiration-icon{
 		padding: 0.5rem 0.7rem;
 		background: var(--peach);
+		
 	}
 	
 	#messages-icon{
 		padding: 0.5rem 0.4rem;
 		background: var(--peach);
+		
 	}
 
 	.boxes-section{
@@ -1106,6 +1135,7 @@ footer h1{
 	text-align: center;
 	padding: 0;
 	margin: 0;
+	font-family: 'Rubik', sans-serif;
 }
 
 .box-names-two{
@@ -1113,6 +1143,7 @@ footer h1{
 	text-align: center;
 	padding: 0;
 	margin: 0;
+	font-family: 'Playfair Display', serif;
 }
 
 .guest-boxes-yes{
@@ -1128,6 +1159,7 @@ footer h1{
 .guest-names{
 	margin-left: 2rem;
 	grid-area: guest-names;
+	font-family: 'Playfair Display', serif;
 }
 
 .going-cannot{
@@ -1135,6 +1167,7 @@ footer h1{
 	grid-area: going-cannot;
 	display: flex;
 	justify-content: flex-end;
+	font-family: 'Rubik', sans-serif;
 }
 
 .guest-boxes-no{
@@ -1160,6 +1193,7 @@ footer h1{
 #edit-all-guests{
 	display: flex;
 	justify-content: center;
+	font-family: 'Rubik', sans-serif;
 }
 
 .pinterest{
@@ -1180,7 +1214,7 @@ footer h1{
   border-radius: 20px;
   padding: 20px 10px;
   margin: 10px 0;
-	
+	font-family: 'Rubik', sans-serif;
 }
 
 .bubble-left{
@@ -1189,16 +1223,19 @@ footer h1{
   border-radius: 20px;
   padding: 20px 10px;
   margin: 10px 0;
+	font-family: 'Rubik', sans-serif;
 }
 
 .time-right {
   float: right;
   color: #aaa;
+	font-family: 'Rubik', sans-serif;
 }
 
 .time-left {
   float: left;
   color: #999;
+	font-family: 'Rubik', sans-serif;
 }
 
 /* ------------------------------------------------------------------------
@@ -1215,14 +1252,17 @@ footer h1{
 	#logo{
 		grid-area: nav-bar;
 		justify-items: flex-start;
+		margin-left: 2em;
 	}
 	
 	#logo img{
-	    max-width: 20%;
+	    max-width: 30%;
 	}
 	
 	#nav-bar{
 		grid-area: logo;
+		padding: 0;
+		margin: 0;
 	}
 	
 	/* Burger menu dissapears */
@@ -1235,16 +1275,30 @@ footer h1{
 		display: inline-flex;
 		position: static;
 		background-color: white;
-		padding: 1em;
+		padding: 0;
+		margin: 0;
 	}
+	
+	nav button{
+	padding: 1.5em 0;
+		margin: 0;
+}
 	
 	/* Nav-bar links get in a line */
 	nav a{
 		display: inline-block;
-		color: black;
+		color: #4C6250;
 		font-size: 1.2em;
 		padding: 0;
+		font-family: 'Rubik', sans-serif;
+		margin: 0;
 	}
+	
+	nav ul{
+		margin: 0;
+	}
+	
+	
 	
 	/* Change color on hover for the nav-bar and login icon */
 	nav a:hover{
@@ -1257,11 +1311,39 @@ footer h1{
 	
 	#login-btn{
 	    justify-content: flex-start;
+		color: #4C6250;
+		margin-left: 8em;
 	}
 	
 	#login-btn:focus{
 	    outline: none;
 	}
+	
+	.dropdown{
+	position: relative;
+	margin: 0;
+}
+	
+	.dropdown-content{
+		margin: 0;
+		padding: 1.5rem 0 0;
+	}
+
+	.dropdown-content li{
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		list-style: none;
+		padding: 0.25rem 0;
+		display: block;
+		
+}
+
+	.dropdown:hover > .dropdown-content{
+		display: block;
+}
+
+	.dropdown-content li a:hover{
+		color: var(--peach);
+}
 	
 	.form-popup{
 		margin: 0;
@@ -1311,28 +1393,18 @@ footer h1{
 
 	}
 	
+		#login-btn{
+	    justify-content: flex-start;
+	}
+	
+	#login-btn:focus{
+	    outline: none;
+	}
+	
 	.exit-col i:hover{
 		transform: scale(1.1);
 	}
 	
-	.dropdown{
-	position: relative;
-}
-
-	.dropdown-content li{
-		border-bottom: 1px solid rgba(0,0,0,0.2);
-		list-style: none;
-		padding: 0.25rem 0;
-		display: block;
-}
-
-	.dropdown:hover > .dropdown-content{
-		display: block;
-}
-
-	.dropdown-content li a:hover{
-		color: var(--peach);
-}
 	
 	.search-for-supplier{
 		height: 40em;
@@ -1765,9 +1837,10 @@ footer h1{
   		text-align: center;
   		text-decoration: none;
   		display: inline-block;
-  		font-size: 1.5rem;
+  		font-size: 1rem;
 		grid-area: sidebuttons;
 		cursor: pointer;
+		margin: 0;
 	}
 	
 	#filter-section-profile{
@@ -1780,10 +1853,12 @@ footer h1{
 		border-left: 2px solid black;
 		grid-area: information;
 		padding: 3rem 5rem;
+		
 	}
 	
 	#checklist{
 		border-left: 2px solid black;
+		
 	}
 	
 	#profile-section{
@@ -1853,7 +1928,6 @@ footer h1{
 		padding-left: 2rem;
 		padding-top: 2rem;
 	}
-	
 	
 	
 }

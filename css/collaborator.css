@@ -20,24 +20,6 @@ html, body{
 	color: var(--dark);
 }
 
-header{
-	width: 100%;
-	height: 3em;
-    margin: 0;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-    background-color: white;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-areas: 
-		'nav-bar logo login';
-	grid-gap: 2em;
-	align-items: center;
-	overflow: hidden;
-	position: fixed;
-	opacity: 0.9;
-}
-
 main{
 	display: grid;
 	grid-template-rows: auto;
@@ -59,7 +41,7 @@ h1{
 	font-family:'Playfair Display', serif;
 	padding: 0;
 	margin: 0 0 4rem 0;
-    font-weight: 600;
+    /*font-weight: 600;*/
 	text-align: center;
 	text-transform: uppercase;
 	color: white;
@@ -67,8 +49,9 @@ h1{
 }
 
 h5{
-	font-family: 'Playfair Display', serif;
-	font-style: italic;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 200;
+	font-style: normal;
 }
 
 /* Hide elements on mobile version */
@@ -82,6 +65,27 @@ h5{
 ---------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
+header{
+	width: 100%;
+	height: 4em;
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: white;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas: 
+		'nav-bar logo login';
+	grid-gap: 2em;
+	align-items: center;
+	/*overflow: hidden;*/
+	position: fixed;
+	opacity: 0.7;
+	z-index: 98;
+	padding: 0;
+}
+
 #nav-bar{
 	display: grid;
 }
@@ -92,7 +96,7 @@ h5{
 	color: white;
 	padding: 1em 1.5em 0 0;
 	position: fixed;
-	z-index: 1002;
+	z-index: 102;
 	opacity: 0;
 }
 
@@ -104,7 +108,7 @@ h5{
 	right: 0;
 	bottom: 0;
 	background-color: rgba(0,0,0,0.60);
-	z-index: 999;
+	z-index: 99;
 	display: none;
 }
 
@@ -114,16 +118,15 @@ h5{
 	height: 3px;
 	background: black;
 	margin-bottom: 4px;
-	z-index: 1001;
+	z-index: 101;
 }
 
 /* Close button (X) for burger menu*/
 #x{
     color: var(--peach);
-	top: 5%;
-    left: 10%;
+    padding: 0.2em;
     position: fixed;
-    z-index: 1002;
+    z-index: 102;
     display: none;
 }
 
@@ -131,24 +134,26 @@ h5{
 nav {
     background-color: rgba(0,0,0,0.60);
     opacity: 1;
+	position: fixed;
 	padding: 2em;
-    position: fixed;
-    left: 5%;
-    z-index: 1000;
-    display: none;
+	z-index: 100;
+	display: none;
+	
 }
 
 /*Links in Navbar*/
 nav a{
 	color: white;
 	display: block;
-	padding-bottom: 1em;
+	padding-bottom: 2em;
     min-width: 10em;
 	text-decoration: none;
 	text-align: center;
 	font-size: 1.6em;
-	font-family: 'Rubik', sans-serif;
+	
 }
+
+
 
 
 /*to toggle the burger menu*/
@@ -181,6 +186,39 @@ nav a{
 	align-self: center;
 }
 
+#login-btn{
+    display: flex;
+    background-color: transparent;
+    border: none;
+	justify-content: flex-end;
+}
+
+#login-btn:focus{
+	outline:none;
+}
+
+#login-btn i{
+    font-size: 2.5em;	
+}
+nav a:hover{
+	color: var(--peach);
+}
+
+
+.dropdown-content{
+	position: absolute;
+	display: none;
+	z-index: 2000;
+	padding: 0;
+	margin: 1rem 0;
+	background: #FFFFFF;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content li{
+	display: none;
+	
+}
 /* Sign-up/login pop-up*/
 #account-form-section {
 	display: none;
@@ -280,6 +318,8 @@ label{
 	position: relative;
 	top: 30%;	
 	z-index: 1;
+	font-weight: 200;
+	font-size: 3rem;
 }
 
 #page-content{
@@ -289,6 +329,9 @@ label{
     flex-flow: column;
     align-items: center;
 	color: #4c6250;
+	font-family: 'Rubik', sans-serif;
+	margin: 0 5rem;
+	font-size: 0.7rem;
 }
 
 #become-supplier-btn{
@@ -316,7 +359,7 @@ label{
 	background-color: var(--peach);
 	padding: 0.8em;
 	border-radius: 4px;
-	color: var(--dark);
+	color: white;
 }
 
 /* ------------------------------------------------------------------------
@@ -331,6 +374,7 @@ footer{
 	align-items: center;
 	padding: 0 0.5em 0 0.5em;
 	opacity: 0.9;
+	font-style: normal;
 }
 
 footer a {
@@ -365,7 +409,7 @@ footer li{
 	
 	header{
 		padding: 0;
-		height: auto;
+		height: 4em;
 	}
 	
 	h2{
@@ -384,22 +428,58 @@ footer li{
     	font-style:italic;
 	}
 	
+	
+	/* Reposition nav-bar items */
+	#logo{
+		grid-area: nav-bar;
+		justify-items: flex-start;
+		margin-left: 2em;
+	}
+	
+	#logo img{
+	    max-width: 30%;
+	}
+	
+	#nav-bar{
+		grid-area: logo;
+		padding: 0;
+		margin: 0;
+	}
+	
+	/* Burger menu dissapears */
+	#menuoff, #menuon, #x, #nav-bar span, #filter-btn-mobile, #arrow-down{
+		display: none;
+	}
+	
 	/* Nav-bar appears as desktop navbar */
 	nav{
 		display: inline-flex;
 		position: static;
 		background-color: white;
 		padding: 0;
-		height: 100%;
+		margin: 0;
 	}
+	
+	nav button{
+	padding: 1.5em 0;
+		margin: 0;
+}
 	
 	/* Nav-bar links get in a line */
 	nav a{
 		display: inline-block;
-		color: black;
+		color: #4C6250;
 		font-size: 1.2em;
 		padding: 0;
+		font-family: 'Rubik', sans-serif;
+		margin: 0;
 	}
+	
+	nav ul{
+		margin: 0;
+	}
+	
+	
 	
 	/* Change color on hover for the nav-bar and login icon */
 	nav a:hover{
@@ -409,26 +489,42 @@ footer li{
 	nav a:active{
 		color: var(--peach);
 	}
+	
+	#login-btn{
+	    justify-content: flex-start;
+		color: #4C6250;
+		margin-left: 8em;
+	}
+	
+	#login-btn:focus{
+	    outline: none;
+	}
+	
+	.dropdown{
+	position: relative;
+	margin: 0;
+}
+	
+	.dropdown-content{
+		margin: 0;
+		padding: 1.5rem 0 0;
+	}
 
-	/* Reposition nav-bar items */
-	#logo{
-		grid-area: nav-bar;
-		justify-items: flex-start;
-	}
-	
-	#logo img{
-	    max-width: 20%;
-	}
-	
-	#nav-bar{
-		grid-area: logo;
-	}
-	
-	/* Burger menu dissapears */
-	#menuoff, #menuon, #x, #nav-bar span{
-		display: none;
-	}
-	
+	.dropdown-content li{
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		list-style: none;
+		padding: 0.25rem 0;
+		display: block;
+		
+}
+
+	.dropdown:hover > .dropdown-content{
+		display: block;
+}
+
+	.dropdown-content li a:hover{
+		color: var(--peach);
+}
 
 	#account-btn{
 		justify-content: flex-start;
@@ -450,12 +546,13 @@ footer li{
 	}
 	
 	.page-title{
-		font-size: 6em;
-		top: 25%;
+		font-size: 5rem;
+		top: 20%;
+		
 	}
 	
 	#background-img{
-		height: 600px;
+		min-height: 25rem;
 		background-position: 20% 35%;
 	}
 	
@@ -485,4 +582,6 @@ footer li{
 	footer ul{
 	    padding: 0.3em;
 	}
+	
+	
 }

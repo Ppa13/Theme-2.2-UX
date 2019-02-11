@@ -432,23 +432,23 @@ nav a{
 
 /* Supplier box background image */
 #venue-box{
-	background: url("../resources/sweet-ice-cream-photography-399226-unsplash.jpg");	
+	background: url("../resources/web/homepage/venue.jpg");	
 }
 
 #photographer-box{
-	background: url("../resources/web/photographers/photographer-xl.jpg");
+	background: url("../resources/web/homepage/photographer.jpg");
 }
 
 #florist-box{
-	background :url("../resources/web/florists/florist-xl.jpg");	
+	background: url("../resources/web/homepage/florist.jpg");	
 }
 
 #cake-box{
-	background: url("../resources/web/cakes/cake-xl.jpg");
+	background: url("../resources/web/homepage/cake.jpg");
 }
 
 #dress-box{
-	background: url("../resources/web/dresses/dress-xl.jpg");
+	background: url("../resources/web/homepage/dress.jpg");
 }
 
 /* Back to top button */

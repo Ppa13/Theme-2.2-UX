@@ -5,11 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="../css/profile.css" type="text/css">
-	<!-- Link to external source of the icons -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	<!-- -->
-	<script async="" src="https://cdn.heapanalytics.com/js/heap-2625472963.js"></script>
-	<script src="../js/supplier.js"></script>
+	<script src="../js/profile.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Rubik:300" rel="stylesheet">
 </head>
 
@@ -62,7 +59,7 @@
 		<!-- Logo -->
 		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
 		<!-- Login function -->
-		<button id="login-btn" onclick="openLogin()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
+		<button id="account-btn" onclick="openLogin()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
     </header>
 
     <!-- The content of the page -->
@@ -457,12 +454,12 @@
 				<a href="#"><i class="fab fa-instagram "></i></a>
 			</li>
   		</ul>
-		<h1>weddingplanner@customerservice.dk</h1>
+		<h5>weddingplanner@customerservice.dk</h5>
 	</footer>
 	
 	<!-- Sign up || Login -->
-	<div class="form-popup" id="account-pop-up">
-		<form action="/action_page.php" class="form-container" method="post" name="questions">
+	<div class="form-section" id="account-form-section">
+		<form action="/action_page.php" class="form-container" id="account-form-container">
 			<div class="exit-row">
 				<div class="exit-col">
 					<i class="far fa-times-circle fa-2x" onclick="closeLogin()" aria-hidden="true"></i> 
@@ -471,13 +468,13 @@
 
 			<div class="btn-row">
 				<div class="col-25">
-					<button type="submit" class="login-btn" onclick="window.open('timeline.html');">Sign up</button>
+					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="window.open('under-construction.html');">Sign up</button>
 				</div>
 			</div>
 
 			<div class="btn-row">
 				<div class="col-25">
-					<button type="submit" class="login-btn" onclick="window.open('timeline.html');">Login</button>
+					<button type="submit" class="account-form-btn" id="login-btn" onclick="window.open('under-construction.html');">Login</button>
 				</div>
 			</div>
 		</form>

@@ -9,12 +9,9 @@
 	--light: #A4BC82;
 }
 
-html{
+html, body{
 	scroll-behavior: smooth;
-}
-
-
-body{
+	font-family: 'Rubik', sans-serif;
     max-width: 100%;
     max-height: 100%;
     text-rendering: optimizeLegibility;
@@ -22,9 +19,7 @@ body{
     font-size: 100%;
 	margin: 0;
 	color: var(--dark);
-	font-family: 'Rubik', sans-serif;
 }
-
 
 main{
 	display: grid;
@@ -32,7 +27,7 @@ main{
 }
 
 /* Hide elements on mobile version */
-#account-pop-up, #login-pop-up, #fa-line, #filter-section{
+#account-form, #signup-form, #login-form, #fa-line, #filter-section{
 	display: none;
 }
 
@@ -52,7 +47,6 @@ h1{
 	font-family:'Playfair Display', serif;
 	padding: 0;
 	margin: 0 0 4rem 0;
-    /*font-weight: 600;*/
 	text-align: center;
 	text-transform: uppercase;
 	color: white;
@@ -60,7 +54,6 @@ h1{
 }
 
 h5{
-	font-family: 'Rubik', sans-serif;
 	font-weight: 200;
 }
 
@@ -72,7 +65,8 @@ h5{
 
 header{
 	width: 100%;
-	height: 4em;
+	height: 3em;
+	padding: 0 0.5em 0 0.5em;
     margin: 0;
     background-position: center;
     background-size: cover;
@@ -84,11 +78,10 @@ header{
 		'nav-bar logo login';
 	grid-gap: 2em;
 	align-items: center;
-	/*overflow: hidden;*/
+	justify-content: center;
 	position: fixed;
 	opacity: 0.7;
 	z-index: 98;
-	padding: 0;
 }
 
 #nav-bar{
@@ -130,6 +123,8 @@ header{
 #x{
     color: var(--peach);
     padding: 0.2em;
+	font-size: 2em;
+	font-style: normal;
     position: fixed;
     z-index: 102;
     display: none;
@@ -137,8 +132,7 @@ header{
 
 /*Navigation bar*/
 nav {
-    background-color: rgba(0,0,0,0.60);
-    opacity: 1;
+    background: black;
 	position: fixed;
 	padding: 2em;
 	z-index: 100;
@@ -158,12 +152,14 @@ nav a{
 	
 }
 
-
-
-
 /*to toggle the burger menu*/
 #togglemenu:checked ~ nav{
 	display: block;
+}
+
+/* to set the menu opacity higher */
+#togglemenu:checked ~ header{
+	opacity: 0.9;
 }
 
 /*to get rid of the checkbox*/
@@ -187,29 +183,27 @@ nav a{
 }
 
 #logo img{
-	max-width: 50%;
+	max-width: 3em;
 	align-self: center;
 }
 
-#login-btn{
+/* Account icon for logging in */
+#account-btn{
     display: flex;
     background-color: transparent;
     border: none;
 	justify-content: flex-end;
 }
 
-#login-btn:focus{
+#account-btn:focus{
 	outline:none;
 }
 
-#login-btn i{
+#account-btn i{
     font-size: 2.5em;	
 }
-nav a:hover{
-	color: var(--peach);
-}
 
-
+/* Drop down menu from nav-bar */
 .dropdown-content{
 	position: absolute;
 	display: none;
@@ -222,51 +216,38 @@ nav a:hover{
 
 .dropdown-content li{
 	display: none;
-	
 }
 
 
-/* Style login/sign-up button */
-.login-btn {
-  	background-color: var(--peach);
-  	width: 100%;
-  	border: none;
-	padding: 0.2em;
-  	opacity: 1;
-    border-style: double;
-    border-radius: 1rem;
-  	font-size: 2em;
-}
+/* ------------- Sign up & Login pop-up ---------------- */
 
-/* ------------- Form ---------------- */
-
-/* The popup form - hidden by default */
-.form-popup {
-	display: none;
-    position: absolute;
-	width: 90%;
-    height: 50%;
-	margin: 1em;
+/* The popup form */
+#account-form{
+	position: fixed;
+    left: 0;
     top: 0;
     right: 0;
-    background-color: black;
-    opacity: 0.8;
     bottom: 0;
-    border-style: dashed;
-    z-index: 10009;
+    background-color: rgba(0,0,0,0.40);
+    z-index: 99;
+    display: none;
 }
 
 /* Add styles to the form container */
 .form-container {
-	  height: 100%;
-	  width: 100%;
-	  padding: 4em;
-	  display: flex;
-      justify-content: space-between;
-      flex-flow: column;
-	  background-color: black;
-	  font-family: 'Rubik', sans-serif;
-
+	height: 45%;
+	width: 80%;
+	position: fixed;
+	top: 2%;
+	right: 4%;
+	padding: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-flow: column;
+	background: rgba(0,0,0,0.70); 
+	color:rgba(0,0,0,0.55);
+	font-family: 'Rubik', sans-serif;
 }
 
 /* Full-width input fields */
@@ -282,14 +263,7 @@ nav a:hover{
   	outline: none;
 }
 
-label{
-	font-size: xx-large;
-	font-family: futura-pt, sans-serif;
-	/*font-weight: 300;*/
-	font-style: normal;
-	color: var(--dark-grey);
-}
-
+/* Exit icon */
 .exit-col{
 	width: 100%;
 }
@@ -304,6 +278,23 @@ label{
 	opacity: 0.9;
 }
 
+/* Sign up | Login buttons */
+.btn-row{
+	width: 10em;
+}
+
+.account-form-btn {
+	color: black; 
+    background:var(--peach);
+  	width: 100%;
+  	border: none;
+	padding: 0.2em;
+  	opacity: 0.9;
+    border-radius: 0.1em;
+  	font-size: 2em;
+	font-family: 'Rubik', sans-serif;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -311,11 +302,18 @@ label{
   clear: both;
 }
 
+/* Style 404 page */
 #under-construction{
-    position: fixed;
-    top: 10%;
-    left: 30%;
+    height: 700px;
+    padding: 10em 0 0 0;
+    display: flex;
+    justify-content: center;
 }
+
+#under-construction img{
+	max-height: 60%;
+}
+
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
 -------------------------------- SEARCH SECTION ---------------------------
@@ -369,7 +367,8 @@ label{
 .button{
   	border: none;
   	cursor: pointer;
-	background:var(--peach);
+	background:rgb(252, 187, 139);
+	color: rgb(76, 98, 80, 1);
 	opacity: 0.7;
 	display: inline-block;
 }
@@ -471,7 +470,6 @@ label{
 
 }
 
-
 .item{
 	height: 6em;
     width: 100%;
@@ -497,11 +495,14 @@ label{
     display: flex;
     flex-flow: column;
     align-items: center;
+    padding: 1em 0 1em 0;
 }
 
 .icons i{
-	padding: 0.8em;
-	color: #fbbc8f;
+    padding: 0.3em;
+    color: var(--dark);
+    background: var(--peach);
+	opacity: 0.7;
 }
 
 	/* -------------------------------------------------------------- */
@@ -727,11 +728,17 @@ footer li{
 	
 }
 
+/* Social media icons */
 .fa-facebook-f, .fa-twitter, .fa-instagram{
     display: block;
     padding: 0 0.5em 0 0.5em;
 }
 
+/* Info icon*/
+.fas.fa-info.fa-2x {
+	padding: 0.3em 0.6em 0.3em 0.6em;
+	margin-top: 1em;
+}
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
 ------------------------------- MEDIA QUERIES -----------------------------
@@ -746,28 +753,28 @@ footer li{
 		height: 4em;
 		padding: 0;
 	}
-	
+
 	#logo{
 		grid-area: nav-bar;
 		justify-items: flex-start;
 		margin-left: 2em;
 	}
-	
+
 	#logo img{
-	    max-width: 30%;
+		max-width: 3em;
 	}
-	
+
 	#nav-bar{
 		grid-area: logo;
 		padding: 0;
 		margin: 0;
 	}
-	
+
 	/* Burger menu dissapears */
 	#menuoff, #menuon, #x, #nav-bar span, #filter-btn-mobile, #arrow-down{
 		display: none;
 	}
-	
+
 	/* Nav-bar appears as desktop navbar */
 	nav{
 		display: inline-flex;
@@ -776,52 +783,50 @@ footer li{
 		padding: 0;
 		margin: 0;
 	}
-	
+
 	nav button{
 	padding: 1.5em 0;
 		margin: 0;
-}
+	}
 	
 	/* Nav-bar links get in a line */
 	nav a{
 		display: inline-block;
-		color: #4C6250;
+		color: var(--dark);
 		font-size: 1.2em;
 		padding: 0;
 		font-family: 'Rubik', sans-serif;
 		margin: 0;
 	}
-	
+
 	nav ul{
 		margin: 0;
 	}
-	
-	
-	
+
 	/* Change color on hover for the nav-bar and login icon */
 	nav a:hover{
 		color: var(--peach);
 	}
-	
+
 	nav a:active{
 		color: var(--peach);
 	}
-	
-	#login-btn{
-	    justify-content: flex-start;
-		color: #4C6250;
+
+	#account-btn{
+		justify-content: flex-start;
+		color: var(--dark);
 		margin-left: 8em;
 	}
-	
-	#login-btn:focus{
-	    outline: none;
+
+	#account-btn:focus{
+		outline: none;
 	}
-	
+
 	.dropdown{
 	position: relative;
 	margin: 0;
-}
-	
+	}
+
 	.dropdown-content{
 		margin: 0;
 		padding: 1.5rem 0 0;
@@ -832,27 +837,34 @@ footer li{
 		list-style: none;
 		padding: 0.25rem 0;
 		display: block;
-		
-}
+
+	}
 
 	.dropdown:hover > .dropdown-content{
 		display: block;
-}
+	}
 
 	.dropdown-content li a:hover{
 		color: var(--peach);
-}
+	}
 	
-	.form-popup{
+	#account-btn i:hover{
+	    color: var(--peach);
+
+	} 
+	
+	/* ------- Sign up ~ Login pop-up ------- */
+	#account-form-section{
 		margin: 0;
     	width: 25%;
     	height: 30%;
-		position: absolute;
+		position: fixed;
     	left: 59%;
 		top: 2%;
 	}
 	
-	.form-container{
+	#account-form-container{
+		position: fixed;
 	    padding: 0;
 		align-items: center;
     	display: flex;
@@ -863,11 +875,11 @@ footer li{
 	    width: 50%;
 	}
 	
-	.login-btn{
+	.account-form-btn{
 		width: 100%;
 	}
 	
-	.login-btn:before {
+	.account-form-btn:before {
 		content: "";
 		position: absolute;
 		background: var(--red);
@@ -880,21 +892,21 @@ footer li{
 		transition: right 0.09s ease-in;
 	}
 	
-	.login-btn:hover {
+	.account-form-btn:hover {
 		color: white;
 		transition: right 0.09s ease-in;
 		transform: scale(1.1);
-	}
-
-	#login-btn i:hover{
-	    color: var(--peach);
-
 	}
 	
 	.exit-col i:hover{
 		transform: scale(1.1);
 	}
 	
+	#under-construction img{
+	max-height: 60%;
+	}
+	
+	/* ------- Search section ------- */
 	.search-for-supplier{
 		min-height: 25rem;
 	}

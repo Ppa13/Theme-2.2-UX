@@ -11,6 +11,7 @@
 
 html, body{
 	scroll-behavior: smooth;
+	font-family: 'Rubik', sans-serif;
 	max-width: 100%;
     max-height: 100%;
 	margin: 0;
@@ -48,8 +49,11 @@ h1{
 	font-size: 2.5em;
 }
 
+h4{
+	
+}
+
 h5{
-	font-family: 'Rubik', sans-serif;
 	font-weight: 200;
 	font-style: normal;
 }
@@ -67,7 +71,8 @@ h5{
 
 header{
 	width: 100%;
-	height: 4em;
+	height: 3em;
+	padding: 0 0.5em 0 0.5em;
     margin: 0;
     background-position: center;
     background-size: cover;
@@ -79,11 +84,10 @@ header{
 		'nav-bar logo login';
 	grid-gap: 2em;
 	align-items: center;
-	/*overflow: hidden;*/
+	justify-content: center;
 	position: fixed;
 	opacity: 0.7;
 	z-index: 98;
-	padding: 0;
 }
 
 #nav-bar{
@@ -125,6 +129,8 @@ header{
 #x{
     color: var(--peach);
     padding: 0.2em;
+	font-size: 2em;
+	font-style: normal;
     position: fixed;
     z-index: 102;
     display: none;
@@ -132,13 +138,12 @@ header{
 
 /*Navigation bar*/
 nav {
-    background-color: rgba(0,0,0,0.60);
+    background-color: black;
     opacity: 1;
 	position: fixed;
 	padding: 2em;
 	z-index: 100;
-	display: none;
-	
+	display: none;	
 }
 
 /*Links in Navbar*/
@@ -149,12 +154,8 @@ nav a{
     min-width: 10em;
 	text-decoration: none;
 	text-align: center;
-	font-size: 1.6em;
-	
+	font-size: 1.6em;	
 }
-
-
-
 
 /*to toggle the burger menu*/
 #togglemenu:checked ~ nav{
@@ -182,15 +183,8 @@ nav a{
 }
 
 #logo img{
-	max-width: 50%;
+	max-width: 3em;
 	align-self: center;
-}
-
-#login-btn{
-    display: flex;
-    background-color: transparent;
-    border: none;
-	justify-content: flex-end;
 }
 
 #login-btn:focus{
@@ -219,43 +213,52 @@ nav a:hover{
 	display: none;
 	
 }
-/* Sign-up/login pop-up*/
+
+/* ------------- Sign up & Login pop-up ---------------- */
+
+/* The popup form */
 #account-form-section {
-	display: none;
-    position: absolute;
-	width: 90%;
-    height: 50%;
-	margin: 1em;
+	position: fixed;
+    left: 0;
     top: 0;
     right: 0;
-    background-color: black;
-    opacity: 0.8;
     bottom: 0;
-    border-style: dashed;
-    z-index: 10009;
+    background-color: rgba(0,0,0,0.40);
+    z-index: 99;
+    display: none;
 }
 
-
+/* Add styles to the form container */
 #account-form-container {
-	  height: 100%;
-	  width: 100%;
-	  padding: 4em;
-	  display: flex;
-      justify-content: space-between;
-      flex-flow: column;
-	  background-color: black;
-	  font-family: 'Rubik', sans-serif;
+	height: 45%;
+	width: 80%;
+	position: fixed;
+	top: 2%;
+	right: 4%;
+	padding: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-flow: column;
+	background: rgba(0,0,0,0.70); 
+	color:rgba(0,0,0,0.55);
+	font-family: 'Rubik', sans-serif;
 }
 
 .account-form-btn {
-  	background-color: var(--peach);
+	color: rgba(76,98,80,1); 
+    background:rgba(252,187,139,1);
   	width: 100%;
   	border: none;
 	padding: 0.2em;
   	opacity: 1;
-    border-style: double;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
   	font-size: 2em;
+	font-family: 'Rubik', sans-serif;
+}
+
+.btn-row {
+    width: 10em;
 }
 
 label{
@@ -279,7 +282,6 @@ label{
 
 /* Sign-up or sign-in button */
 #account-btn{
-	padding: 0;
     display: flex;
     background-color: transparent;
     border: none;
@@ -306,8 +308,7 @@ label{
 }
 
 #background-img{
-	background-image: url("../resources/web/collaborator.jpg");
-	margin-bottom: 1em;
+	background-image: url("../resources/web/collaborator/collaborator.jpg");
 	height: 14em;
 	display: flex;
 	align-items: center;
@@ -316,26 +317,29 @@ label{
 
 .page-title{
 	position: relative;
-	top: 30%;	
+	top: 20%;	
 	z-index: 1;
 	font-weight: 200;
 	font-size: 3rem;
 }
 
+#content-title{
+	color: black;
+	opacity: 0.8;
+}
+
 #page-content{
-    padding: 1em;
+    padding: 2em;
 	padding-bottom: 3em;
     display: flex;
     flex-flow: column;
     align-items: center;
-	color: #4c6250;
-	font-family: 'Rubik', sans-serif;
-	margin: 0 5rem;
-	font-size: 0.7rem;
+	font-size: 0.8em;
 }
 
 #become-supplier-btn{
 	background-color: var(--peach);
+	color: black;
 	width: 60%;
 	height: auto;
 	border: none;
@@ -343,8 +347,8 @@ label{
 	padding: 0.5em;
 	border-radius: 0.5rem;
 	font-size: 1.2em;
+	font-family: 'Rubik', sans-serif;
 	opacity: 0.8;
-	color: var(--dark);
 }
 
 #back-to-top{

@@ -1,21 +1,21 @@
 // Open login pop-up
 function openLogin(){
- 	document.getElementById("account-form").style.display="block";
+ 	document.getElementById("account-pop-up").style.display="block";
 }
 
 // Open logout pop-up
 function openLogout(){
-	document.getElementById("logout-form").style.display="block";
+	document.getElementById("logout-pop-up").style.display="block";
 }
 
 // Close login pop-up
 function closeLogin(){
-  	document.getElementById("account-form").style.display="none";
+  	document.getElementById("account-pop-up").style.display="none";
 }
 
 // Close logout pop-up
 function closeLogout(){
-	document.getElementById("logout-form").style.display="none";
+	document.getElementById("logout-pop-up").style.display="none";
 }
 
 // When the user scrolls down make button appear

@@ -1,20 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
+	<title>Wedding Planner</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../css/home.css" type="text/css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
-<!--Stylesheet link-->
-	<link rel="stylesheet" href="../css/home.css">
-	<script src="../js/supplier.js"></script>
-	<title>Wedding Planner</title>
+	<link href="https://fonts.googleapis.com/css?family=Khmer" rel="stylesheet">
+	<script src="../js/home.js"></script>
 </head>
 
 <body>
 	
 	<!-- Navigation -->
 	<header>
+		<!-- Login function -->
+		<button id="account-btn" onclick="openAccount()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
+		<!-- Logo -->
+		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
 		<!-- Burger menu -->			
 		<section class="" id="nav-bar">
 			<!--Checkbox to toggle the burger menu-->
@@ -58,144 +61,134 @@
 			<span></span>
 			<span></span>
 		</section>
-		<!-- Logo -->
-		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
-		<!-- Login function -->
-		<button id="login-btn" onclick="openForm()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
     </header>
 	
-	<main>
-		
+	<main>	
 		<!--First picture section-->
 		<section class="homepage-pictures">
-			
 			<!--First picture article-->
 			<article>
-				<p id="first-pic-text">WEDDING PLANNER</p>
+				<h1 id="first-pic-text">Wedding planner</h1>
 				<!--Start Planning button on the picture-->
 				<a class="start-planning-button" href="#">Start Planning</a>
 			</article>
 		</section>
 		
 		<!--Quote section-->
-		<section>
-			
-			<!--Quote-->
-			<p id="quote"><i>"The best thing to hold onto in life is each other."</i></p>
-			<p id="quote-name">-Audrey Hepburn</p>
+		<section id="quote-section">
+			<h2 id="quote">"The best thing to hold onto in life, is each other."</h2>
+			<h4 id="quote-name">-Audrey Hepburn</h4>
 		</section>
 		
-		<!--Second picture section-->
-		<section class="homepage-pictures">
-			
-			<!--Second picture-->
-			<a id="venue-pic" href="venue.html">
-				
-				<!--Venues text on top of image-->
-				<p id="venues-text">VENUES</p>
-			</a>
-			
-			
-			
-			
-		</section>
-		
-		<!--Smaller boxes section-->
-		<section id="boxes-section">
-			
-			<!--Florist box-->
-			<article>
-				
-				<!--Florist link with img-->
-				<a id="florist-box" href="florist.html">
-					<p class="box-text-first">FLORIST</p>
-				</a>
-				
+		<!-- Suppliers section -->
+		<section id="suppliers-section">
+			<!-- Venue box -->
+			<article class="supplier-box" id="venue-box">
+				<a href="venue.html">
+					<h1 class="supplier-title" id="venue-title">Venues</h1>
+				</a>	
+			</article>
+	
+			<!-- Photographer box -->
+			<article class="supplier-box" id="photographer-box">
+				<a href="photographer.html">
+					<h1 class="supplier-title" id="photographer-title">Photographer</h1>
+				</a>	
 			</article>
 			
-			<!--Dresses box-->
-			<article>
-				
-				<!--Dresses link with img-->
-				<a id="dresses-box" href="dress.html">
-					<p class="box-text-first">DRESSES</p>
+			<!-- Florist box -->
+			<article class="supplier-box" id="florist-box">
+				<a href="florist.html">
+					<h1 class="supplier-title" id="florist-title">Florist</h1>
 				</a>
-				
 			</article>
 			
-			<!--Rings box-->
-			<article>
-				
-				<!--Rings link with img-->
-				<a id="rings-box" href="photographer.html">
-					<p class="box-text-third">PHOTOGRAPHER</p>
+			<!-- Dress box -->
+			<article class="supplier-box" id="dress-box">	
+				<a href="dress.html">
+					<h1 class="supplier-title" id="dress-title">Dresses</h1>
 				</a>
-				
 			</article>
 			
-			<!--Cakes box-->
-			<article>
-				
-				<!--Cakes link with img-->
-				<a id="cakes-box" href="bakeri.html">
-					<p class="box-text-second">CAKES</p>
+			<!-- Cake box -->
+			<article class="supplier-box" id="cake-box">
+				<a href="cake.html">
+					<h1 class="supplier-title" id="cake-title">Cakes</h1>
 				</a>
-				
 			</article>
 		</section>
-		
-		
 	</main>
 	
+    <!-- Contact information and social media icons -->
 	<footer>
-			<ul>
-		  	  	<a href="#"><i class="fab fa-facebook-f"></i></a>
+		<ul>
+			<li>
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
 				<a href="#"><i class="fab fa-twitter "></i></a> 
 				<a href="#"><i class="fab fa-instagram "></i></a>
-  			</ul>
-			<h1>weddingplanner@customerservice.dk</h1>
-		</footer>
+			</li>
+  		</ul>
+		<h5>weddingplanner@customerservice.dk</h5>
+	</footer>
 	
 	<!-- Back to top function -->
-		<button onclick="topFunction()" id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+	<button onclick="topFunction()" id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 	
-	<!-- Sign up || Login -->
-	<div class="form-popup" id="account-pop-up">
-		<form action="/action_page.php" class="form-container" method="post" name="questions">
+	<!-- Account form -->
+	<div class="form-popup" id="account-form">
+		<form action="/action_page.php" class="form-container" id="account-form-container">
 			<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-2x" onclick="closeLogin()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-2x" onclick="closeAccount()" aria-hidden="true"></i> 
 				</div>
 			</div>
 
 			<div class="btn-row">
 				<div class="col-25">
-					<button type="submit" class="login-btn" onclick="window.open('timeline.html');">Sign up</button>
+					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="openSignup()">Sign up</button>
 				</div>
 			</div>
 
 			<div class="btn-row">
 				<div class="col-25">
-					<button type="submit" class="login-btn" onclick="window.open('timeline.html');">Login</button>
+					<button type="submit" class="account-form-btn" id="login-btn" onclick="openLogin()">Login</button>
 				</div>
 			</div>
 		</form>
 	</div>
 
-	<!-- Login  -->
-	<section class="form-popup" id="login-form">
+	<!-- Signup form -->
+	<section class="form-popup" id="signup-form">
 		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-3x" onclick="closeForm()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-3x" onclick="closeSignup()" aria-hidden="true"></i> 
 				</div>
 			</div>
 
+			<div class="name-row">
+				<div class="col-25">
+					<label for="name">Name</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="name" name="name" required>
+				</div>
+			</div>
+			
+			<div class="surname-row">
+				<div class="col-25">
+					<label for="surname">Surname</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="surname" name="surname" required>
+				</div>
+			</div>
+			
 			<div class="email-row">
 				<div class="col-25">
 					<label for="email">Email Address</label>
 				</div>
 				<div class="col-75">
-					<input type="email" id="email" name="email" required>
+					<input type="email" class="email" name="email" required>
 				</div>
 			</div>
 
@@ -204,7 +197,51 @@
 					<label for="password">Password</label>
 				</div>
 				<div class="col-75">
-					<input type="password" id="password" name="password" required>
+					<input type="password" class="password" name="password" required>
+				</div>
+			</div>
+			
+			<div class="repeat-password-row">
+				<div class="col-25">
+					<label for="repeat-password">Repeat password</label>
+				</div>
+				<div class="col-75">
+					<input type="password" id="repeat-password" name="repeat-password" required>
+				</div>
+			</div>
+
+			<div class="login-row">
+				<div class="col-25">
+					<button type="submit" class="login-btn">Create account</button>
+				</div>
+			</div>
+		</form>
+	</section>
+	
+	
+	<!-- Login form -->
+	<section class="form-popup" id="login-form">
+		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
+				<div class="exit-col">
+					<i class="far fa-times-circle fa-3x" onclick="closeLogin()" aria-hidden="true"></i> 
+				</div>
+			</div>
+
+			<div class="email-row">
+				<div class="col-25">
+					<label for="email">Email Address</label>
+				</div>
+				<div class="col-75">
+					<input type="email" class="email" name="email" required>
+				</div>
+			</div>
+
+			<div class="password-row">
+				<div class="col-25">
+					<label for="password">Password</label>
+				</div>
+				<div class="col-75">
+					<input type="password" class="password" name="password" required>
 				</div>
 			</div>
 

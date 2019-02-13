@@ -1,21 +1,33 @@
-// Open login pop-up
-function openLogin(){
- 	document.getElementById("account-form").style.display="block";
+// Open account form
+function openAccount(){
+  document.getElementById("account-form").style.display="block";
+  document.getElementById("account-btn").style.visibility="hidden";
 }
 
-// Open logout pop-up
-function openLogout(){
-	document.getElementById("logout-form").style.display="block";
-}
-
-// Close login pop-up
-function closeLogin(){
+// Close account form
+function closeAccount(){
   	document.getElementById("account-form").style.display="none";
+	document.getElementById("account-btn").style.visibility="visible";
 }
 
-// Close logout pop-up
-function closeLogout(){
-	document.getElementById("logout-form").style.display="none";
+// Open login form
+function openLogin(){
+	document.getElementById("login-form").style.display="block";
+}
+
+// Close login form
+function closeLogin(){
+	document.getElementById("login-form").style.display="none";
+}
+
+// Open signup form
+function openSignup(){
+	document.getElementById("signup-form").style.display="block";
+}
+
+// Close signup form
+function closeSignup(){
+	document.getElementById("signup-form").style.display="none";
 }
 
 // When the user scrolls down make button appear

@@ -13,6 +13,10 @@
 <body>
 	<!-- Navigation -->
 	<header>
+		<!-- Login function -->
+		<button id="account-btn" onclick="openAccount()"><i class="far fa-user fa-1x" aria-hidden="true"></i></button>
+		<!-- Logo -->
+		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
 		<!-- Burger menu -->			
 		<section class="" id="nav-bar">
 			<!--Checkbox to toggle the burger menu-->
@@ -28,7 +32,7 @@
 				<!--Links in Navbar-->
 				<a href="index.html">Home</a>
 				<section class="dropdown">
-					<a href="profile.html">Planning Tools</a>
+					<a href="#">Planning Tools</a>
 						<ul class="dropdown-content">
 							<li><a href="profile.html">My Information</a></li>
 							<li><a href="profile.html">Checklist</a></li>
@@ -39,12 +43,12 @@
 						</ul>
 				</section>
 				<section class="dropdown">
-					<a href="venue.html">Wedding Suppliers</a>
+					<a href="#">Wedding Suppliers</a>
 						<ul class="dropdown-content">
 							<li><a href="venue.html">Venues</a></li>
 							<li><a href="photographer.html">Photographers</a></li>
 							<li><a href="florist.html">Florists</a></li>
-							<li><a href="bakeri.html">Bakers</a></li>
+							<li><a href="cake.html">Bakers</a></li>
 							<li><a href="dress.html">Dresses</a></li>
 						</ul>
 				</section>
@@ -56,9 +60,6 @@
 			<span></span>
 			<span></span>
 		</section>
-		<!-- Logo -->
-		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
-		<button id="account-btn" onclick="openLogin()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
     </header>
 
      <!-- The content of the page -->
@@ -81,7 +82,7 @@
 		
 		
 		<!-- Back to top function -->
-		<button onclick="topFunction()" id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+		<button onclick="topFunction()" id="back-to-top" title="Go to top"><i class="fas fa-arrow-up fa-1x"></i></button>
 	</main>
 
     <!-- Contact information and social media icons -->
@@ -96,24 +97,24 @@
 		<h5>weddingplanner@customerservice.dk</h5>
 	</footer>
 	
-		<!-- Account form -->
+<!-- Account form -->
 	<div class="form-popup" id="account-form">
 		<form action="/action_page.php" class="form-container" id="account-form-container">
 			<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-2x" onclick="closeLogin()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-2x" onclick="closeAccount()" aria-hidden="true"></i> 
 				</div>
 			</div>
 
 			<div class="btn-row">
 				<div class="col-25">
-					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="window.open('under-construction.html');">Sign up</button>
+					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="openSignup()">Sign up</button>
 				</div>
 			</div>
 
 			<div class="btn-row">
 				<div class="col-25">
-					<button type="submit" class="account-form-btn" id="login-btn" onclick="window.open('under-construction.html');">Login</button>
+					<button type="submit" class="account-form-btn" id="login-btn" onclick="openLogin()">Login</button>
 				</div>
 			</div>
 		</form>
@@ -123,7 +124,7 @@
 	<section class="form-popup" id="signup-form">
 		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-3x" onclick="closeForm()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-3x" onclick="closeSignup()" aria-hidden="true"></i> 
 				</div>
 			</div>
 
@@ -185,7 +186,7 @@
 	<section class="form-popup" id="login-form">
 		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-3x" onclick="closeForm()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-3x" onclick="closeLogin()" aria-hidden="true"></i> 
 				</div>
 			</div>
 

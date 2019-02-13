@@ -1,21 +1,33 @@
-// Open login pop-up
+// Open account form
+function openAccount(){
+    document.getElementById("account-form").style.display="block";
+    document.getElementById("account-btn").style.visibility="hidden";
+}
+
+// Close account form
+function closeAccount(){
+    document.getElementById("account-form").style.display="none";
+	document.getElementById("account-btn").style.visibility="visible";
+}
+
+// Open login form
 function openLogin(){
- 	document.getElementById("account-pop-up").style.display="block";
+	document.getElementById("login-form").style.display="block";
 }
 
-// Open logout pop-up
-function openLogout(){
-	document.getElementById("logout-pop-up").style.display="block";
-}
-
-// Close login pop-up
+// Close login form
 function closeLogin(){
-  	document.getElementById("account-pop-up").style.display="none";
+	document.getElementById("login-form").style.display="none";
 }
 
-// Close logout pop-up
-function closeLogout(){
-	document.getElementById("logout-pop-up").style.display="none";
+// Open signup form
+function openSignup(){
+	document.getElementById("signup-form").style.display="block";
+}
+
+// Close signup form
+function closeSignup(){
+	document.getElementById("signup-form").style.display="none";
 }
 
 // When the user scrolls down make button appear
@@ -29,10 +41,6 @@ function scrollFunction(){
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction(){
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+   document.body.scrollTop = 0;
+   document.documentElement.scrollTop = 0;
 }
-
-
-
-

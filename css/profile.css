@@ -1,20 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i|Rubik:300');
 * {
 	box-sizing: border-box;
 }
 
 :root {
 	--peach: #fbbc8f;
-	--dark-green: #4c6250;
-	--light-green: #a4bc82;
+	--dark: #4C6250;
+	--light: #A4BC82;
 }
 
-html{
+html, body{
 	scroll-behavior: smooth;
-}
-
-
-
-body{
+	font-family: 'Rubik', sans-serif;
+	color: var(--dark);
     max-width: 100%;
     max-height: 100%;
     text-rendering: optimizeLegibility;
@@ -23,28 +21,51 @@ body{
 	margin: 0;
 }
 
-
-/*main{
+main{
 	display: grid;
 	grid-template-rows: auto;
-}*/
+}
 
-/* Hide elements on mobile version */
-#account-pop-up, #login-pop-up, #fa-line, #filter-section{
-	display: none;
+img{
+	width: 100%;
+	background-size: cover;
+    background-position:center;
+	background-repeat: no-repeat;
 }
 
 a{
 	display: contents;
-	color: black;
+	text-decoration: none;
+	color: white;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h4, h5{
+	font-weight: 200;
 }
 
 h1{
-	font-family: 'Rubik', sans-serif;
-	font-weight: 200;
+	font-family:'Playfair Display', serif;
+	padding: 0;
 	text-align: center;
+	text-transform: uppercase;
+	font-size: 2em;
 }
 
+/* Hide elements on mobile version */
+#account-form, #signup-form, #login-form, #fa-line, #filter-section{
+	display: none;
+}
 
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
@@ -69,12 +90,25 @@ header{
 	align-items: center;
 	justify-content: center;
 	position: fixed;
-	opacity: 0.7;
+	opacity: 0.8;
 	z-index: 98;
 }
 
-#nav-bar{
+#logo{
 	display: grid;
+    justify-items: center;
+	color: black;
+}
+
+#logo img{
+	max-width: 3em;
+	align-self: center;
+}
+
+#nav-bar {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
 }
 
 /*Burger menu - Menu On*/
@@ -101,8 +135,8 @@ header{
 
 #nav-bar span{
 	display: block;
-	width: 2em;
-	height: 3px;
+	width: 1.6em;
+	height: 2px;
 	background: black;
 	margin-bottom: 4px;
 	z-index: 101;
@@ -110,40 +144,38 @@ header{
 
 /* Close button (X) for burger menu*/
 #x{
-    color: var(--peach);
     padding: 0.2em;
 	font-size: 2em;
 	font-style: normal;
     position: fixed;
+	top: 1%;
+    right: 4%;
     z-index: 102;
     display: none;
+	opacity: 0.9;
 }
 
 /*Navigation bar*/
 nav {
-    background-color: rgba(0,0,0,0.60);
-    opacity: 1;
-	position: fixed;
+    background: white;
+    position: fixed;
+    top: 2%;
+    right: 4%;
 	padding: 2em;
 	z-index: 100;
-	display: none;
-	
+	display: none;	
 }
 
 /*Links in Navbar*/
 nav a{
-	color: white;
+	color: var(--dark);
 	display: block;
 	padding-bottom: 2em;
     min-width: 10em;
 	text-decoration: none;
 	text-align: center;
-	font-size: 1.6em;
-	
+	font-size: 1.6em;	
 }
-
-
-
 
 /*to toggle the burger menu*/
 #togglemenu:checked ~ nav{
@@ -165,34 +197,9 @@ nav a{
 	display: block;
 }
 
-#logo{
-	display: grid;
-    justify-items: center;
+#togglemenu:checked ~ span{
+	display: none;
 }
-
-#logo img{
-	max-width: 3em;
-	align-self: center;
-}
-
-#login-btn{
-    display: flex;
-    background-color: transparent;
-    border: none;
-	justify-content: flex-end;
-}
-
-#login-btn:focus{
-	outline:none;
-}
-
-#login-btn i{
-    font-size: 2.5em;	
-}
-nav a:hover{
-	color: var(--peach);
-}
-
 
 .dropdown-content{
 	position: absolute;
@@ -209,90 +216,109 @@ nav a:hover{
 	
 }
 
-/* ------------- Form ---------------- */
+/* Sign-up or sign-in button */
+#account-btn{
+    display: flex;
+    background-color: transparent;
+    border: none;
+	justify-content: flex-start;
+	padding: 0;
+	color: black;
+}
 
-/* The popup form - hidden by default */
+#account-btn i{
+    font-size: 2em;	
+}
+
+/* ------------- Sign up & Login pop-up ---------------- */
+
+/* The popup form */
 .form-popup {
-	display: none;
-    position: absolute;
-	width: 90%;
-    height: 50%;
-	margin: 1em;
+	position: fixed;
+    left: 0;
     top: 0;
     right: 0;
-    background-color: black;
-    opacity: 0.8;
     bottom: 0;
-    border-style: dashed;
-    z-index: 10009;
+    background-color: rgba(0,0,0,0.40);
+    z-index: 99;
+    display: none;
 }
 
 /* Add styles to the form container */
 .form-container {
-	  height: 100%;
-	  width: 100%;
-	  padding: 4em;
-	  display: flex;
-      justify-content: space-between;
-      flex-flow: column;
-	  background-color: black;
+	height: 45%;
+	width: 80%;
+	position: fixed;
+	top: 2%;
+	left: 4%;
+	padding: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-flow: column;
+	background: rgba(0,0,0,0.70); 
+	color:rgba(0,0,0,0.55);
 }
 
-/* Full-width input fields */
-.form-container input[type=text],input[type=email], textarea{
-  	border: none;
-  	background: #f1f1f1;
-  	width: 20em;
+/* ------------- Sign up & Login pop-up ---------------- */
+
+/* The popup form */
+#account-form {
+    display: none;
+	position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.40);
+    z-index: 99;
 }
 
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, input[type=email]:focus, textarea:focus{
-  	background-color: #ddd;
-  	outline: none;
+/* Add styles to the form container */
+#account-form-container {
+	height: 45%;
+	width: 80%;
+	position: fixed;
+	top: 2%;
+	left: 4%;
+	padding: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-flow: column;
+	background: rgba(253,253,253,0.50); 
+	color:rgba(0,0,0,0.55);
 }
 
-/* Style send button */
-.login-btn {
-  	background-color: var(--peach);
-  	width: 100%;
-  	color: black;
-  	border: none;
-  	cursor: pointer;
-	padding: 0.2em;
-  	opacity: 1;
-    border-style: double;
-    border-radius: 1rem;
-  	font-size: 2em;
-  	font-family: futura-pt, sans-serif;
-  	font-weight: 300;
-  	font-style: normal;
-  	transition:         0.08s ease-in;
-	-o-transition:      0.08s ease-in;
-	-ms-transition:     0.08s ease-in;
-	-moz-transition:    0.08s ease-in;
-	-webkit-transition: 0.08s ease-in;
-}
-
-label{
-	font-size: xx-large;
-	font-family: futura-pt, sans-serif;
-	font-weight: 300;
-	font-style: normal;
-	color: var(--dark-grey);
-}
-
+/* Exit icon */
 .exit-col{
 	width: 100%;
 }
 
 .exit-col i{
-    color: white;
+    color: var(--dark);
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     cursor: pointer;
     padding: 0.2em;
 	opacity: 0.9;
+}
+
+/* Sign up | Login buttons */
+.btn-row{
+	width: 10em;
+}
+
+.account-form-btn {
+    font-weight: 300;
+    background: var(--peach);
+    width: 100%;
+    padding: 15px 32px;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+	border-color: var(--dark);
+    border-style: solid;	
 }
 
 /* Clear floats after the columns */
@@ -302,13 +328,21 @@ label{
   clear: both;
 }
 
+/* Style 404 page */
 #under-construction{
-	display: flex;
+    height: 700px;
+    padding: 10em 0 0 0;
+    display: flex;
     justify-content: center;
 }
+
+#under-construction img{
+	max-height: 60%;
+}
+
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
--------------------------------- SEARCH SECTION ---------------------------
+------------------------------------ MAIN  --------------------------------
 ---------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
 
@@ -663,88 +697,49 @@ label{
 }
 
 #back-to-top {
-  display: none;
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
-  z-index: 99;
-  font-size: 1.2em;
-  border: none;
-  outline: none;
-  background-color: var(--peach);
-  color: white;
-  padding: 0.8em;
-  border-radius: 4px;
+	display: none;
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	z-index: 200;
+	font-size: 1.2em;
+	border: none;
+	border-radius: 0.2em;
+	border-color: var(--peach);
+	outline: none;
+	background-color: var(--dark);
+	color: antiquewhite;
+	padding: 0.8em;
+	opacity: 0.8;
 }
-
 
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
 -------------------------------------- FOOTER -----------------------------
 ---------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-
-footer{
-	width: 100%;
-    height: 100%;
-	display:flex;
-	justify-content: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-	padding: 0.5em;
-	text-align: center;
-	opacity: 0.9;
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5em 0 0.5em;
+    opacity: 0.9;
 }
 
 footer a {
-    text-decoration: none;
-    color: #3a3a3c;
+    color: var(--dark);
 }
 
-footer ul {
+footer li{
     display: flex;
-    padding: 0;
-	margin: 0;
-    list-style: none;    
-
+    align-items: center;
+	padding: 0 0.5em 0 0;
 }
 
-footer h1{
-	text-align: center;
-    font-size: 0.9em;
-	padding: 0.3em;
-	margin: 0;
-	vertical-align: middle;
-}
-
-.fa:hover {
-    opacity: 0.7;
-}
-.fa-facebook-f {
+.fa-facebook-f, .fa-twitter, .fa-instagram{
     display: block;
-    padding: 8px;
-    max-width: 80px;
-    max-height: 80px;
-    border-radius: 50%;
-    text-decoration: none;
+    padding: 0 0.5em 0 0.5em;
 }
-.fa-twitter {
-    display: block;
-    padding: 8px;
-    max-width: 80px;
-    max-height: 80px;
-    border-radius: 50%;
-    text-decoration: none;
-}
-.fa-instagram {
-	display: block;
-    padding: 8px;
-    max-width: 80px;
-    max-height: 80px;
-    border-radius: 50%;
-    text-decoration: none;
-}
-
 
 /*------PROFILE-----*/
 
@@ -1250,15 +1245,16 @@ footer h1{
 
 @media screen and (min-width: 700px){
 	
+	header{
+		height: auto;
+		padding: 0.3em;
+	}
+	
 	/* Reposition nav-bar items */
 	#logo{
 		grid-area: nav-bar;
 		justify-items: flex-start;
 		margin-left: 2em;
-	}
-	
-	#logo img{
-	    max-width: 30%;
 	}
 	
 	#nav-bar{
@@ -1300,8 +1296,6 @@ footer h1{
 		margin: 0;
 	}
 	
-	
-	
 	/* Change color on hover for the nav-bar and login icon */
 	nav a:hover{
 		color: var(--peach);
@@ -1310,13 +1304,7 @@ footer h1{
 	nav a:active{
 		color: var(--peach);
 	}
-	
-	#login-btn{
-	    justify-content: flex-start;
-		color: #4C6250;
-		margin-left: 8em;
-	}
-	
+
 	#login-btn:focus{
 	    outline: none;
 	}
@@ -1337,35 +1325,52 @@ footer h1{
 		padding: 0.25rem 0;
 		display: block;
 		
-}
+	}
 
 	.dropdown:hover > .dropdown-content{
 		display: block;
-}
+	}
 
 	.dropdown-content li a:hover{
 		color: var(--peach);
-}
-	
-	.form-popup{
-		margin: 0;
-    	width: 25%;
-    	height: 30%;
-		position: absolute;
-    	left: 59%;
-		top: 2%;
+	}
+	#account-btn{
+		color: var(--dark);
 	}
 	
-	.form-container{
-	    padding: 0;
-		align-items: center;
-    	display: flex;
-    	justify-content: space-evenly;
+	#account-form-container{
+		display: flex;
+		flex-flow: row;
+		justify-content: space-evenly;
+		height: 30%;
+		width: 30%;
+		left: 53%;
+		padding: 2em;
 	}
 	
-	.btn-row{
-	    width: 50%;
+	.account-form-btn{
+		opacity: 0.9;
 	}
+
+	/* Signup/Login buttons */
+	.account-form-btn:hover{
+		-moz-transition: opacity 0.2s; /* Firefox */
+		-webkit-transition: opacity 0.2s; /* Safari and Chrome */
+		-o-transition: opacity 0.2s; /* Opera */
+		transition: opacity 0.2s;
+		opacity: 1;
+		transform: scale(1.1);
+	}
+	
+	/* Close account form */
+	.exit-col i{
+		left: 90%;
+		padding: 0.3em 0.3em 0 0;
+	}
+	
+	.exit-col i:hover{
+		transform: scale(1.1);
+	}	
 	
 	.login-btn{
 		width: 100%;
@@ -1395,7 +1400,7 @@ footer h1{
 
 	}
 	
-		#login-btn{
+	#login-btn{
 	    justify-content: flex-start;
 	}
 	
@@ -1770,20 +1775,6 @@ footer h1{
 	#dress8{
 		background-image: url("../resources/web/dresses/dress9-xl.jpg");
 	}
-
-	
-	/* Footer styling */
-	footer h1 {
-    	font-size: 1.5em;
-	}
-	
-	footer ul{
-	    padding: 0.3em;
-	}
-	
-	footer ul a i{
-		font-size: 1.5em;
-	}
 	
 	#profile-text{
 	position: absolute;
@@ -1931,7 +1922,13 @@ footer h1{
 		padding-top: 2rem;
 	}
 	
+	/* Footer styling */
+	footer h5{
+	    font-size: 1.2em;
+	}
+	
+	footer a{
+		font-size: 1.2em;
+	}	
 	
 }
-/* Tablet */
-

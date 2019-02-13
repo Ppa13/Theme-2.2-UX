@@ -10,25 +10,26 @@
 }
 
 html, body{
+	min-width: 100%;
+    min-height: 100%;
+	margin: 0;
+	padding: 0;
 	scroll-behavior: smooth;
 	font-family: 'Rubik', sans-serif;
-    max-width: 100%;
-    max-height: 100%;
-    text-rendering: optimizeLegibility;
-    line-height: 1.4;
+	font-weight: 200;
+	font-style: normal;
+    text-decoration: none;
+	text-rendering: optimizeLegibility;
+    font-kerning: none;
+    line-height: 1.5;
+	white-space: 1.2;
     font-size: 100%;
-	margin: 0;
 	color: var(--dark);
 }
 
 main{
 	display: grid;
 	grid-template-rows: auto;
-}
-
-/* Hide elements on mobile version */
-#account-form, #signup-form, #login-form, #fa-line, #filter-section{
-	display: none;
 }
 
 a{
@@ -57,6 +58,11 @@ h5{
 	font-weight: 200;
 }
 
+/* Hide elements on mobile version */
+#account-form, #signup-form, #login-form, #fa-line, #filter-section{
+	display: none;
+}
+
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
 -------------------------------- NAVIGATION -------------------------------
@@ -80,12 +86,25 @@ header{
 	align-items: center;
 	justify-content: center;
 	position: fixed;
-	opacity: 0.7;
+	opacity: 0.8;
 	z-index: 98;
 }
 
-#nav-bar{
+#logo{
 	display: grid;
+    justify-items: center;
+	color: black;
+}
+
+#logo img{
+	max-width: 3em;
+	align-self: center;
+}
+
+#nav-bar {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
 }
 
 /*Burger menu - Menu On*/
@@ -112,8 +131,8 @@ header{
 
 #nav-bar span{
 	display: block;
-	width: 2em;
-	height: 3px;
+	width: 1.6em;
+	height: 2px;
 	background: black;
 	margin-bottom: 4px;
 	z-index: 101;
@@ -121,45 +140,42 @@ header{
 
 /* Close button (X) for burger menu*/
 #x{
-    color: var(--peach);
     padding: 0.2em;
 	font-size: 2em;
 	font-style: normal;
     position: fixed;
+	top: 1%;
+    right: 4%;
     z-index: 102;
     display: none;
+	opacity: 0.9;
 }
 
 /*Navigation bar*/
 nav {
-    background: black;
-	position: fixed;
+    background: white;
+    position: fixed;
+    top: 2%;
+    right: 4%;
 	padding: 2em;
 	z-index: 100;
-	display: none;
-	
+	display: none;	
 }
 
 /*Links in Navbar*/
 nav a{
-	color: white;
+	color: var(--dark);
 	display: block;
 	padding-bottom: 2em;
     min-width: 10em;
 	text-decoration: none;
 	text-align: center;
-	font-size: 1.6em;
-	
+	font-size: 1.6em;	
 }
 
 /*to toggle the burger menu*/
 #togglemenu:checked ~ nav{
 	display: block;
-}
-
-/* to set the menu opacity higher */
-#togglemenu:checked ~ header{
-	opacity: 0.9;
 }
 
 /*to get rid of the checkbox*/
@@ -177,33 +193,10 @@ nav a{
 	display: block;
 }
 
-#logo{
-	display: grid;
-    justify-items: center;
+#togglemenu:checked ~ span{
+	display: none;
 }
 
-#logo img{
-	max-width: 3em;
-	align-self: center;
-}
-
-/* Account icon for logging in */
-#account-btn{
-    display: flex;
-    background-color: transparent;
-    border: none;
-	justify-content: flex-end;
-}
-
-#account-btn:focus{
-	outline:none;
-}
-
-#account-btn i{
-    font-size: 2.5em;	
-}
-
-/* Drop down menu from nav-bar */
 .dropdown-content{
 	position: absolute;
 	display: none;
@@ -216,8 +209,22 @@ nav a{
 
 .dropdown-content li{
 	display: none;
+	
 }
 
+/* Sign-up or sign-in button */
+#account-btn{
+    display: flex;
+    background-color: transparent;
+    border: none;
+	justify-content: flex-start;
+	padding: 0;
+	color: black;
+}
+
+#account-btn i{
+    font-size: 2em;	
+}
 
 /* ------------- Sign up & Login pop-up ---------------- */
 
@@ -233,21 +240,23 @@ nav a{
     display: none;
 }
 
+#account-form-container{
+	position: fixed;
+	top: 2%;
+	left: 4%;
+}
+
 /* Add styles to the form container */
 .form-container {
 	height: 45%;
 	width: 80%;
-	position: fixed;
-	top: 2%;
-	right: 4%;
 	padding: 3em;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	flex-flow: column;
-	background: rgba(0,0,0,0.70); 
+	background: rgba(253,253,253,0.50); 
 	color:rgba(0,0,0,0.55);
-	font-family: 'Rubik', sans-serif;
 }
 
 /* Full-width input fields */
@@ -269,10 +278,10 @@ nav a{
 }
 
 .exit-col i{
-    color: white;
+    color: var(--dark);
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     cursor: pointer;
     padding: 0.2em;
 	opacity: 0.9;
@@ -284,15 +293,14 @@ nav a{
 }
 
 .account-form-btn {
-	color: black; 
-    background:var(--peach);
-  	width: 100%;
-  	border: none;
-	padding: 0.2em;
-  	opacity: 0.9;
-    border-radius: 0.1em;
-  	font-size: 2em;
-	font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    background: var(--peach);
+    width: 100%;
+    padding: 15px 32px;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+	border-color: var(--dark);
+    border-style: solid;
 }
 
 /* Clear floats after the columns */
@@ -366,7 +374,6 @@ nav a{
 
 .button{
   	border: none;
-  	cursor: pointer;
 	background:rgb(252, 187, 139);
 	color: rgb(76, 98, 80, 1);
 	opacity: 0.7;
@@ -375,6 +382,7 @@ nav a{
 
 #filter-btn-mobile{
 	display: block;
+	background:rgb(252, 187, 139);
 }
 
 .type-row{
@@ -386,7 +394,7 @@ nav a{
 	/* -------------------------------------------------------------- */
 
 #search-for-venue{
-	background-image: url(../resources/sweet-ice-cream-photography-399226-unsplash.jpg);
+	background-image: url("../resources/mobile/venues/venue-xs.jpg");
 	
 }
 
@@ -411,7 +419,7 @@ nav a{
 	/* -------------------------------------------------------------- */
 
 #search-for-bakeri{
-	background-image: url("../resources/mobile/bakeries/bakeri-xs.jpg");
+	background-image: url("../resources/mobile/cakes/cake-xs.jpg");
 }
 
 	/* -------------------------------------------------------------- */
@@ -456,7 +464,7 @@ nav a{
 	display: flex;
 	flex-flow: column;
 	align-items: center;
-	border: 2px solid var(--peach);
+	border: 2px solid rgba(251,188,143,0.8);
 	margin-bottom: 3em;
 	font-family: 'Rubik', sans-serif;
 
@@ -501,8 +509,7 @@ nav a{
 .icons i{
     padding: 0.3em;
     color: var(--dark);
-    background: var(--peach);
-	opacity: 0.7;
+	opacity: 0.8;
 }
 
 	/* -------------------------------------------------------------- */
@@ -618,35 +625,35 @@ nav a{
 	/* -------------------------------------------------------------- */
 
 #bakeri1{
-	background-image: url("../resources/mobile/bakeries/bakeri1-xs.jpg"); 
+	background-image: url("../resources/mobile/cakes/cake1-xs.jpg"); 
 }
 
 #bakeri2{
-	background-image: url("../resources/mobile/bakeries/bakeri2-xs.jpg"); 
+	background-image: url("../resources/mobile/cakes/cake2-xs.jpg"); 
 }
 
 #bakeri3{
-	background-image: url("../resources/mobile/bakeries/bakeri3-xs.jpg"); 
+	background-image: url("../resources/mobile/cakes/cake3-xs.jpg"); 
 }
 
 #bakeri4{
-	background-image: url("../resources/mobile/bakeries/bakeri4-xs.jpg"); 
+	background-image: url("../resources/mobile/cakes/cake4-xs.jpg"); 
 }
 
 #bakeri5{
-	background-image: url("../resources/mobile/bakeries/bakeri5-xs.jpg"); 
+	background-image: url("../resources/mobile/cakes/cake5-xs.jpg"); 
 }
 
 #bakeri6{
-	background-image: url("../resources/mobile/bakeries/bakeri6-xs.jpg"); 
+	background-image: url("../resources/mobile/cakes/cake6-xs.jpg"); 
 }
 
 #bakeri7{
-	background-image: url("../resources/mobile/bakeries/bakeri7-xs.jpg"); 
+	background-image: url("../resources/mobile/cakes/cake7-xs.jpg"); 
 }
 
 #bakeri8{
-	background-image: url("../resources/mobile/bakeries/bakeri8-xs.jpg"); 
+	background-image: url("../resources/mobile/cakes/cake8-xs.jpg");
 }
 
 	/* -------------------------------------------------------------- */
@@ -686,21 +693,21 @@ nav a{
 }
 
 #back-to-top {
-  display: none;
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
-  z-index: 99;
-  font-size: 1.2em;
-  border: none;
-  outline: none;
-  background-color: var(--peach);
-  color: white;
-  padding: 0.8em;
-  border-radius: 4px;
-	
+	display: none;
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	z-index: 200;
+	font-size: 1.2em;
+	border: none;
+	border-radius: 0.2em;
+	border-color: var(--peach);
+	outline: none;
+	background-color: var(--dark);
+	color: antiquewhite;
+	padding: 0.8em;
+	opacity: 0.8;
 }
-
 
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
@@ -714,7 +721,6 @@ footer{
 	align-items: center;
 	padding: 0 0.5em 0 0.5em;
 	opacity: 0.9;
-	
 }
 
 footer a {
@@ -739,6 +745,7 @@ footer li{
 	padding: 0.3em 0.6em 0.3em 0.6em;
 	margin-top: 1em;
 }
+
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
 ------------------------------- MEDIA QUERIES -----------------------------
@@ -750,18 +757,14 @@ footer li{
 @media screen and (min-width: 700px){
 	
 	header{
-		height: 4em;
-		padding: 0;
+		height: auto;
+		padding: 0.3em;
 	}
 
 	#logo{
 		grid-area: nav-bar;
 		justify-items: flex-start;
 		margin-left: 2em;
-	}
-
-	#logo img{
-		max-width: 3em;
 	}
 
 	#nav-bar{
@@ -815,7 +818,6 @@ footer li{
 	#account-btn{
 		justify-content: flex-start;
 		color: var(--dark);
-		margin-left: 8em;
 	}
 
 	#account-btn:focus{
@@ -853,49 +855,34 @@ footer li{
 
 	} 
 	
-	/* ------- Sign up ~ Login pop-up ------- */
-	#account-form-section{
-		margin: 0;
-    	width: 25%;
-    	height: 30%;
-		position: fixed;
-    	left: 59%;
-		top: 2%;
-	}
-	
 	#account-form-container{
-		position: fixed;
-	    padding: 0;
-		align-items: center;
-    	display: flex;
-    	justify-content: space-evenly;
-	}
-	
-	.btn-row{
-	    width: 50%;
+		display: flex;
+		flex-flow: row;
+		justify-content: space-evenly;
+		height: 30%;
+		width: 30%;
+		left: 53%;
+		padding: 2em;
 	}
 	
 	.account-form-btn{
-		width: 100%;
+		opacity: 0.9;
 	}
-	
-	.account-form-btn:before {
-		content: "";
-		position: absolute;
-		background: var(--red);
-		bottom: 0;
-		left: 0;
-		top: 0;
-		right: 100%;
-		z-index: -1;
-		-webkit-transition: right 0.09s ease-in;
-		transition: right 0.09s ease-in;
-	}
-	
-	.account-form-btn:hover {
-		color: white;
-		transition: right 0.09s ease-in;
+
+	/* Signup/Login buttons */
+	.account-form-btn:hover{
+		-moz-transition: opacity 0.2s; /* Firefox */
+		-webkit-transition: opacity 0.2s; /* Safari and Chrome */
+		-o-transition: opacity 0.2s; /* Opera */
+		transition: opacity 0.2s;
+		opacity: 1;
 		transform: scale(1.1);
+	}
+	
+	/* Close account form */
+	.exit-col i{
+		left: 90%;
+		padding: 0.3em 0.3em 0 0;
 	}
 	
 	.exit-col i:hover{
@@ -908,7 +895,7 @@ footer li{
 	
 	/* ------- Search section ------- */
 	.search-for-supplier{
-		min-height: 25rem;
+		height: 30em;
 	}
 
 	.page-title{
@@ -940,7 +927,8 @@ footer li{
 
 	/* Background image for venue search section */
 	#search-for-venue{
-		background-image: url(../resources/sweet-ice-cream-photography-399226-unsplash.jpg)
+		background-image: url("../resources/web/venues/venue-xl.jpg");
+		background-position: 20% 65%;
 	}
 	
 	/* Background image for florist search section */
@@ -950,29 +938,26 @@ footer li{
 
 	/* Background image for photographer search section */
 	#search-for-photographer{
-		background-image: url(../resources/web/photographers/photographer2-xl.jpg);
-		
-		
+		background-image: url("../resources/web/photographers/photographer-xl.jpg");
 	}
 
-		/* Background image for bakeri search section */
+	/* Background image for bakeri search section */
 	#search-for-bakeri{
-		background-image: url(../resources/web/bakeries/bakeri-xl.jpg);
-		background-position: top;
-		 
+		background-image: url(../resources/web/cakes/cake-xl.jpg);	
+		background-position: 80% 35%;
 	}
 
 		/* Background image for dress search section */
 	#search-for-dress{
-		background-image: url(../resources/charisse-kenion-340543-unsplash.jpg);
-		background-position: top;
+		background-image: url("../resources/web/dresses/dress-xl.jpg");
+		background-position: 100% 1%;
 	}
 
 	/* Filter and search buttons style*/
 	.button{
     	padding: 1em;
 		font-size: 1em;
-		background: var(--peach);
+		background: white;
 	}
 
 	#filter-section{
@@ -991,6 +976,7 @@ footer li{
 		display: flex;
 		align-items: flex-start;
 		background: transparent;
+		color: var(--dark);
 		padding: 0;
 		padding-left: 2em;	
 	}
@@ -1004,6 +990,11 @@ footer li{
 	#filter-btn-web{
 		display: inline-flex;
 		padding: 0.2em;
+	}
+
+	#filter-btn-web i{
+		font-size: 1.5em;
+		color: var(--dark);
 	}
 	
 	#style-filter{
@@ -1035,9 +1026,10 @@ footer li{
 	} 
 	
 	#filter-functions-label {
-		font-family: 'Rubik', sans-serif;
-		
+		font-size: 1.5em;
+		color: var(--dark);
 	}
+
 	
 	.filter-list-label{
 		float: left;
@@ -1102,11 +1094,18 @@ footer li{
 	}
 	
 	.icons i{
+		font-size: 1.5em;
 		color: var(--dark);
 	}
 	
 	.icons i:hover{
+		-moz-transition: opacity 0.2s; /* Firefox */
+		-webkit-transition: opacity 0.2s; /* Safari and Chrome */
+		-o-transition: opacity 0.2s; /* Opera */
+		transition: opacity 0.2s;
+		transform: scale(1.2);
 		color: var(--peach);
+		opacity: 1;
 	}
 	
 	/* -------------------------------------------------------------- */
@@ -1222,35 +1221,35 @@ footer li{
 	/* -------------------------------------------------------------- */
 
 	#bakeri1{
-		background-image: url("../resources/web/bakeries/bakeri1-xl.jpg");
+		background-image: url("../resources/web/cakes/cake1-xl.jpg");
 	}
 
 	#bakeri2{
-		background-image: url("../resources/web/bakeries/bakeri2-xl.jpg");
+		background-image: url("../resources/web/cakes/cake2-xl.jpg");
 	}
 
 	#bakeri3{
-		background-image: url("../resources/web/bakeries/bakeri3-xl.jpg"); 
+		background-image: url("../resources/web/cakes/cake3-xl.jpg");
 	}
 
 	#bakeri4{
-		background-image: url("../resources/web/bakeries/bakeri4-xl.jpg");
+		background-image: url("../resources/web/cakes/cake4-xl.jpg");
 	}
 
 	#bakeri5{
-		background-image: url("../resources/web/bakeries/bakeri5-xl.jpg");
+		background-image: url("../resources/web/cakes/cake5-xl.jpg");
 	}
 
 	#bakeri6{
-		background-image: url("../resources/web/bakeries/bakeri6-xl.jpg");
+		background-image: url("../resources/web/cakes/cake6-xl.jpg");
 	}
 
 	#bakeri7{
-		background-image: url("../resources/web/bakeries/bakeri7-xl.jpg");
+		background-image: url("../resources/web/cakes/cake7-xl.jpg");
 	}
 
 	#bakeri8{
-		background-image: url("../resources/web/bakeries/bakeri8-xl.jpg");
+		background-image: url("../resources/web/cakes/cake8-xl.jpg");
 	}
 	
 	/* -------------------------------------------------------------- */
@@ -1291,10 +1290,10 @@ footer li{
 
 	/* Footer styling */
 	footer h5{
-	    font-size: 1.5em;
+	    font-size: 1.2em;
 	}
 	
 	footer a{
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
 }

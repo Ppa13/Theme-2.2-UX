@@ -1,16 +1,13 @@
 // Open account form
 function openAccount(){
-  var x = document.getElementById("account-form");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+    document.getElementById("account-form").style.display="block";
+    document.getElementById("account-btn").style.visibility="hidden";
 }
 
 // Close account form
 function closeAccount(){
-  	document.getElementById("account-form").style.display="none";
+    document.getElementById("account-form").style.display="none";
+	document.getElementById("account-btn").style.visibility="visible";
 }
 
 // Open login form
@@ -44,10 +41,6 @@ function scrollFunction(){
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction(){
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+   document.body.scrollTop = 0;
+   document.documentElement.scrollTop = 0;
 }
-
-
-
-

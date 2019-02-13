@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Bakeries</title>
+	<title>Bakers</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="../css/supplier.css" type="text/css">
@@ -14,6 +14,10 @@
 <body>
 	<!-- Navigation -->
 	<header>
+		<!-- Login function -->
+		<button id="account-btn" onclick="openAccount()"><i class="far fa-user fa-1x" aria-hidden="true"></i></button>
+		<!-- Logo -->
+		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
 		<!-- Burger menu -->			
 		<section class="" id="nav-bar">
 			<!--Checkbox to toggle the burger menu-->
@@ -45,7 +49,7 @@
 							<li><a href="venue.html">Venues</a></li>
 							<li><a href="photographer.html">Photographers</a></li>
 							<li><a href="florist.html">Florists</a></li>
-							<li><a href="bakeri.html">Bakers</a></li>
+							<li><a href="cake.html">Bakers</a></li>
 							<li><a href="dress.html">Dresses</a></li>
 						</ul>
 				</section>
@@ -57,17 +61,13 @@
 			<span></span>
 			<span></span>
 		</section>
-		<!-- Logo -->
-		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
-		<!-- Login function -->
-		<button id="account-btn" onclick="openLogin()"><i class="far fa-user fa-2x" aria-hidden="true"></i></button>
     </header>
 
     <!-- The content of the page -->
     <main>
     	<!-- The background image and the search bar -->
 		<section class="search-for-supplier" id="search-for-bakeri">
-			<h1 class="page-title">Cakes</h1>
+			<h1 class="page-title">Bakers</h1>
 			<!-- Search bar + filter btn and search btn -->
 			<article>
 				<button class="button" id="filter-btn-mobile" type="submit"><i class="fas fa-sliders-h fa-2x"></i></button>
@@ -133,7 +133,7 @@
 							<tr><td><b>Bake My Day</b></td></tr>
 							<tr><td><i class="fas fa-map-marker-alt"></i>&nbsp;Bornholm, Denmark</td></tr>
 							<td></td>
-							<tr><td><i class="fas fa-palette"></i>&nbsp;Pastel Colours &amp; Sugar Flowers </td></tr>
+							<tr><td><i class="fas fa-palette"></i>&nbsp;Pastel Colours  </td></tr>
 							<tr><td><i class="fas fa-coins"></i>&nbsp;From 750 DKK</td></tr>
 						</table>
 					</section>
@@ -254,15 +254,17 @@
 		</section>
 
 		<!-- Back to top function -->
-		<button onclick="topFunction()" id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+		<button onclick="topFunction()" id="back-to-top" title="Go to top"><i class="fas fa-arrow-up fa-1x"></i></button>
     </main>
 
     <!-- Contact information and social media icons -->
 	<footer>
 		<ul>
-		    <a href="#"><i class="fab fa-facebook-f"></i></a>
-			<a href="#"><i class="fab fa-twitter "></i></a> 
-			<a href="#"><i class="fab fa-instagram "></i></a>
+			<li>
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter "></i></a> 
+				<a href="#"><i class="fab fa-instagram "></i></a>
+			</li>
   		</ul>
 		<h5>weddingplanner@customerservice.dk</h5>
 	</footer>
@@ -272,19 +274,19 @@
 		<form action="/action_page.php" class="form-container" id="account-form-container">
 			<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-2x" onclick="closeLogin()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-2x" onclick="closeAccount()" aria-hidden="true"></i> 
 				</div>
 			</div>
 
 			<div class="btn-row">
 				<div class="col-25">
-					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="window.open('under-construction.html');">Sign up</button>
+					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="openSignup()">Sign up</button>
 				</div>
 			</div>
 
 			<div class="btn-row">
 				<div class="col-25">
-					<button type="submit" class="account-form-btn" id="login-btn" onclick="window.open('under-construction.html');">Login</button>
+					<button type="submit" class="account-form-btn" id="login-btn" onclick="openLogin()">Login</button>
 				</div>
 			</div>
 		</form>
@@ -294,7 +296,7 @@
 	<section class="form-popup" id="signup-form">
 		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-3x" onclick="closeForm()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-3x" onclick="closeSignup()" aria-hidden="true"></i> 
 				</div>
 			</div>
 
@@ -345,7 +347,7 @@
 
 			<div class="login-row">
 				<div class="col-25">
-					<button type="submit" class="login-btn">Create account</button>
+					<button type="submit" class="account-form-btn" id="create-account-btn">Create account</button>
 				</div>
 			</div>
 		</form>
@@ -356,7 +358,7 @@
 	<section class="form-popup" id="login-form">
 		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-3x" onclick="closeForm()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-3x" onclick="closeLogin()" aria-hidden="true"></i> 
 				</div>
 			</div>
 
@@ -380,7 +382,7 @@
 
 			<div class="login-row">
 				<div class="col-25">
-					<button type="submit" class="login-btn">Login</button>
+					<button type="submit" class="account-form-btn">Login</button>
 				</div>
 			</div>
 		</form>

@@ -4,7 +4,7 @@
 }
 
 :root {
-	--peach: #fbbc8f;
+	--peach: #fad6bc;
 	--dark: #4C6250;
 	--light: #A4BC82;
 }
@@ -17,8 +17,8 @@ html, body{
     max-height: 100%;
 	margin: 0;
 	text-rendering: optimizeLegibility;
-    line-height: 1.4;
-    font-size: 100%;
+	font-size: 100%;
+	font-kerning: none;
 	color: var(--dark);
 }
 
@@ -51,6 +51,7 @@ h1{
 
 h5{
 	font-weight: 200;
+	margin: 0;
 }
 
 /* Hide elements on mobile version */
@@ -80,7 +81,6 @@ header{
 	align-items: center;
 	justify-content: center;
 	position: fixed;
-	opacity: 0.8;
 	z-index: 98;
 }
 
@@ -142,15 +142,14 @@ header{
     right: 4%;
     z-index: 102;
     display: none;
-	opacity: 0.9;
 }
 
 /*Navigation bar*/
 nav {
     background: white;
     position: fixed;
-    top: 2%;
-    right: 4%;
+    top: 1%;
+    right: 2%;
 	padding: 2em;
 	z-index: 100;
 	display: none;	
@@ -160,11 +159,11 @@ nav {
 nav a{
 	color: var(--dark);
 	display: block;
-	padding-bottom: 2em;
+	padding: 1.5rem;
     min-width: 10em;
 	text-decoration: none;
 	text-align: center;
-	font-size: 1.6em;	
+	font-size: 1.3em;	
 }
 
 /*to toggle the burger menu*/
@@ -203,7 +202,6 @@ nav a{
 
 .dropdown-content li{
 	display: none;
-	
 }
 
 /* Sign-up or sign-in button */
@@ -239,16 +237,27 @@ nav a{
 	height: 45%;
 	width: 80%;
 	position: fixed;
-	top: 2%;
-	left: 4%;
+	top: 1%;
+	left: 2%;
 	padding: 3em;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	flex-flow: column;
-	background: rgba(253,253,253,0.50); 
+	background:white;
 	color:rgba(0,0,0,0.55);
 }
+
+.account-form-btn {
+	font-weight: 300;
+	background: var(--peach);
+	width: 100%;
+	padding: 12px 0px;
+	border-radius: 0.3em;
+	font-size: 1.3em;
+	border-style: solid;
+	opacity: 0.8;
+  }
 
 /* Exit icon */
 .exit-col{
@@ -277,7 +286,6 @@ nav a{
     padding: 15px 32px;
     border-radius: 0.2em;
     font-size: 1.5em;
-	border-color: var(--dark);
     border-style: solid;
 }
 
@@ -323,6 +331,7 @@ nav a{
 #content-title{
 	color: black;
 	opacity: 0.8;
+	font-size: 1.4rem;
 }
 
 #page-content{
@@ -334,6 +343,10 @@ nav a{
 	font-size: 0.8em;
 }
 
+#page-content h4{
+	font-size: 1rem;
+}
+
 #become-supplier-btn{
 	background-color: var(--peach);
 	color: black;
@@ -341,7 +354,7 @@ nav a{
 	height: auto;
 	border: none;
 	margin: 2em 0 2em 0;
-	padding: 15px 32px;
+	padding: 0.8em;
 	padding: 1em;
 	border-radius: 0.2em;
 	font-size: 1.3em;
@@ -365,41 +378,47 @@ nav a{
 	padding: 0.8em;
 	opacity: 0.8;
 }
-
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
 -------------------------------------- FOOTER -----------------------------
 ---------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-
-footer{
-    display: flex;
-    justify-content: center;
+footer {
+	justify-content: center;
 	align-items: center;
 	padding: 0 0.5em 0 0.5em;
-	opacity: 0.9;
-}
-
-footer a {
-    color: var(--dark);
-}
-
-footer li{
-    display: flex;
+	opacity: 0.8;
+	background-color: var(--peach);
+	height: 3em;
+  }
+  
+  footer ul{
+	display: flex;
+	height: 100%;
+	  justify-content: center;
+  }
+  
+  footer a {
+	color: var(--dark);
+  }
+  
+  footer li {
+	display: flex;
 	justify-content: center;
-    align-items: center;
+	align-items: center;
 	padding: 0 0.5em 0 0;
-	
-}
-
-.fa-facebook-f, .fa-twitter, .fa-instagram{
-    display: block;
-    padding: 0 0.5em 0 0.5em;
-    max-width: 80px;
-    max-height: 80px;
-    border-radius: 50%;
-    text-decoration: none;
-}
+  }
+  
+  .fa-facebook-f,
+  .fa-twitter,
+  .fa-instagram {
+	display: block;
+	padding: 0 0.5em 0 0.5em;
+  }
+  
+  .copyright-txt{
+	display: none;
+  }
 
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
@@ -411,6 +430,14 @@ footer li{
 
 @media screen and (min-width: 700px){
 	
+	#page-content h4{
+		font-size: 1.3rem;
+	}
+
+	#content-title{
+		font-size: 1.6rem;
+	}
+
 	header{
 		height: auto;
 		padding: 0.3em;
@@ -508,25 +535,22 @@ footer li{
 		display: block;
 	}
 
-	.dropdown-content li a:hover{
-		color: var(--peach);
-	}
-
-	#account-btn{
-		justify-content: flex-start;
-	}
+	#account-btn {
+		justify-content: flex-end;
+		color: var(--dark);
+		margin-right: 2em;
+	  }
 	
-	#account-btn:hover{
-		color: var(--peach);
-	}
+	#account-btn i:hover, .dropdown-content li a:hover{
+	    color: var(--peach);
+	} 
 	
 	#account-form-container{
 		display: flex;
-		flex-flow: row;
 		justify-content: space-evenly;
-		height: 30%;
-		width: 30%;
-		left: 53%;
+		height: 25%;
+		width: 20%;
+		left: 79%;
 		padding: 2em;
 	}
 	
@@ -546,7 +570,7 @@ footer li{
 	
 	/* Close account form */
 	.exit-col i{
-		left: 90%;
+		left: 88%;
 		padding: 0.3em 0.3em 0 0;
 	}
 	
@@ -583,12 +607,33 @@ footer li{
 		transform: scale(1.1);
 	}
 	
-	/* Footer styling */
-	footer h5{
-	    font-size: 1.2em;
-	}
-	
-	footer a{
-		font-size: 1.2em;
-	}
+/* Footer styling */
+footer{
+    height: fit-content;
+  }
+
+  footer ul{
+	padding: 1em;
+  }
+
+  footer li{
+    padding: 0 2em 0 0;
+  }
+
+  footer h5 {
+    font-size: 1.2em;
+  }
+
+  footer a {
+    font-size: 1.2em;
+  }
+
+  footer i:hover{
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+
+  .copyright-txt{
+    display: block;
+  }
 }

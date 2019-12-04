@@ -4,7 +4,7 @@
 }
 
 :root {
-	--peach: #fbbc8f;
+	--peach: #fad6bc;
 	--dark: #4C6250;
 	--light: #A4BC82;
 }
@@ -21,7 +21,6 @@ html, body{
     text-decoration: none;
 	text-rendering: optimizeLegibility;
     font-kerning: none;
-    line-height: 1.5;
 	white-space: 1.2;
     font-size: 100%;
 	color: var(--dark);
@@ -56,6 +55,7 @@ h1{
 
 h5{
 	font-weight: 200;
+	margin: 0;
 }
 
 /* Hide elements on mobile version */
@@ -86,7 +86,6 @@ header{
 	align-items: center;
 	justify-content: center;
 	position: fixed;
-	opacity: 0.8;
 	z-index: 98;
 }
 
@@ -148,15 +147,14 @@ header{
     right: 4%;
     z-index: 102;
     display: none;
-	opacity: 0.9;
 }
 
 /*Navigation bar*/
 nav {
     background: white;
     position: fixed;
-    top: 2%;
-    right: 4%;
+    top: 1%;
+    right: 2%;
 	padding: 2em;
 	z-index: 100;
 	display: none;	
@@ -166,11 +164,11 @@ nav {
 nav a{
 	color: var(--dark);
 	display: block;
-	padding-bottom: 2em;
+	padding: 1.5rem;
     min-width: 10em;
 	text-decoration: none;
 	text-align: center;
-	font-size: 1.6em;	
+	font-size: 1.3em;	
 }
 
 /*to toggle the burger menu*/
@@ -247,15 +245,18 @@ nav a{
 }
 
 /* Add styles to the form container */
-.form-container {
+#account-form-container {
 	height: 45%;
 	width: 80%;
+	position: fixed;
+	top: 1%;
+	left: 2%;
 	padding: 3em;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	flex-flow: column;
-	background: rgba(253,253,253,0.50); 
+	background: white;
 	color:rgba(0,0,0,0.55);
 }
 
@@ -296,10 +297,9 @@ nav a{
     font-weight: 300;
     background: var(--peach);
     width: 100%;
-    padding: 15px 32px;
+	padding: 12px 0px;
     border-radius: 0.2em;
-    font-size: 1.5em;
-	border-color: var(--dark);
+    font-size: 1.3em;
     border-style: solid;
 }
 
@@ -312,14 +312,20 @@ nav a{
 
 /* Style 404 page */
 #under-construction{
-    height: 700px;
-    padding: 10em 0 0 0;
-    display: flex;
-    justify-content: center;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	padding: 5rem 0 0 0;
+}
+
+#under-construction h1{
+	margin: 0;
+	color: #4c6250;
 }
 
 #under-construction img{
-	max-height: 60%;
+	width: 60%;
 }
 
 /* ------------------------------------------------------------------------
@@ -358,18 +364,19 @@ nav a{
 	position: relative;
 	top: 50%;
 	opacity: 1;
-	height:3em;
+	height:2.5em;
 	width: 18em;
 }
 
 .search-for-supplier input[type=text]{	
-	background-color:antiquewhite;
-	width: 100%;
-  	margin: 0; 
-	opacity: 1;
-	border: none;
-	text-align: center;
-	font-style: italic;
+	background-color: antiquewhite;
+    width: 100%;
+    margin: 0;
+    opacity: 1;
+    border: none;
+    padding: 0 0.5rem;
+    font-style: italic;
+    font-size: 1rem;
 }
 
 .button{
@@ -464,7 +471,7 @@ nav a{
 	display: flex;
 	flex-flow: column;
 	align-items: center;
-	border: 2px solid rgba(251,188,143,0.8);
+	border: 2px solid var(--peach);
 	margin-bottom: 3em;
 	font-family: 'Rubik', sans-serif;
 
@@ -491,12 +498,13 @@ nav a{
 }
 
 .image-label{
-    display: flex;
-	flex-flow: row-reverse;
+	display: flex;
+    flex-flow: row-reverse;
     align-items: center;
-	width: 100%;
-	font-size: 0.8em;
-    justify-content: space-around;
+    width: 100%;
+    font-size: 0.8em;
+    justify-content: space-between;
+    padding: 0 0.5rem;
 }
 
 .icons{
@@ -714,37 +722,42 @@ nav a{
 -------------------------------------- FOOTER -----------------------------
 ---------------------------------------------------------------------------
 --------------------------------------------------------------------------- */
-
-footer{
-    display: flex;
-    justify-content: center;
+footer {
+	justify-content: center;
 	align-items: center;
 	padding: 0 0.5em 0 0.5em;
-	opacity: 0.9;
-}
-
-footer a {
-    color: var(--dark);
-}
-
-footer li{
-    display: flex;
-    align-items: center;
+	opacity: 0.8;
+	background-color:var(--peach);
+	height: 3em;
+  }
+  
+  footer ul{
+	display: flex;
+	height: 100%;
+	  justify-content: center;
+  }
+  
+  footer a {
+	color: var(--dark);
+  }
+  
+  footer li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	padding: 0 0.5em 0 0;
-	
-}
-
-/* Social media icons */
-.fa-facebook-f, .fa-twitter, .fa-instagram{
-    display: block;
-    padding: 0 0.5em 0 0.5em;
-}
-
-/* Info icon*/
-.fas.fa-info.fa-2x {
-	padding: 0.3em 0.6em 0.3em 0.6em;
-	margin-top: 1em;
-}
+  }
+  
+  .fa-facebook-f,
+  .fa-twitter,
+  .fa-instagram {
+	display: block;
+	padding: 0 0.5em 0 0.5em;
+  }
+  
+  .copyright-txt{
+	display: none;
+  }
 
 /* ------------------------------------------------------------------------
 ---------------------------------------------------------------------------
@@ -815,10 +828,11 @@ footer li{
 		color: var(--peach);
 	}
 
-	#account-btn{
-		justify-content: flex-start;
+	#account-btn {
+		justify-content: flex-end;
 		color: var(--dark);
-	}
+		margin-right: 2em;
+	  }
 
 	#account-btn:focus{
 		outline: none;
@@ -845,43 +859,37 @@ footer li{
 	.dropdown:hover > .dropdown-content{
 		display: block;
 	}
-
-	.dropdown-content li a:hover{
-		color: var(--peach);
-	}
 	
-	#account-btn i:hover{
+	#account-btn i:hover, .dropdown-content li a:hover{
 	    color: var(--peach);
-
 	} 
 	
 	#account-form-container{
 		display: flex;
-		flex-flow: row;
 		justify-content: space-evenly;
-		height: 30%;
-		width: 30%;
-		left: 53%;
+		height: 25%;
+		width: 20%;
+		left: 79%;
 		padding: 2em;
 	}
-	
-	.account-form-btn{
-		opacity: 0.9;
-	}
 
-	/* Signup/Login buttons */
-	.account-form-btn:hover{
+	.account-form-btn {
+		opacity: 0.9;
+	  }
+	
+	  /* Signup/Login buttons */
+	  .account-form-btn:hover {
 		-moz-transition: opacity 0.2s; /* Firefox */
 		-webkit-transition: opacity 0.2s; /* Safari and Chrome */
 		-o-transition: opacity 0.2s; /* Opera */
 		transition: opacity 0.2s;
 		opacity: 1;
 		transform: scale(1.1);
-	}
+	  }
 	
 	/* Close account form */
 	.exit-col i{
-		left: 90%;
+		left: 88%;
 		padding: 0.3em 0.3em 0 0;
 	}
 	
@@ -890,7 +898,7 @@ footer li{
 	}
 	
 	#under-construction img{
-	max-height: 60%;
+		width: 30%;
 	}
 	
 	/* ------- Search section ------- */
@@ -974,6 +982,7 @@ footer li{
 	
 	#filter-form{
 		display: flex;
+		flex-flow: column;
 		align-items: flex-start;
 		background: transparent;
 		color: var(--dark);
@@ -1288,12 +1297,33 @@ footer li{
 		background-image: url("../resources/web/dresses/dress9-xl.jpg");
 	}
 
-	/* Footer styling */
-	footer h5{
-	    font-size: 1.2em;
-	}
-	
-	footer a{
-		font-size: 1.2em;
-	}
+/* Footer styling */
+footer{
+    height: fit-content;
+  }
+
+  footer ul{
+	padding: 1em;
+  }
+
+  footer li{
+    padding: 0 2em 0 0;
+  }
+
+  footer h5 {
+    font-size: 1.2em;
+  }
+
+  footer a {
+    font-size: 1.2em;
+  }
+
+  footer i:hover{
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+
+  .copyright-txt{
+    display: block;
+  }
 }

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Find your invitation</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="../css/guest.css" type="text/css">
 	<!-- Link to external source of the icons -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Khmer" rel="stylesheet">
 	<script src="../js/guest.js"></script>
 </head>
@@ -15,10 +17,10 @@
 	<!-- Navigation -->
 	<header>
 		<!-- Login function -->
-		<button id="account-btn" onclick="openAccount()"><i class="far fa-user fa-1x" aria-hidden="true"></i></button>
+		<button id="account-btn" aria-label="sign-in-button" onclick="openAccount()"><i class="far fa-user fa-1x" aria-hidden="true"></i></button>
 		<!-- Logo -->
-		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
-		<!-- Burger menu -->			
+		<a href="index.html" id="logo"><img src="../resources/logo.png" alt="logo"></a>
+		<!-- Burger menu -->
 		<section class="" id="nav-bar">
 			<!--Checkbox to toggle the burger menu-->
 			<input id="togglemenu" type="checkbox" />
@@ -33,25 +35,25 @@
 				<!--Links in Navbar-->
 				<a href="index.html">Home</a>
 				<section class="dropdown">
-					<a href="#">Planning Tools</a>
-						<ul class="dropdown-content">
-							<li><a href="profile.html">My Information</a></li>
-							<li><a href="profile.html">Checklist</a></li>
-							<li><a href="profile.html">Inspiration</a></li>
-							<li><a href="profile.html">Favorites</a></li>
-							<li><a href="profile.html">Guest List</a></li>
-							<li><a href="profile.html">Messages</a></li>
-						</ul>
+					<a href="under-construction.html">Planning Tools</a>
+					<ul class="dropdown-content">
+						<li><a href="profile.html">My Information</a></li>
+						<li><a href="profile.html">Checklist</a></li>
+						<li><a href="profile.html">Inspiration</a></li>
+						<li><a href="profile.html">Favorites</a></li>
+						<li><a href="profile.html">Guest List</a></li>
+						<li><a href="profile.html">Messages</a></li>
+					</ul>
 				</section>
 				<section class="dropdown">
-					<a href="#">Wedding Suppliers</a>
-						<ul class="dropdown-content">
-							<li><a href="venue.html">Venues</a></li>
-							<li><a href="photographer.html">Photographers</a></li>
-							<li><a href="florist.html">Florists</a></li>
-							<li><a href="cake.html">Bakers</a></li>
-							<li><a href="dress.html">Dresses</a></li>
-						</ul>
+					<a href="venue.html">Wedding Suppliers</a>
+					<ul class="dropdown-content">
+						<li><a href="venue.html">Venues</a></li>
+						<li><a href="photographer.html">Photographers</a></li>
+						<li><a href="florist.html">Florists</a></li>
+						<li><a href="cake.html">Bakers</a></li>
+						<li><a href="dress.html">Dresses</a></li>
+					</ul>
 				</section>
 				<a href="guest.html">For Guests</a>
 				<a href="collaborator.html">Work with Us</a>
@@ -61,18 +63,18 @@
 			<span></span>
 			<span></span>
 		</section>
-    </header>
-	
-	 <!-- The content of the page -->
-    <main>
-    	<!-- The background image -->
+	</header>
+
+	<!-- The content of the page -->
+	<main>
+		<!-- The background image -->
 		<section class="image" id="background-img">
 			<h1 class="page-title">Guests</h1>
 		</section>
-		
+
 		<!-- Invitation request form  -->
 		<section class="form-section" id="invitation-form-section">
-			<form class="form-container" id="invitation-form-container">		
+			<form class="form-container" id="invitation-form-container">
 				<h2 id="form-title">Find your invitation</h2>
 				<div class="row">
 					<div class="col-25">
@@ -91,7 +93,7 @@
 						<input type="text" id="surname" name="surname" required>
 					</div>
 				</div>
-				
+
 				<div class="row" id="code-row">
 					<div class="col-25">
 						<label for="code">Code</label>
@@ -109,31 +111,37 @@
 			</form>
 		</section>
 	</main>
-		
-    <!-- Contact information and social media icons -->
+
+	<!-- Contact information and social media icons -->
 	<footer>
-		<ul>
-			<li>
-				<a href="#"><i class="fab fa-facebook-f"></i></a>
-				<a href="#"><i class="fab fa-twitter "></i></a> 
-				<a href="#"><i class="fab fa-instagram "></i></a>
-			</li>
-  		</ul>
-		<h5>weddingplanner@customerservice.dk</h5>
-	</footer>
-	
-<!-- Account form -->
+			<ul>
+				<li>
+					<a aria-label="link to facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+					<a aria-label="link to twitter" href="#"><i class="fab fa-twitter "></i></a>
+					<a aria-label="link to instagram" href="#"><i class="fab fa-instagram "></i></a>
+				</li>
+				<li>
+					<h5>weddingplanner@customerservice.dk</h5>
+				</li>
+				<li>
+					<h5 class="copyright-txt">Wedding Planner © 2019</h5>
+				</li>
+			</ul>
+		</footer>
+
+	<!-- Account form -->
 	<div class="form-popup" id="account-form">
 		<form action="/action_page.php" class="form-container" id="account-form-container">
 			<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-2x" onclick="closeAccount()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-2x" onclick="closeAccount()" aria-hidden="true"></i>
 				</div>
 			</div>
 
 			<div class="btn-row">
 				<div class="col-25">
-					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="openSignup()">Sign up</button>
+					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="openSignup()">Sign
+						up</button>
 				</div>
 			</div>
 
@@ -147,9 +155,10 @@
 
 	<!-- Signup form -->
 	<section class="form-popup" id="signup-form">
-		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
+		<form action="/action_page.php" class="form-container" method="post" name="questions">
+			<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-3x" onclick="closeSignup()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-3x" onclick="closeSignup()" aria-hidden="true"></i>
 				</div>
 			</div>
 
@@ -161,7 +170,7 @@
 					<input type="text" class="name" name="name" required>
 				</div>
 			</div>
-			
+
 			<div class="surname-row">
 				<div class="col-25">
 					<label for="surname">Surname</label>
@@ -170,7 +179,7 @@
 					<input type="text" class="surname" name="surname" required>
 				</div>
 			</div>
-			
+
 			<div class="email-row">
 				<div class="col-25">
 					<label for="email">Email Address</label>
@@ -188,7 +197,7 @@
 					<input type="password" class="password" name="password" required>
 				</div>
 			</div>
-			
+
 			<div class="repeat-password-row">
 				<div class="col-25">
 					<label for="repeat-password">Repeat password</label>
@@ -205,13 +214,14 @@
 			</div>
 		</form>
 	</section>
-	
-	
+
+
 	<!-- Login form -->
 	<section class="form-popup" id="login-form">
-		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
+		<form action="/action_page.php" class="form-container" method="post" name="questions">
+			<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-3x" onclick="closeLogin()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-3x" onclick="closeLogin()" aria-hidden="true"></i>
 				</div>
 			</div>
 
@@ -241,4 +251,5 @@
 		</form>
 	</section>
 </body>
+
 </html>

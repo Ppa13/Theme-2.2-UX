@@ -14,9 +14,9 @@
 	<!-- Navigation -->
 	<header>
 		<!-- Login function -->
-		<button id="account-btn" onclick="openAccount()"><i class="far fa-user fa-1x" aria-hidden="true"></i></button>
+		<button id="account-btn" aria-label="sign-in-button" onclick="openAccount()"><i class="far fa-user fa-1x" aria-hidden="true"></i></button>
 		<!-- Logo -->
-		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
+		<a href="index.html" id="logo"><img src="../resources/logo.png" alt="logo"></a>
 		<!-- Burger menu -->			
 		<section class="" id="nav-bar">
 			<!--Checkbox to toggle the burger menu-->
@@ -32,7 +32,7 @@
 				<!--Links in Navbar-->
 				<a href="index.html">Home</a>
 				<section class="dropdown">
-					<a href="#">Planning Tools</a>
+					<a href="under-construction.html">Planning Tools</a>
 						<ul class="dropdown-content">
 							<li><a href="profile.html">My Information</a></li>
 							<li><a href="profile.html">Checklist</a></li>
@@ -43,7 +43,7 @@
 						</ul>
 				</section>
 				<section class="dropdown">
-					<a href="#">Wedding Suppliers</a>
+					<a href="venue.html">Wedding Suppliers</a>
 						<ul class="dropdown-content">
 							<li><a href="venue.html">Venues</a></li>
 							<li><a href="photographer.html">Photographers</a></li>
@@ -256,17 +256,22 @@
 		<button onclick="topFunction()" id="back-to-top" title="Go to top"><i class="fas fa-arrow-up fa-1x"></i></button>
     </main>
 
-    <!-- Contact information and social media icons -->
+	<!-- Contact information and social media icons -->
 	<footer>
-		<ul>
-			<li>
-				<a href="#"><i class="fab fa-facebook-f"></i></a>
-				<a href="#"><i class="fab fa-twitter "></i></a> 
-				<a href="#"><i class="fab fa-instagram "></i></a>
-			</li>
-  		</ul>
-		<h5>weddingplanner@customerservice.dk</h5>
-	</footer>
+			<ul>
+				<li>
+					<a aria-label="link to facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+					<a aria-label="link to twitter" href="#"><i class="fab fa-twitter "></i></a>
+					<a aria-label="link to instagram" href="#"><i class="fab fa-instagram "></i></a>
+				</li>
+				<li>
+					<h5>weddingplanner@customerservice.dk</h5>
+				</li>
+				<li>
+					<h5 class="copyright-txt">Wedding Planner © 2019</h5>
+				</li>
+			</ul>
+		</footer>
 	
 	<!-- Account form -->
 	<div class="form-popup" id="account-form">
@@ -346,7 +351,7 @@
 
 			<div class="login-row">
 				<div class="col-25">
-					<button type="submit" class="account-form-btn" id="create-account-btn">Create account</button>
+					<button type="submit" class="account-form-btn" aria-label="create account" id="create-account-btn">Create account</button>
 				</div>
 			</div>
 		</form>

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<title>Wedding Planner</title>
 	<meta charset="utf-8">
@@ -7,7 +8,8 @@
 	<!-- Css -->
 	<link rel="stylesheet" href="../css/home.css" type="text/css">
 	<!-- Icons -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Khmer" rel="stylesheet">
 	<script src="../js/home.js"></script>
@@ -17,11 +19,10 @@
 	<!-- Navigation -->
 	<header>
 		<!-- Login function -->
-		<!-- <label class="off" id="account-off" for="account-btn" onFocus="closeAccount()"></label> -->
-		<button id="account-btn" onclick="openAccount()"><i class="far fa-user fa-1x" aria-hidden="true"></i></button>
+		<button id="account-btn" aria-label="sign-in-button" onclick="openAccount()"><i class="far fa-user fa-1x" aria-hidden="true"></i></button>
 		<!-- Logo -->
-		<a href="home.html" id="logo"><img src="../resources/logo.jpg" alt="logo"></a>
-		<!-- Burger menu -->			
+		<a href="index.html" id="logo"><img src="../resources/logo.png" alt="logo"></a>
+		<!-- Burger menu -->
 		<section class="" id="nav-bar">
 			<!--Checkbox to toggle the burger menu-->
 			<input id="togglemenu" type="checkbox" />
@@ -36,25 +37,25 @@
 				<!--Links in Navbar-->
 				<a class="breadcrumb-item" href="index.html">Home</a>
 				<section class="dropdown">
-					<a href="#">Planning Tools</a>
-						<ul class="dropdown-content">
-							<li><a href="profile.html">My Information</a></li>
-							<li><a href="profile.html">Checklist</a></li>
-							<li><a href="profile.html">Inspiration</a></li>
-							<li><a href="profile.html">Favorites</a></li>
-							<li><a href="profile.html">Guest List</a></li>
-							<li><a href="profile.html">Messages</a></li>
-						</ul>
+					<a href="under-construction.html">Planning Tools</a>
+					<ul class="dropdown-content">
+						<li><a href="profile.html">My Information</a></li>
+						<li><a href="profile.html">Checklist</a></li>
+						<li><a href="profile.html">Inspiration</a></li>
+						<li><a href="profile.html">Favorites</a></li>
+						<li><a href="profile.html">Guest List</a></li>
+						<li><a href="profile.html">Messages</a></li>
+					</ul>
 				</section>
 				<section class="dropdown">
-					<a href="#">Wedding Suppliers</a>
-						<ul class="dropdown-content">
-							<li><a href="venue.html">Venues</a></li>
-							<li><a href="photographer.html">Photographers</a></li>
-							<li><a href="florist.html">Florists</a></li>
-							<li><a href="cake.html">Bakers</a></li>
-							<li><a href="dress.html">Dresses</a></li>
-						</ul>
+					<a href="venue.html">Wedding Suppliers</a>
+					<ul class="dropdown-content">
+						<li><a href="venue.html">Venues</a></li>
+						<li><a href="photographer.html">Photographers</a></li>
+						<li><a href="florist.html">Florists</a></li>
+						<li><a href="cake.html">Bakers</a></li>
+						<li><a href="dress.html">Dresses</a></li>
+					</ul>
 				</section>
 				<a href="guest.html">For Guests</a>
 				<a href="collaborator.html">Work with Us</a>
@@ -64,9 +65,9 @@
 			<span></span>
 			<span></span>
 		</section>
-    </header>
-	
-	<main>	
+	</header>
+
+	<main>
 		<!-- Landing section -->
 		<section class="start-planning-section">
 			<article>
@@ -74,122 +75,147 @@
 				<a class="start-planning-button" href="under-construction.html">Start Planning</a>
 			</article>
 		</section>
-		
+
 		<!--Quote section-->
 		<section id="quote-section">
 			<h2 id="quote">"The best thing to hold onto in life, is each other."</h2>
 			<h4 id="quote-name">-Audrey Hepburn</h4>
 		</section>
-		
+
 		<!-- Suppliers section -->
 		<section id="suppliers-section">
-			<ul id="supplier-list">
-				<!-- Venue box -->
-				<li class="supplier-box" id="venue-box">
-					<section class="slideshow-item">
-						<a href="venue.html">
-							<img src="../resources/web/venues/venue-xl.jpg" alt="photo">
-							<div class="view-project-inner">
-								<div class="project-text-wrap">
-									<span class="project-title"><h4>Venues</h4></span>
-									<h2 class="project-concept">Discover the perfect location</h2>
+			<button class="slideshow-btn" onclick="plusSlides(-1)">&#10094;</button>
+			<div class="slideshow-container">
+				<ul id="supplier-list">
+					<!-- Venue box -->
+					<li class="supplier-box fade" id="venue-box">
+						<section class="slideshow-item">
+							<a href="venue.html">
+								<img class="slideshow-img" src="../resources/web/venues/venue-xl.jpg" alt="photo">
+								<div class="view-project-inner">
+									<div class="project-text-wrap">
+										<span class="project-title">
+											<h4>Venues</h4>
+										</span>
+										<h2 class="project-concept">Discover the perfect location</h2>
+									</div>
 								</div>
-							</div>
-						</a>
-					</section>	
-				</li>
+							</a>
+						</section>
+					</li>
 
-				<!-- Photographer box -->
-				<li class="supplier-box" id="photographer-box">
-					<section class="slideshow-item">
-						<a href="photographer.html">
-							<img src="../resources/web/photographers/photographer-xl.jpg" alt="photo">
-							<div class="view-project-inner">
-								<div class="project-text-wrap">
-									<span class="project-title"><h4>Photographers</h4></span>
-									<h2 class="project-concept">Capture your story</h2>
+					<!-- Photographer box -->
+					<li class="supplier-box fade" id="photographer-box">
+						<section class="slideshow-item">
+							<a href="photographer.html">
+								<img class="slideshow-img" src="../resources/web/photographers/photographer-xl.jpg"
+									alt="photo">
+								<div class="view-project-inner">
+									<div class="project-text-wrap">
+										<span class="project-title">
+											<h4>Photographers</h4>
+										</span>
+										<h2 class="project-concept">Capture your story</h2>
+									</div>
 								</div>
-							</div>
-						</a>
-					</section>	
-				</li>
+							</a>
+						</section>
+					</li>
 
-				<!-- Florist box -->
-				<li class="supplier-box" id="florist-box">
-					<section class="slideshow-item">
-						<a href="florist.html">
-							<img src="../resources/web/florists/florist-xl.jpg" alt="photo">
-							<div class="view-project-inner">
-								<div class="project-text-wrap">
-									<span class="project-title"><h4>Florists</h4></span>
-									<h2 class="project-concept">Add color to your day</h2>
+					<!-- Florist box -->
+					<li class="supplier-box fade" id="florist-box">
+						<section class="slideshow-item">
+							<a href="florist.html">
+								<img class="slideshow-img" src="../resources/web/florists/florist-xl.jpg" alt="photo">
+								<div class="view-project-inner">
+									<div class="project-text-wrap">
+										<span class="project-title">
+											<h4>Florists</h4>
+										</span>
+										<h2 class="project-concept">Add color to your day</h2>
+									</div>
 								</div>
-							</div>
-						</a>
-					</section>	
-				</li>
+							</a>
+						</section>
+					</li>
 
-				<!-- Baker box -->
-				<li class="supplier-box" id="baker-box">
-					<section class="slideshow-item">
-						<a href="cake.html">
-							<img src="../resources/web/cakes/cake-xl.jpg" alt="photo">
-							<div class="view-project-inner">
-								<div class="project-text-wrap">
-									<span class="project-title"><h4>Bakers</h4></span>
-									<h2 class="project-concept">The "cherry-on-top"</h2>
+					<!-- Baker box -->
+					<li class="supplier-box" id="baker-box">
+						<section class="slideshow-item">
+							<a href="cake.html">
+								<img class="slideshow-img" src="../resources/web/cakes/cake-xl.jpg" alt="photo">
+								<div class="view-project-inner">
+									<div class="project-text-wrap">
+										<span class="project-title">
+											<h4>Bakers</h4>
+										</span>
+										<h2 class="project-concept">The "cherry-on-top"</h2>
+									</div>
 								</div>
-							</div>
-						</a>
-					</section>
-				</li>
+							</a>
+						</section>
+					</li>
 
-				<!-- Dress box -->
-				<li class="supplier-box" id="dress-box">	
-					<section class="slideshow-item">
-						<a href="dress.html">
-							<img src="../resources/web/dresses/dress-xl.jpg" alt="photo">
-							<div class="view-project-inner">
-								<div class="project-text-wrap">
-									<span class="project-title"><h4>Dresses</h4></span>
-									<h2 class="project-concept">Look like you always dreamt about</h2>
+					<!-- Dress box -->
+					<li class="supplier-box" id="dress-box">
+						<section class="slideshow-item">
+							<a href="dress.html">
+								<img class="slideshow-img" src="../resources/web/dresses/dress-xl.jpg" alt="photo">
+								<div class="view-project-inner">
+									<div class="project-text-wrap">
+										<span class="project-title">
+											<h4>Dresses</h4>
+										</span>
+										<h2 class="project-concept">Look like you've always dreamed about</h2>
+									</div>
 								</div>
-							</div>
-						</a>
-					</section>
-				</li>
-			</ul>
+							</a>
+						</section>
+					</li>
+				</ul>
+				<div class="dots">
+					<span class="dot" onclick="currentSlide(1)"></span>
+					<span class="dot" onclick="currentSlide(2)"></span>
+					<span class="dot" onclick="currentSlide(3)"></span>
+					<span class="dot" onclick="currentSlide(4)"></span>
+					<span class="dot" onclick="currentSlide(5)"></span>
+				</div>
+			</div>
+			<button class="slideshow-btn" onclick="plusSlides(1)">&#10095;</button>
 		</section>
 	</main>
-	
-    <!-- Contact information and social media icons -->
+
+	<!-- Contact information and social media icons -->
 	<footer>
 		<ul>
 			<li>
-				<a href="#"><i class="fab fa-facebook-f"></i></a>
-				<a href="#"><i class="fab fa-twitter "></i></a> 
-				<a href="#"><i class="fab fa-instagram "></i></a>
+				<a aria-label="link to facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+				<a aria-label="link to twitter" href="#"><i class="fab fa-twitter "></i></a>
+				<a aria-label="link to instagram" href="#"><i class="fab fa-instagram "></i></a>
 			</li>
-  		</ul>
-		<h5>weddingplanner@customerservice.dk</h5>
+			<li>
+				<h5>weddingplanner@customerservice.dk</h5>
+			</li>
+			<li>
+				<h5 class="copyright-txt">Wedding Planner © 2019</h5>
+			</li>
+		</ul>
 	</footer>
-	
-	<!-- Back to top function -->
-	<button onclick="topFunction()" id="back-to-top" title="Go to top"><i class="fas fa-arrow-up fa-1x"></i></button>
-	
+
 	<!-- Account form -->
 	<div class="form-popup" id="account-form">
 		<!--Label for the checkbox to turn OFF-->
 		<form action="/action_page.php" class="form-container" id="account-form-container">
 			<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-2x" onclick="closeAccount()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-2x" onclick="closeAccount()" aria-hidden="true"></i>
 				</div>
 			</div>
 
 			<div class="btn-row">
 				<div class="col-25">
-					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="openSignup()">Sign up</button>
+					<button type="submit" class="account-form-btn" id="sign-up-btn" onclick="openSignup()">Sign
+						up</button>
 				</div>
 			</div>
 
@@ -200,12 +226,13 @@
 			</div>
 		</form>
 	</div>
-	
+
 	<!-- Signup form -->
 	<section class="form-popup" id="signup-form">
-		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
+		<form action="/action_page.php" class="form-container" method="post" name="questions">
+			<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-3x" onclick="closeSignup()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-3x" onclick="closeSignup()" aria-hidden="true"></i>
 				</div>
 			</div>
 
@@ -217,7 +244,7 @@
 					<input type="text" id="name" name="name" required>
 				</div>
 			</div>
-			
+
 			<div class="surname-row">
 				<div class="col-25">
 					<label for="surname">Surname</label>
@@ -226,7 +253,7 @@
 					<input type="text" id="surname" name="surname" required>
 				</div>
 			</div>
-			
+
 			<div class="email-row">
 				<div class="col-25">
 					<label for="email">Email Address</label>
@@ -244,7 +271,7 @@
 					<input type="password" class="password" name="password" required>
 				</div>
 			</div>
-			
+
 			<div class="repeat-password-row">
 				<div class="col-25">
 					<label for="repeat-password">Repeat password</label>
@@ -256,18 +283,19 @@
 
 			<div class="login-row">
 				<div class="col-25">
-					<button type="submit" class="account-form-btn" id="create-account-btn">Create account</button>
+					<button type="submit" class="account-form-btn" aria-label="create account" id="create-account-btn">Create account</button>
 				</div>
 			</div>
 		</form>
 	</section>
-	
-	
+
+
 	<!-- Login form -->
 	<section class="form-popup" id="login-form">
-		<form action="/action_page.php" class="form-container" method="post" name="questions">		<div class="exit-row">
+		<form action="/action_page.php" class="form-container" method="post" name="questions">
+			<div class="exit-row">
 				<div class="exit-col">
-					<i class="far fa-times-circle fa-3x" onclick="closeLogin()" aria-hidden="true"></i> 
+					<i class="far fa-times-circle fa-3x" onclick="closeLogin()" aria-hidden="true"></i>
 				</div>
 			</div>
 
@@ -297,10 +325,50 @@
 		</form>
 	</section>
 	<script>
-		// When the user scrolls down 150px from the top of the document, show the button
-		window.onscroll = function() {
-			scrollFunction()
-		};
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		// Next/previous controls
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		// Thumbnail image controls
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			var i;
+			var slides = document.getElementsByClassName("supplier-box");
+			var dots = document.getElementsByClassName("dot");
+			if (n > slides.length) { slideIndex = 1 }
+			if (n < 1) { slideIndex = slides.length }
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+		}
+
+		var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("supplier-box");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slideIndex++;
+			if (slideIndex > slides.length) { slideIndex = 1 }
+			slides[slideIndex - 1].style.display = "block";
+			setTimeout(showSlides, 4000); // Change image every 2 seconds
+		}
 	</script>
 </body>
+
 </html>
